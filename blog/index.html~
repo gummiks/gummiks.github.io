@@ -1,0 +1,23 @@
+---
+layout: blog
+title: archive
+---
+
+<h1>posts</h1>
+<div class="row">
+	<div class="span3"> 
+{% for post in site.posts %}
+  <p>  {{ post.date | date_to_long_string }}</p>
+  {% endfor %}
+  </div>
+	<div class="span3 offset2"> 
+		{% for post in site.posts %}
+  <p>
+  <a href="{{ post.url }}">{{ post.title }}</a> 
+  </p>
+  {% endfor %}
+  </div>
+
+</div>
+
+
