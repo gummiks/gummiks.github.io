@@ -3,15 +3,10 @@ title: About me
 layout: default
 ---
 
+###Guðmundur Kári Stefánsson
 
-Hi!
+<code>About Me</code>
 
-Guðmundur my name is.
-<p>
-Developing this site I am. 
-</p>
-<p>
-Patient you must be.
-</p>
+Hæ! (Icelandic for hi!)
 
-
+I am a Fulbright Scholar from Iceland, currently in my first year of my PhD in Astronomy & Astrophysics at Penn State University. My primary research interest center around the study of exoplanets, and their detection.
