@@ -1,8 +1,11 @@
 ---
 layout: default
 ---
+#Photongraphy
 
+<br/>
 When I have time I like to fiddle around with photography.
+
 
 As an open-source advocate I mostly use the programs <code>digicam</code>, <code>darktable</code>, and <code>GIMP</code> - all of which should be conveniently found in your nearest <code>linux</code> repository!
 
