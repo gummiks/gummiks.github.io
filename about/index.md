@@ -7,7 +7,7 @@ layout: default
 
 <div class="span3">
 <center>
-<img src="../img/profile_lopapeysa.jpg"/>
+<img src="../img/profile_canoe.jpg"/>
 </center>
 </div>
 
