@@ -1,9 +1,6 @@
 ---
-title: To the West!
+title: To the West
 layout: post
-tags:
--travel
--CERN
 ---
 I don't know how many goodbyes I have said this last week.
 
