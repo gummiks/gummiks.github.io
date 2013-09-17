@@ -21,5 +21,13 @@ Hæ! (Icelandic for hi!)
 <br/>
 <br/>
 
-I am a Fulbright Scholar from Iceland, currently in my first year of my PhD in Astronomy & Astrophysics at Penn State University. My primary research interest center around the study of exoplanets, and their detection.
+<p>
+I am a Fulbright student from Iceland, currently in my first year of my PhD in Astronomy & Astrophysics at Penn State University. My primary research interest center around the study of <code>exoplanets</code>, their detection and characterization.
+</p>
+
+<p>
+	When I'm not contemplating the heavens (which nowadays seems mostly to consist of running/writing code) I like trying my luck with taking photos, especially when travelling. 
+	The photography part I guess stems from coming from this island of Fire and Ice in the middle of the Atlantic, but I can certainly say that it offers some scenic places.
+	Somewhere along the way I learned to play the guitar, and picked up a dan in Shotokan. My next immediate tasks hobby-wise are; finding a decent dojo and a good place to jam.
+</p>
 </div>
