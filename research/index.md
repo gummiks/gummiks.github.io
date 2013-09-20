@@ -10,7 +10,9 @@ doc_2012Report: /research/files/hi/nsn2012.pdf
 
 #Current Research
 
+<p class="muted">
 Coming soon
+</p>
 
 
 <hr>
@@ -19,16 +21,19 @@ Coming soon
 ####(2013) Research project at CERN
 #####_High Purity Germanium Detector Calibration at ISOLDE_
 
-Coming Soon
 
 
-
+<p class="muted">
+Coming soon
+</p>
 
 
 ####(2013) Bachelor Thesis Project
 #####_Observational Constraints on Dark Energy_
 
-<br/>
+<p class="muted">
+Coming soon
+</p>
 
 
 
