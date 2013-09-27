@@ -17,14 +17,21 @@ However, I was tired. Having only slept for two hours before my flight I didn't 
 The girl in front of me had the exact same question I was going to ask; "How do I get to Geneva?" - it turned out she was Icelandic as well, moreover from Húsavík (like half of my family are from there); the world is smaller than I thought! 
 We resolved to share this part of the trip; trips are more fun with friends.
 
-<ul class="entries">
-  <li>
-    <a id="demo_standard">
-      <img src="{{ page.image1 }}" />
-      <h3>{{ page.image1title}}</h3>
-    </a>
-  </li>
-</ul>
+<div class="carousel slide">
+  <!-- Carousel items -->
+	<div class="carousel-inner">
+		<div class="active item">
+			<img class="carouselImage" src=" {{ page.image1 }}"> 
+			<div class="container">
+				<div class="carousel-caption">
+					<p class="lead"> {{ page.image1title }}</p>
+					<p class="muted"> {{ page.image1subtitle }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 The train ride was great. 
 I almost forgot how tired I was.
