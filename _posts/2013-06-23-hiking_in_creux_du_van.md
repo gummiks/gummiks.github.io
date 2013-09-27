@@ -22,35 +22,53 @@ Below you can see some empirical observations from the trip, backed up with phot
 ###Weather
 Highly dependent on height, and time of day. 
 
-<ul class="entries">
-  <li>
-    <a id="demo_standard">
-      <img src="{{ page.image1 }}" />
-      <h3>{{ page.image1title}}</h3>
-    </a>
-  </li>
-</ul>
+<div class="carousel slide">
+  <!-- Carousel items -->
+	<div class="carousel-inner">
+		<div class="active item">
+			<img class="carouselImage" src=" {{ page.image1 }}"> 
+			<div class="container">
+				<div class="carousel-caption">
+					<p class="lead"> {{ page.image1title }}</p>
+					<p class="muted"> {{ page.image1subtitle }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 ###Wild-life
 Some visible. Mostly ibexes and birds (excluding some wild summer students).
 
-<ul class="entries">
-  <li>
-    <a id="demo_standard">
-      <img src="{{ page.image2 }}" />
-      <h3>{{ page.image2title}}</h3>
-    </a>
-  </li>
-</ul>
+<div class="carousel slide">
+  <!-- Carousel items -->
+	<div class="carousel-inner">
+		<div class="active item">
+			<img class="carouselImage" src=" {{ page.image2 }}"> 
+			<div class="container">
+				<div class="carousel-caption">
+					<p class="lead"> {{ page.image2title }}</p>
+					<p class="muted"> {{ page.image2subtitle }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<ul class="entries">
-  <li>
-    <a id="demo_standard">
-      <img src="{{ page.image3 }}" />
-      <h3>{{ page.image3title}}</h3>
-    </a>
-  </li>
-</ul>
+<div class="carousel slide">
+  <!-- Carousel items -->
+	<div class="carousel-inner">
+		<div class="active item">
+			<img class="carouselImage" src=" {{ page.image3 }}"> 
+			<div class="container">
+				<div class="carousel-caption">
+					<p class="lead"> {{ page.image3title }}</p>
+					<p class="muted"> {{ page.image3subtitle }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 ###Conclusion
 In all the trip was a success, despite a small car incident (which proved to be trivial).
