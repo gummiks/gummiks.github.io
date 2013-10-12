@@ -20,7 +20,7 @@ tags:
 - astroNight
 - outreach
 ---
-I decided to volunteer for AstroNight, an annual outreach event held by the astrodepartment; supposedly a smaller variant of its bigger brother <a href="http://www.astro.psu.edu/public-outreach/astrofest">AstroFest</a> which I haven't attended yet. 
+I decided to volunteer for AstroNight, an annual outreach event held by the astronomy department, supposedly a smaller variant of its bigger brother <a href="http://www.astro.psu.edu/public-outreach/astrofest">AstroFest</a> which I haven't attended yet. 
 I took my new <code>1.4 aperture</code> with me - I wanted to test it out. 
 
 Regretfully the weather wasn't good.
