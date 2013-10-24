@@ -36,7 +36,7 @@ I am a Fulbright student from Iceland, currently in my first year of my PhD in A
 <hr>
 <p class="muted">
 	<i>
-	This blog is not an official Department of State website, and the views and information presented here is my own and do not represent the Fulbright Program or the Department of State.
+	This blog is not an official Department of State website, and the views and information presented here are my own and do not represent the Fulbright Program or the Department of State.
 	</i>
 </p>
 <hr/>
