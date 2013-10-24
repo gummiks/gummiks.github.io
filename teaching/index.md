@@ -27,7 +27,13 @@ Lab section of Physics 2V (6 credit physics course for engineering students) tau
 <hr>
 #Outreach
 
-<p class="muted">Coming soon</p>
+<br/>
+
+- <a href="http://ph-news.web.cern.ch/content/interview-john-ellis">Interview with John Ellis, CERN</a>
+- <a href="http://phsummer2013.web.cern.ch/PHsummer2013/PH_SummerStudents_2013.html">CERN Summer Student Map</a>  
+- <a href="http://gummiks.github.io/2013/10/05/astronight/">AstroNight blog post, PSU</a>
+
+<br/>
 
 And maybe, just maybe, this site might be classified as outreach?
 {{ content }}
