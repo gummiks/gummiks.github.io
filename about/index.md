@@ -30,4 +30,14 @@ I am a Fulbright student from Iceland, currently in my first year of my PhD in A
 	The photography part I guess stems from coming from this island of Fire and Ice in the middle of the Atlantic, but I can certainly say that it offers some scenic places.
 	Somewhere along the way I learned to play the guitar, and picked up a dan in Shotokan. My next immediate tasks hobby-wise are; finding a decent dojo and a good place to jam.
 </p>
+
+<br/>
+
+<hr>
+<p class="muted">
+	<i>
+	This blog is not an official Department of State website, and the views and information presented here is my own and do not represent the Fulbright Program or the Department of State.
+	</i>
+</p>
+<hr/>
 </div>
