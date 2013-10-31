@@ -45,4 +45,4 @@ Kvæðið virðist kannski einfalt við fyrstu sýn; auðskyld orð og tákn (r�
 Ástæðan að ég held upp á þetta ljóð er undirliggjandi hugmyndin að það þarf bara eina athugasemd frá einum manni, vel studda af sönnunargögnum, til að kollvarpa heimsmynd heils samfélags algjörlega.
 <i>Við búum ekki sérstakan stað í alheiminum, heldur ósköp lítin stein í gapandi tómi</i> - ég er óviss hvort hægt sé að komast betur að orði.
 
-Pældu í því að vera Kóperníkus á þessum tíma; kannski búinn að átta sig á þessu öllu saman; ekki búinn að segja neinum frá, meðan allt annað er enn á sínum stað og gengur sinn vana gang, <i>óafvitandi</i>.
+Pældu í því að vera Kóperníkus á þessum tíma; kannski búinn að átta sig á þessu öllu saman; ekki búinn að segja neinum frá, meðan allt annað er enn á sínum stað og gengur óafvitandi sinn vanagang.
