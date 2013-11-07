@@ -3,7 +3,7 @@ title: AstroNight
 layout: post
 image1: /img/astroNight/people.jpg
 image1title: Walking the mile
-image1subtitle: The corridors in Davey were filled to the brim
+image1subtitle: 
 image2: /img/astroNight/he.jpg
 image2title: Spectral Signals!
 image2subtitle: 
