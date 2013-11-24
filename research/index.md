@@ -1,9 +1,9 @@
 ---
 layout: research
 image1_mold: /research/files/hi/mold.png
-image2_waveguide: /research/files/hi/waveguide.jpg
+image2_waveguide: /research/files/hi/labWork.jpg
 image3_cosmo: /research/files/hi/sn.png
-image4_detectors: /research/files/cern/modules.png
+image4_detectors: /research/files/cern/isoldeLab.jpg
 doc_2011Report: /research/files/hi/nsn2011.pdf
 doc_2011Outline: /research/files/hi/micro_procedure.pdf
 doc_2012Presentation: /research/files/hi/nanoPatterning.pdf
@@ -38,8 +38,12 @@ Coming soon
 <code> Observational Constraints on Dark Energy </code>
 <div class="row-fluid">
 	<div class="span8">
-		<p>My bachelor's thesis topic was in observational Cosmology. You can find my thesis below encoded in <code>Icelandic</code> and <code>in math</code>. <br/><br/>
-		<i>When I have time I'll write a few words about it in English!</i></p>
+		<p>My bachelor's thesis topic was in observational Cosmology. You can find my thesis below encoded in <code>Icelandic</code> and <code>math</code>. <br/><br/>
+
+		The project revolved around constraining the values for Dark Energy density parameter, \( \Omega_{\Lambda} \), in two ways: <br/>
+		First, using observational evidence from SNIa explosions from Reiss et al. (1998) and Perlmutter et al. (1999).
+		Second, performing Markov-Chain Monte-Carlo calculations using various cosmological observations to explore the likelood density projected on the \( \Omega_{\Lambda} \)- \( \Omega_{m} \) parameter space. The calculations were done on the <a href='http://rhi.hi.is/en/jotunn_cluster'>Jötunn</a> computer cluster at the University of Iceland.
+		</p>
 	</div>
 	<div class="span4">
 		<img src=" {{ page.image3_cosmo }}">
