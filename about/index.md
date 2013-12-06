@@ -26,8 +26,7 @@ I am a Fulbright student from Iceland, currently in my first year of my PhD in A
 </p>
 
 <p>
-	When I'm not contemplating the heavens (which nowadays seems mostly to consist of running/writing code) I like trying my luck with taking photos, especially when travelling. 
-	The photography part I guess stems from coming from this island of Fire and Ice in the middle of the Atlantic, but I can certainly say that it offers some scenic places.
+	When I'm not doing astrophysics (which nowadays seems mostly to consist of running/writing code, or grading papers) I like trying my luck with taking photos, especially when travelling. 
 	Somewhere along the way I learned to play the guitar, and picked up a dan in Shotokan. My next immediate tasks hobby-wise are; finding a decent dojo and a good place to jam.
 </p>
 
