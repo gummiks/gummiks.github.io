@@ -4,25 +4,27 @@ layout: default
 
 #Teaching
 ###Current
-####Astro 1 (001) - Astronomical Universe
-3 credit course taught by Prof <a href="http://www3.geosc.psu.edu/~ruk15/">Ravi Kopparapu</a> at Penn State.
 
-####Astro 1 (004) - Astronomical Universe
-3 credit course taught by Prof <a href="http://www.astro.psu.edu/people/e5f">Eric Feigelson</a> at Penn State.
+<b>Rooftop TA</b> - in charge of the telescope observing activities on top of Davey Laboratory. Check <a href="http://www.astro.psu.edu/academics/telescope-status">here</a> to see if we are open!
 
-####Astro 10 (001) - Elementary Astronomy
-2 credit course taught by Prof <a href="http://www2.astro.psu.edu/users/alex/">Alex Wolszczan</a> at Penn State.
-
-####Astro 11 (004) - Elementary Astronomy Laboratory
-1 credit course where I am the Instructor of Record. All course material is available through the Penn State ANGEL Website.
+<b>Astro 11 (008) - Elementary Astronomy Laboratory</b> - taught by me as an Instructor of Record.
 
 ###Past
-####Physics 2V - Experimental Labs in Physics 2R
-Lab section of Physics 2V (6 credit physics course for engineering students) taught by Prof <a href="http://www.hi.is/~sthi">S. Þ. Ingvarsson</a>.
+####Fall 2013
+<b>Astro 1 (001) - Astronomical Universe</b> - taught by Prof <a href="http://www3.geosc.psu.edu/~ruk15/">Ravi Kopparapu</a>.
 
-####Physics 305G - Classical Mechanics
-6 credit course taught by Prof <a href="http://www.raunvis.hi.is/~pja/research.html">P. Jakobsson</a> at the University of Iceland.
+<b>Astro 1 (004) - Astronomical Universe</b> - taught by Prof <a href="http://www.astro.psu.edu/people/e5f">Eric Feigelson</a>.
 
+<b>Astro 10 (001) - Elementary Astronomy</b> - taught by Prof <a href="http://www2.astro.psu.edu/users/alex/">Alex Wolszczan</a>.
+
+<b>Astro 11 (004) - Elementary Astronomy Laboratory</b> - taught by me as an Instructor of Record.
+
+####Spring 2013
+<b>Physics 2V - Experimental Labs in Physics 2V</b> - Taught the Lab sections of Physics 2V taught by Prof <a href="http://www.hi.is/~sthi">S. Þ. Ingvarsson</a>.
+
+####Fall 2012
+<b>
+Physics 305G - Classical Mechanics</b> - taught by Prof <a href="http://www.raunvis.hi.is/~pja/research.html">P. Jakobsson</a>.
 
 <hr>
 #Outreach
