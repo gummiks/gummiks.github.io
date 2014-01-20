@@ -59,7 +59,7 @@ I sometimes think if capturing the expressions they showed when seeing them for 
 	</div>
 </div>
 
-The northern lights do not wait for anybody. We learned this the hard way. Although various websites that try to predict their visibility they are not always that accurate as viewing conditions depend on many dynamic factors; cloud cover, seeing, time of day, and solar activity, capriciousnes of Icelandic weather, etc. 
+The northern lights do not wait for anybody. Although various websites that try to predict their visibility they are not always that accurate as viewing conditions depend on many dynamic factors; cloud cover, seeing, time of day, and solar activity, capriciousnes of Icelandic weather, etc. 
 Still, as 2013 was at the peak of the sun-spot cycle, the trips added up, and over the course of last year I ended up accumulating quite a few timelapses scenes - some of which made use of a homemade wooden Arduino+car-battery-dolly - sometimes referred to as the "Icebox", or "Bomb Slider".
 I decided to make a small video-project out of it. 
 Below you can see the result:
