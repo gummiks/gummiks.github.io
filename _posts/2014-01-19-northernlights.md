@@ -17,7 +17,7 @@ tags:
 
 _"The prospects are at 6! The prospects are at 6!! Have you seen what's happening outside? It's green! Everything! I'm heading out in 5. Are you with me?"_ 
 
-I'm quite impressed for those of my friends that decided spontaneously leave the things they were doing after receiving such an abrupt phonecall without any other notice, then quickly put on a jacket and an extra pair of socks, grab a snack and to join me to drive into the night in an attempt to capture the Aurora. Different ways were used: some tried filming; other took handheld pictures; others pictures on a tripod; and still others on a dolly; some wrote short stories and poems; some stood and leaned their head gaping just a little bit too much, straining their neck; 
+I'm quite impressed of those of my friends that decided spontaneously leave the things they were doing after receiving such an abrupt phonecall without any other notice, then quickly put on a jacket and an extra pair of socks, grab a snack and to join me to drive into the night in an attempt to capture the Aurora. Different ways were used: some tried filming; other took handheld pictures; others pictures on a tripod; and still others on a dolly; some wrote short stories and poems; some stood and leaned their head gaping just a little bit too much, straining their neck; 
 others lay down on the ground on the cold winter snow, laying absolutely still to see if they could hear them;
 others tried running around and dancing, either dancing with them or plainly just to keep warm.
 Some of my friends were irritated, hung up and went right back to sleep. 
