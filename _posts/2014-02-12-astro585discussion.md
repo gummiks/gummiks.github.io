@@ -6,8 +6,11 @@ tags:
 ---
 
 <code>Bottom lines:</code>
+
 * Try to find the thing that takes the longest - **and do something about it!**
-* 
+
+*  Every bit of code that you write, _write it as you were trying to convince somebody else to use it_.
+Make it public (push on Github), and sure enough the person that is going to be reusing your code is,_ well, most likely yourself!_
 
 ##Profiling
 A profiler is a program to see where a program is spending most of its time (examples: <code>prof</code>, and <code>gprof</code>). Early profiling tools were mostly based on counting; monitoring how often, and how long calling a function takes.
@@ -100,7 +103,5 @@ This has saved many a person a lot of time.
 ##Good advice
 If you can make your code easy to use and reuse, then you yourself are likely to benefit; your group is likely to benefit; and maybe somebody else is also likely to benefit. And there is also that chance of a chance that that person which benefited will also benefit you in some way later! 
 
-Every bit of code that you write, _write it as you were trying to convince somebody else to use it_.
-Make it public (push on Github), and sure enough the person that is going to be reusing your code is,_ well, most likely yourself!_
 
 
