@@ -50,11 +50,12 @@ In astronomy we don't really care if you solve a problem cleverly, just that you
 The typical scenario is that an _astronomy graduate student is thrown into a pond to solve a problem, hopefully to reach shore with the solution in hand_.
 
 
-Taking people into lunch - can be very productive.
-Then you can get hints into what 
-Per unit time, and per unit dollar collaboration. 
-Are there proposals that we want to work together on?
-Don't spend too much of your time to reinvent the wheel - when somebody else has already done it.
+Taking people into lunch (for example a computer scientist - or maybe that particular girl you like) can be very productive.
+If you converse with the former then you can potentially get hints on how to solve a particular problem efficiently, and you can expand upon it by googling about it; a very high-yielding collaboration per unit time, per unit dollar.
+
+For the latter party you might ask: "Are there proposals that we want to work together on?"
+
+In any case, _don't spend too much of your time to reinvent the wheel, when somebody else has already done it for you._
 
 ##Some things that we should do more of
 ####Code reviews 
