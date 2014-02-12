@@ -31,7 +31,7 @@ This is how the <code>Julia</code> profiler works.
 If you are trying to figure out something about _branching_, then statistical profiling is better.
 
 
-##Overloaded functions, profiling and _name manging_
+##Overloaded functions, profiling and _name mangling_
 C++ supports overloaded functions i.e. functions that have the same names.
 Then if you are profiling C++ code the profiler puts extra identifiers to distinguish the different versions of the overloaded functions. The identifiers have sometimes something to do with the variables that the functions use, or sometimes _just complete random gibberish_ - this is called: **name mangling**.
 
