@@ -5,7 +5,7 @@ layout: default
 #Teaching
 ###Current
 
-<b>Rooftop and Planetarium TA</b> - check <a href="http://www.astro.psu.edu/academics/telescope-status">here</a> to see if we are open!
+<b>Rooftop and Planetarium TA</b> - check <a href="http://www.astro.psu.edu/academics/telescope-status">here</a> to see if we are open! You can also follow us on <a href="https://twitter.com/PSUObservatory">@PSUObservatory</a>.
 
 <b>Astro 11 (008) - Elementary Astronomy Laboratory</b> - Instructor of Record.
 
