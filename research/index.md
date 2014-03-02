@@ -5,6 +5,7 @@ image2_waveguide: /research/files/hi/labWork.jpg
 image3_cosmo: /research/files/hi/sn.png
 image4_detectors: /research/files/cern/isoldeLab.jpg
 image_het: /research/files/psu/het.jpg
+image_mdwarf: /research/files/psu/mdwarf.jpg
 doc_2011Report: /research/files/hi/nsn2011.pdf
 doc_2011Outline: /research/files/hi/micro_procedure.pdf
 doc_2012Presentation: /research/files/hi/nanoPatterning.pdf
@@ -24,6 +25,7 @@ It will be used to search for terrestrial-mass planets around M stars.</p>
 	</div>
 	<div class="span4">
 		<img src=" {{ page.image_het }}">
+		<img src=" {{ page.image_mdwarf }}">
 	</div>
 </div>
 
