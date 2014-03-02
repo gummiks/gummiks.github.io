@@ -4,6 +4,7 @@ image1_mold: /research/files/hi/mold.png
 image2_waveguide: /research/files/hi/labWork.jpg
 image3_cosmo: /research/files/hi/sn.png
 image4_detectors: /research/files/cern/isoldeLab.jpg
+image_het: /research/files/psu/het.jpg
 doc_2011Report: /research/files/hi/nsn2011.pdf
 doc_2011Outline: /research/files/hi/micro_procedure.pdf
 doc_2012Presentation: /research/files/hi/nanoPatterning.pdf
@@ -13,9 +14,19 @@ doc_2013cernReport: /research/files/cern/cern_report.pdf
 ---
 #Current Research
 
-<p class="muted">
-Coming soon
-</p>
+
+####(2014) Summer Research at Penn State
+<code>The Habitable-Zone Planet Finder</code>
+<div class="row-fluid">
+	<div class="span8">
+		<p> I will be working with Suvrath Mahadevan on the <a href="http://arxiv.org/abs/1209.1686">Habitable-Zone Planet Finder</a> this summer. The instrument is a fiber-fed near-infrared spectrograph which will be commissioned at the 10m meter class <a href="http://www.as.utexas.edu/mcdonald/het/het.html">Hobby-Eberly Telescope (HET)</a> in late 2015.
+It will be used to search for terrestrial-mass planets around M stars.</p>
+	</div>
+	<div class="span4">
+		<img src=" {{ page.image_het }}">
+	</div>
+</div>
+
 
 <hr>
 #Past Research Projects
