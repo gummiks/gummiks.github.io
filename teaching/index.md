@@ -26,13 +26,5 @@ layout: default
 <b>Physics 305G - Classical Mechanics</b> - Prof <a href="http://www.raunvis.hi.is/~pja/research.html">P. Jakobsson</a>.
 
 <hr>
-#Outreach
 
-<br/>
-
-- <a href="http://ph-news.web.cern.ch/content/interview-john-ellis">Interview with John Ellis, CERN</a>
-- <a href="http://phsummer2013.web.cern.ch/PHsummer2013/PH_SummerStudents_2013.html">CERN Summer Student Map</a>  
-- <a href="http://gummiks.github.io/2013/10/05/astronight/">AstroNight blog post, PSU</a>
-
-<br/>
 {{ content }}
