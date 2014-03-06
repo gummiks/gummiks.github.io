@@ -1,11 +1,29 @@
 ---
 layout: default
+image1: /img/planetarium.jpg
+image1title: 
+image1subtitle: 
 ---
 
 #Teaching
 ###Current
 
 <b>Rooftop and Planetarium TA</b> - check <a href="http://www.astro.psu.edu/academics/telescope-status">here</a> to see if we are open! You can also follow us on <a href="https://twitter.com/PSUObservatory">@PSUObservatory</a>.
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+	<div class="carousel-inner">
+		<div class="active item">
+			<img class="carouselImage" src=" {{ page.image1 }}"> 
+			<div class="container">
+				<div class="carousel-caption">
+					<p class="lead"> {{ page.image1title }}</p>
+					<p class="muted"> {{ page.image1subtitle }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 <b>Astro 11 (008) - Elementary Astronomy Laboratory</b> - Instructor of Record.
 
