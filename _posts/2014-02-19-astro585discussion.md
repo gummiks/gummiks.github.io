@@ -1,6 +1,7 @@
 ---
-title: Astro 585 discussion
+title: Astro 585 Discussion 7
 layout: post
+published: false
 tags:
 - astro585 
 ---

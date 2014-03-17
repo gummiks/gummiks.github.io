@@ -1,6 +1,7 @@
 ---
-title: Astro 585 - Profilers
+title: Astro 585 Discussion 5
 layout: post
+published: false
 tags:
 - astro585 
 ---

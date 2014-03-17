@@ -1,5 +1,6 @@
 ---
-title: Astro 585 discussion
+title: Astro 585 Discussion 8
+published: false
 layout: post
 tags:
 - astro585 
