@@ -1,7 +1,7 @@
 ---
 title: Astro 585 discussion 3
+published: false
 layout: post
-visible: false
 tags:
 - astro585 
 ---
