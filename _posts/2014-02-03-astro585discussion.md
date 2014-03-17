@@ -1,6 +1,7 @@
 ---
 title: Astro 585 discussion 2
 layout: post
+published: false
 image1: /img/coursework/astro585/performance.png
 image1title: Performance curve
 image1subtitle: 
