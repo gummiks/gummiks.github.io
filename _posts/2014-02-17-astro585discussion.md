@@ -1,10 +1,10 @@
 ---
 title: Astro 585 Discussion 6
 layout: post
-published: false
 image1: /img/coursework/astro585/bandwith.png
-image1title: Latency-Bandwith diagram
+image1title: Latency Bandwith diagram
 image1subtitle: Image gotten from IHPCfSE by G Hager, and G Wellein
+published: false
 tags:
 - astro585
 ---
