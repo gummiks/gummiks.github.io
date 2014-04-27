@@ -26,6 +26,6 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
 <br/>
 
 <h4>Recent posts!</h4>
-  {% for post in site.posts limit: 6 %}
+  {% for post in site.posts limit: 10 %}
   <p> {{ post.date | date_to_long_string }} <a href="{{ post.url }}">{{ post.title }}</a>  </p>
   {% endfor %}
