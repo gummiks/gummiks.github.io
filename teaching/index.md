@@ -3,6 +3,9 @@ layout: default
 image1: /img/planetarium.jpg
 image1title: 
 image1subtitle: 
+image2: /img/davey_startrails.jpg
+image2title: 
+image2subtitle: 
 ---
 
 #Teaching
@@ -24,6 +27,23 @@ image1subtitle:
 		</div>
 	</div>
 </div>
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+	<div class="carousel-inner">
+		<div class="active item">
+			<img class="carouselImage" src=" {{ page.image2 }}"> 
+			<div class="container">
+				<div class="carousel-caption">
+					<p class="lead"> {{ page.image2title }}</p>
+					<p class="muted"> {{ page.image2subtitle }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 
 <b>Astro 11 (008) - Elementary Astronomy Laboratory</b> - Instructor of Record.
 
