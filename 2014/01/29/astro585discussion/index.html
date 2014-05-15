@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>gkBlog</title>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+	<!--JavaScripts -->
+	<script src="/js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript"
+	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript">
+	$(document).ready(function() {
+	// $('.carousel').carousel();
+	$('.carousel').pause();
+	});
+    </script> 
+
+
+    <!--Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="gks blog">
+
+    <!-- Styling -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/ownStyle.css" type="text/css" rel="stylesheet"/>
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></sc\
+ript>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".na\
+v-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">gkBlog</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">hoMe</a></li>
+	      <li><a href="/blog">bLog</a></li>
+	      <li><a href="/research">reSearch</a></li>
+	      <li><a href="/teaching">teaChing</a></li>
+	      <li><a href="/outreach">outReach</a></li>
+	      <li><a href="/photography">photoGraphy</a></li>
+	      <li><a href="/about">abOut</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+
+<div class="row-fluid">
+	<div class="span8">
+		<h1>Astro 585 discussion 1</h1>
+		<p class="muted">29 January 2014 </p>
+		<hr/>
+		
+		<a class="muted" href="/tag/astro585">astro585</a>
+		
+		<hr/>
+      <p>I'm taking Eric's class: Astro 585, topics in Astronomy and Astrophysics; <em>High-Performance Scientific Computing for Astrophysics</em>.
+Its a very discussion based class, and I thought I might try to post my notes here.</p>
+
+<p><em>These notes are typed quite quickly during class - but I'll try my best to minimize wrong spelling!</em></p>
+
+<p><strong><em>Anyways, lets see how it goes!</em></strong></p>
+
+<h1>Discussion Wed Jan 29, 2014</h1>
+
+<h3>Q: IDL precision, single or double?</h3>
+
+<p>IDL's default is <code>single precision</code> - many oblivious grad students have suffered through history because of this.</p>
+
+<p><em>I myself, a gradstudent am started to be exposed to this! - Why are we still using a thing born in the 70s of which you can almost physically see the rust covering it? - Not even mentioning the digital handcuffs...</em> Stallman, are you picking your feet about this?</p>
+
+<h3>Automating processes</h3>
+
+<h4>Using scripts like <em>make</em></h4>
+
+<p>Often if you find yourself doing stuff <em>again, and again (3 or 4 times)</em>. Then automating might be useful. Say you have a humongous table that lists lots of things about a new planet you found. For the next planet you find, you might want to have this table be automated.</p>
+
+<p>You can automate things pretty easily in <em>Julia</em>.</p>
+
+<h3>Reusing code</h3>
+
+<h4>The difference between writing astronomical software and developing drugs for a pharmaceutical company</h4>
+
+<p>The readings were pretty supportive of reusing code. However, you have to have two things in mind:</p>
+
+<p><strong>Beware of Licenses</strong> - This can be troublesome, and can become very hindering for the expansion of projects. - Remember Eric's story about <em>Numerical Recipes</em> - sort of like: <code>All of your thoughts belong to us</code> type of deal.</p>
+
+<p><strong>Libraries</strong> - Be sure to know that they are actually doing what you want them to do!</p>
+
+<h3>Any tips about refactoring code, or start from scratch?</h3>
+
+<p><strong>Difficult to answer, depends on the problem</strong>. Rather than rewrite everything maybe focus on rewrite a few functions. And do it in a ridiculously incremental level. Use <em>assertions, debuggers, warnings, print statements etc.</em></p>
+
+<h3>Q: Top-Down vs. Bottom-Up type programming</h3>
+
+<h4>Difference between academic programming and commercial programming</h4>
+
+<p>In the old days, everybody had these massive plans (in the <em>Extreme Programming movement</em>) to make everything perfect from the beginning. Then it sort of transitioned to the <em>quick-and-dirty</em> movement (sometimes making programs that didn't even work!). Nowadays its a kind of pendulum between the two extremes.</p>
+
+<p><strong>For an academic setting:</strong> Its very good to make small incremental changes. Still you have to have some overview. So maybe actually <em>programming from the middle might be the right thing to do</em>. Do keep in mind Donald Knuth's words: <code><em>"Premature optimization is the root of all evil"</em></code></p>
+
+<p>Somebody suggested: <em>Bottom up, but keep it general.</em></p>
+
+<h3>Q: Functional programming vs. Object oriented programming</h3>
+
+<h4>Reusing objects as containers, or making functions do all the work.</h4>
+
+<p>For example, you can have a galaxy-class and you can make it do photometry, redshifts, etc.</p>
+
+<p><strong>Object oriented</strong> Languages like C++, and Java, make it easy to think in that way.
+Once you start writing functions that have.
+You don't need classes really, you can do things you want in C!</p>
+
+<p><strong>Template meta programming</strong> <em>(still not exactly sure what this is - you can do it, but supposedly it is a little bit obnoxious)</em>.</p>
+
+<p>Say you have a function, <em>an abstract integrator say</em>, and you are gonna pass it a variable.
+But what if your function doesn't know what type you are gonna pass it?
+Those types have different internal data structures.
+If you had a pre-compiled language, the compiler wouldn't really know what type you are gonna pass it - and it might barf.
+<em>Julias</em> approach is to compile everything at runtime, so it then knows the type, and does it right.
+So it is a way of getting a compile-type function arguments.</p>
+
+      </div>
+      <div class="span4">
+<h3>Me</h3>
+<p><code>pamfýll</code></p>
+<p>"Pamfýll" is an Icelandic/Danish word which nobody really knows the meaning of.
+However, it is usually bundled with good luck. I guess I put it here thinking I might need it someday.</p>
+
+<br/>
+
+<h4>Contact Info</h4>
+	 <p>Guðmundur Kári Stefánsson</p>
+	 <p>Penn State University</p>
+	 <p>537 Davey Lab</p>
+	 <p>University Park, PA 16802</p>
+|
+<a class="muted" href="http://500px.com/gummiks">500px</a>
+|
+<a class="muted" href="https://vimeo.com/user22290691">vimeo</a>
+|
+<a class="muted" href="https://www.facebook.com/gudmundurkari">facebook</a>
+|
+
+<br/>
+
+<p>email: <i> gws5257 [at] psu.edu</i></p>
+
+<br/>
+<br/>
+
+<h4>Recent posts!</h4>
+  
+  <p> 27 April 2014 <a href="/2014/04/27/parking/">The Parking Lot</a>  </p>
+  
+  <p> 16 April 2014 <a href="/2014/04/16/astro585discussion/">Astro585 discussion</a>  </p>
+  
+  <p> 15 April 2014 <a href="/2014/04/15/portland/">Portland</a>  </p>
+  
+  <p> 29 January 2014 <a href="/2014/01/29/astro585discussion/">Astro 585 discussion 1</a>  </p>
+  
+  <p> 19 January 2014 <a href="/2014/01/19/northernlights/">Northern Lights</a>  </p>
+  
+  <p> 18 January 2014 <a href="/2014/01/18/planck/">Plotting Planck's Law</a>  </p>
+  
+  <p> 27 December 2013 <a href="/2013/12/27/haifoss/">Fossá - (The River of Waterfalls)</a>  </p>
+  
+  <p> 01 December 2013 <a href="/2013/12/01/canada/">A trip to the North; Canada</a>  </p>
+  
+  <p> 21 November 2013 <a href="/2013/11/21/mtnittany/">Mt. Nittany</a>  </p>
+  
+  <p> 10 November 2013 <a href="/2013/11/10/reno/">Reno, Nevada</a>  </p>
+  
+
+    </div>
+   </div>
+    </div>
+
+    <div class="myFooter">
+	    <hr> 
+<center>
+	<small>Ergonomically handwritten code, with a little help from my friends; <code><a href="http://www.vim.org/">vim</a></code>, <code><a href="http://jekyllrb.com/">jekyll</a></code> and <code><a href="http://getbootstrap.com/">twitter bootstrap</a></code></small>
+    </center>
+    <hr>
+    </div> 
+  </body>
+</html>
+
