@@ -1,0 +1,56 @@
+li.archive_list {
+list-style: none;
+margin: 0;
+padding-bottom: 25px;
+}
+
+span.archive_list_header {
+font-size: 25px;
+letter-spacing: 0;
+line-height: 1.2;
+font-weight:bold;
+padding: 0px 2px 5px 10px;
+}
+
+time.archive_list_post_date {
+color: #666;
+float: left;
+font-size: 11px;
+padding-top: 1px;
+}
+
+p.summary {
+color: #444;
+line-height: 1.2;
+padding: 0px 0 5px 58px;
+}
+
+li.inline {
+display: inline;
+}
+
+ul.tag_list {
+padding: 0px 0 5px 58px;
+}
+
+a.tag_list_link {
+border-left: 1px solid #ccc;
+color: #888;
+font-size: 14px;
+/*font-variant: small-caps;*/
+margin: 0;
+padding: 0 6px;
+text-transform: lowercase;
+}
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+/*h1, h2, h3, h4 {
+font-family: "LeagueGothicRegular", helvetica,"League Gothic", "Helvetica Neue", helvetica, arial, sans-serif;
+font-weight: normal;
+letter-spacing: -.025em;
+}*/
+
