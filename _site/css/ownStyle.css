@@ -58,16 +58,33 @@ ul.entries li {
   background: #ececec;
   width: 600px;
 }
+
+ul.entries2 li {
+  position: relative;
+  margin: 30px auto;
+  padding: 10px auto;
+  width: 600px;
+}
  
 ul.entries img {
   width: 600px;
 }
- 
+
+ul.entries2 img {
+  width: 290px;
+  float: left;
+  margin: 4px;
+}
+
 ul.entries li h3 {
   position: absolute;
   bottom: -10px;
   left: 10px;
   font-size: 1.7em;
+}
+
+ul.entries2 li {
+  z-index: 1;
 }
 
 ul.entries a {
@@ -103,3 +120,7 @@ footer {
 	height:400px;
 	background-color:#fff;
 }
+.carouselImage{
+	width: 100%;
+}
+
