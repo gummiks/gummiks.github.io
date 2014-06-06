@@ -85,128 +85,73 @@ v-collapse">
 
 <div class="row-fluid">
 	<div class="span8">
-		<h1>Astro 585 discussion 2</h1>
-		<hr/>
-		03 February 2014 
-		
-		<a class="tag_list_link" href="/tag/astro585"> <code>astro585</code></a> 
-		
-		<hr/>
-      <p>One of the general themes of this course (and perhaps in real life as well?);</p>
+      
+<div class="well">
+<h1>Hello World</h1>
+<p class="muted">14 June 2013</p>
+<div class="postContent">
+<p>Hi!</p>
 
-<p><code><i>Try not to do work that you don't need to do</i></code></p>
+<p>My name is Guðmundur Kári [read it however you like - Icelandic pronounciation can be quite hard, believe me!], and yes, I'm from Iceland, "the land of the ice and snow, with the midnight sun and where the hot springs blow...".
+I'm leaving this place pretty soon though, and that for quite a while it seems.</p>
 
-<p><em>RISC</em>-y chips, and <em>CISC</em>-y chips</p>
+<p>This seems to be my first post here, and I might as well tell you who the intended audience is; well, <strong>everybody</strong> - <strong>everybody interested enough</strong>.</p>
 
-<h1>Comments about <i>Homework 2</i></h1>
+<p>My skills in predicting the future have never been that good, so I can not be sure what I will be posting here, but I can say that it will probably be largely governed by what I think of at the spur of the moment.
+Probably then, this blog will end up being full of sound and fury, written by an idiot, signifying nothing... - well, lets see!</p>
 
-<h4>Coding habits in <code>Julia</code></h4>
-
-<p>Put an exclamation mark at the end of a function if your function modifies some of the input arguments.</p>
-
-<h4>Performance checking</h4>
-
-<p>People who did memory allocation in the for loop:</p>
-
-<ol>
-<li><p><code>asserts</code> didn't really make any difference in time</p></li>
-<li><p>making generic function calls didn't really make a difference either</p></li>
-</ol>
+</div>
+</div>
+<hr>
 
 
-<p>People who <b>didn't</b> do memory allocation in the for loop:</p>
 
-<ol>
-<li><p><code>asserts</code> didn't really make any difference in time</p></li>
-<li><p>making generic function calls did really make a difference</p></li>
-</ol>
-
-
-<h2>Explaining performance curves in homework 2</h2>
-
-<p>Check the following code:</p>
-
-<pre>
-    using PyPlot
-    n_list = [ 2^i for i=1:24 ] #Increasing i from 1:10 to 1:24 to see further
-    elapsed_list = map(calc_time_log_likelihood,n_list)
-    plot(log10(n_list), log10(elapsed_list), color="red", linewidth=2, marker="+", markersize=12);
-    xlabel("log N"); ylabel("log (Time/s)");    
-</pre>
-
-
-<p><i>Note that we are using <code>map</code> - next it might be cool to check out <code>pmap</code>.</i>
-This gives the following result on my computer:</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/coursework/astro585/performance.png"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Performance curve</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
+<div class="row-fluid">
+  <div class="span8">
+    <div class="pagination">
+      <ul>
+        
+          
+          <li><a href="/page3">Prev</a></li>
+          
+        
+        
+        <li><a href="/">1</a></li>
+        
+        
+          
+          <li><a href="/page2">2</a></li>
+          
+        
+          
+          <li><a href="/page3">3</a></li>
+          
+        
+          
+          <li><span class="active">4</span></li>
+          
+        
+        
+        <li><span class="disabled">Next</span></li>
+        
+      </ul>
     </div>
+  </div>
 </div>
 
+<script type="text/javascript">
 
-<p>Sometimes things that you think should take longer don't: look at the first part from 0.5 to around 2 - the curve is almost flat. There we are probably making good use of the <i>caches</i>.
-Then as we keep using bigger and bigger arrays, we see a linear increase in time: we are starting to use the main memory.</p>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43955416-1']);
+  _gaq.push(['_trackPageview']);
 
-<p><b>Note:</b> <i>Some people saw strange bumps/spikes in their curves; probably due to memory-cache interactions, where the computer is trying to be smart, but pays a price in performance for it</i>.</p>
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 
-<h2>What are caches though?</h2>
-
-<p>Caches, are a small amount of memory that is better accessible to the CPU; the memory access is much, much faster, than accessing the main memory.
-Accessing the memory is slow, and expensive.
-Smaller caches are relatively fast, while bigger ones are slower.</p>
-
-<hr></hr>
-
-
-<h1>Discussion on chapter 6: Computer Organization</h1>
-
-<h2>When do we need queues, and when do we need stacks?</h2>
-
-<p>If you wanna get a Starbucks - you stand in line and get your coffee the last.
-However, if you are the last one to check in your flight-luggage, then there is a good chance that you are the first to get it back (bags are usually stacked on top of each other).</p>
-
-<p><strong>Queues:</strong> - Well if you need to do things that require you to do them in a particular fixed order.</p>
-
-<p><strong>Stacks:</strong> - Function calls for small variables. They are not efficient when you have dynamic memory allocation. Moreover, you have to be careful with using stacks and recursive functions - can lead to <code>stack overflows!</code></p>
-
-<p><i>
-Check out <code>tail recursion</code> though: The ability to implement neat recursive algorithms without doing terrible things.
-</i></p>
-
-<h2>Registers, stacks, and heaps</h2>
-
-<p><strong>Registers</strong><br/>
-Registers are a <i>property of the hardware</i>, while the stacks, and heaps are <i>software constructs</i>.
-And accessing the registers is basically free - this is what you would like to do in an ideal world.</p>
-
-<p><strong><em>stack</em> vs <em>heap</em></strong> <br/>
-If its dynamically allocated, it is almost certain that the compiler will put it into the <code>heap</code> - its safer, and a reasonable thing to do. Still however, it costs time and performance.</p>
-
-<p>A function can return data types that are small, on the stack, or return a pointer to a memory location on the heap (if the return data is big).</p>
-
-<h2>Language choices</h2>
-
-<p>Some languages were written a long time ago. Ideas like <code>"I would like to access the web"</code> were non-existent when the people were developing the initial versions of <code>Fortran</code>.
-If you are doing text processing - then it makes sense to use Python or Perl - don't really try to do it in Fortran or C; you have to do some real acrobatics.</p>
-
-<p>In general if you use a higher level language - then hopefully you need a fewer lines of code; and hopefully you have less bugs, and are quicker to get things done.
-However using an interpreted language you have to live with the overhead it has to go through when interpreting.</p>
-
-<p>One of the nice things about <code>Julia</code> - is that it combines some of the best of the ides of high-level language, as high performance, but its syntax is similar to Python's.</p>
-
-<h2>Higher level language parallelism</h2>
-
-<p><strong>Macro-use-framework</strong> Sometimes referred to as <em>embarrassingly parallel</em>  - still, this is often the best parallelization you can come up with. Why? A) its easy for you, and B) its easy for the computer to do.</p>
+</script>
 
       </div>
       <div class="span4">
