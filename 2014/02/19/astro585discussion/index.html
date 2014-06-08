@@ -85,90 +85,112 @@ v-collapse">
 
 <div class="row-fluid">
 	<div class="span8">
-		<h1>Canoeing!</h1>
+		<h1>Astro 585 discussion 7</h1>
 		<hr/>
-		07 September 2013 
+		19 February 2014 
 		
-		<a class="tag_list_link" href="/tag/travel"> <code>travel</code></a> 
-		
-		<a class="tag_list_link" href="/tag/pennsylvania"> <code>pennsylvania</code></a> 
+		<a class="tag_list_link" href="/tag/astro585"> <code>astro585</code></a> 
 		
 		<hr/>
-      <p>Went canoeing in the <code>Juniata</code> river.
-It was great - a relieve from all of the duties that surround a new life in another country, in another continent.</p>
+      <h2>Q: What is TLB?</h2>
 
-<p>Overall the trip was deemed a success as we did not capsize the boat.
-I however fell in the water, in a well, <em>very unprofessional</em> manner.</p>
+<p><em>The translation-look-aside-buffer</em> (TLB) is a cache that memory management hardware uses to improve virtual address translation speed. Issues:</p>
 
-<div class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canoe/canoe.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Canoe</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<ul>
+<li><p>But then what happens if this buffer isn't big enough?</p></li>
+<li><p>The way the TLB works is likely different between different processors.</p></li>
+</ul>
 
 
+<h2><em>Virtual Memory Space</em> or <em>Virtual Address Space</em></h2>
+
+<p>In the old days when you had only say 2MB of RAM, then you could use a feature called <em>'Virtual memory space'</em> to simulate that you might actually have 4MB of data.
+This was came in handy when you were running <em>Windows</em>, and running both <em>Word</em>, and <em>Excel</em> at the same time, and both were hogging your memory.
+So when you alt-tabbed you could actually save the memory on the window that was not being used to disk.</p>
+
+<h2>Using higher level interfaces vs knowing the minute details</h2>
+
+<p><strong>Higher level interfaces:</strong> <em>You don't really know what you are doing, but the good thing is, you are much quicker at it!</em></p>
+
+<h2>Q: Why are <em>micro commands</em> reordered by the compiler/assembler?</h2>
+
+<p>Lets say we are doing the computation: <code>A*B + C</code>.
+Once you have translated the high-level language to micro-commands like <em>move this byte over here, and that one over there,</em> - you can figure out which ones depend on one another.
+And once you have done then the idea is to try to make the hardware try to perform as many operations that it can concurrently, while not breaking any of the dependencies.
+<b>Use the hardware better = performance gains.</b></p>
+
+<h2>Memory and garbage collection</h2>
+
+<p>If you say: <em>Get me this memory</em> and your computer gives it to you, you also have the responsibility to <em>de-allocate it</em>.</p>
+
+<h2>Remember:</h2>
+
+<ul>
+<li><p><b>With great memory allocation comes great memory de-allocation</b></p></li>
+<li><p>Surprisingly, <strong>a lot of people forget to do the second part</strong>; those people fall in the group of <em>B-programmers</em> or <em>Bad-programmers</em> - a curious lot.</p></li>
+</ul>
 
 
-<div class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canoe/fishing.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Fishing</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<p>Its probably fine to be sloppy about memory issues if your program only runs for <em>a fifth of a second</em>.
+But what if you are running a web-server that you want to run for months without crashing - then memory leaks <em>really are a bad thing</em>.</p>
+
+<p>At some point, someone got the idea to take this responsibility away from <em>bad</em>-programmers; this was the dawn of <em>garbage collection</em> - then the computer is responsible for de-allocating dynamically allocated memory.</p>
+
+<h2>Garbage collectors</h2>
+
+<p>They do make life easier, but you pay the price of slowing things down. So: _ <strong>you can be sloppy, and not worry about it.</strong>_
+Don't try to be sloppy though - then you will need to collect less of it!</p>
+
+<p>The bottom line here is:</p>
+
+<ul>
+<li><code>There is no perfect garbage collector, but some are more equal than others.</code></li>
+</ul>
 
 
+<p>In Julia you can disable the garbage collector when you want. To turn it on: <code>gc()</code></p>
+
+<p>You can even specify your own memory manager.</p>
+
+<h2>Electric fence</h2>
+
+<p>Checkout using <code>efence</code> within <code>gcc</code> to check for memory leaks.
+Static variables exist once it is allocated until the program ends.</p>
+
+<h2>Smart pointers</h2>
+
+<p>Pointers that contain information of how many other pointers are currently pointing to that place in memory.</p>
+
+<h4>Bad side:</h4>
+
+<ul>
+<li><p>Overhead of changing the increment/decrement information</p></li>
+<li><p>Can be hard to deal with those if you have a circular linked list. <em>Solution:</em> even smarter pointers??  --> more overhead.</p></li>
+</ul>
 
 
-<div class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canoe/paddling.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> </p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<h2>Constant pointers</h2>
+
+<p>In C, C++, Fortran you can define constant pointers.
+Its a way to tell the compiler that this specific variable will not change over the course of the program.</p>
+
+<p>The reason Fortran used to be much faster than C was due to <code>aliasing</code>.</p>
+
+<h2>Static vs Dynamic memory allocation</h2>
+
+<h5>Static</h5>
+
+<ul>
+<li><p>Then you know up front the size of the memory you want to allocate.</p></li>
+<li><p>If you only use this, you are probably very unlikely to run into memory leaks.</p></li>
+<li><p>The memory can be allocated to the stack if it is small enough, but a reasonable compiler would allocate it on the heap if it is realatively big. Only small enough statically allocated variables are allocated on the stack, but can the stack dynamically grow?</p></li>
+<li><p>Garbage collectors do not work on the stack.</p></li>
+</ul>
 
 
+<h4>Dynamic</h4>
 
-
-<div class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canoe/water.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> </p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+<p>Then you don't know up front the size of the memory you want to allocate.</p>
 
       </div>
       <div class="span4">

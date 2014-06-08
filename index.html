@@ -542,6 +542,115 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 
 
 <div class="well">
+<h1>Astro 585 discussion 7</h1>
+<p class="muted">19 February 2014</p>
+<div class="postContent">
+<h2>Q: What is TLB?</h2>
+
+<p><em>The translation-look-aside-buffer</em> (TLB) is a cache that memory management hardware uses to improve virtual address translation speed. Issues:</p>
+
+<ul>
+<li><p>But then what happens if this buffer isn't big enough?</p></li>
+<li><p>The way the TLB works is likely different between different processors.</p></li>
+</ul>
+
+
+<h2><em>Virtual Memory Space</em> or <em>Virtual Address Space</em></h2>
+
+<p>In the old days when you had only say 2MB of RAM, then you could use a feature called <em>'Virtual memory space'</em> to simulate that you might actually have 4MB of data.
+This was came in handy when you were running <em>Windows</em>, and running both <em>Word</em>, and <em>Excel</em> at the same time, and both were hogging your memory.
+So when you alt-tabbed you could actually save the memory on the window that was not being used to disk.</p>
+
+<h2>Using higher level interfaces vs knowing the minute details</h2>
+
+<p><strong>Higher level interfaces:</strong> <em>You don't really know what you are doing, but the good thing is, you are much quicker at it!</em></p>
+
+<h2>Q: Why are <em>micro commands</em> reordered by the compiler/assembler?</h2>
+
+<p>Lets say we are doing the computation: <code>A*B + C</code>.
+Once you have translated the high-level language to micro-commands like <em>move this byte over here, and that one over there,</em> - you can figure out which ones depend on one another.
+And once you have done then the idea is to try to make the hardware try to perform as many operations that it can concurrently, while not breaking any of the dependencies.
+<b>Use the hardware better = performance gains.</b></p>
+
+<h2>Memory and garbage collection</h2>
+
+<p>If you say: <em>Get me this memory</em> and your computer gives it to you, you also have the responsibility to <em>de-allocate it</em>.</p>
+
+<h2>Remember:</h2>
+
+<ul>
+<li><p><b>With great memory allocation comes great memory de-allocation</b></p></li>
+<li><p>Surprisingly, <strong>a lot of people forget to do the second part</strong>; those people fall in the group of <em>B-programmers</em> or <em>Bad-programmers</em> - a curious lot.</p></li>
+</ul>
+
+
+<p>Its probably fine to be sloppy about memory issues if your program only runs for <em>a fifth of a second</em>.
+But what if you are running a web-server that you want to run for months without crashing - then memory leaks <em>really are a bad thing</em>.</p>
+
+<p>At some point, someone got the idea to take this responsibility away from <em>bad</em>-programmers; this was the dawn of <em>garbage collection</em> - then the computer is responsible for de-allocating dynamically allocated memory.</p>
+
+<h2>Garbage collectors</h2>
+
+<p>They do make life easier, but you pay the price of slowing things down. So: _ <strong>you can be sloppy, and not worry about it.</strong>_
+Don't try to be sloppy though - then you will need to collect less of it!</p>
+
+<p>The bottom line here is:</p>
+
+<ul>
+<li><code>There is no perfect garbage collector, but some are more equal than others.</code></li>
+</ul>
+
+
+<p>In Julia you can disable the garbage collector when you want. To turn it on: <code>gc()</code></p>
+
+<p>You can even specify your own memory manager.</p>
+
+<h2>Electric fence</h2>
+
+<p>Checkout using <code>efence</code> within <code>gcc</code> to check for memory leaks.
+Static variables exist once it is allocated until the program ends.</p>
+
+<h2>Smart pointers</h2>
+
+<p>Pointers that contain information of how many other pointers are currently pointing to that place in memory.</p>
+
+<h4>Bad side:</h4>
+
+<ul>
+<li><p>Overhead of changing the increment/decrement information</p></li>
+<li><p>Can be hard to deal with those if you have a circular linked list. <em>Solution:</em> even smarter pointers??  --> more overhead.</p></li>
+</ul>
+
+
+<h2>Constant pointers</h2>
+
+<p>In C, C++, Fortran you can define constant pointers.
+Its a way to tell the compiler that this specific variable will not change over the course of the program.</p>
+
+<p>The reason Fortran used to be much faster than C was due to <code>aliasing</code>.</p>
+
+<h2>Static vs Dynamic memory allocation</h2>
+
+<h5>Static</h5>
+
+<ul>
+<li><p>Then you know up front the size of the memory you want to allocate.</p></li>
+<li><p>If you only use this, you are probably very unlikely to run into memory leaks.</p></li>
+<li><p>The memory can be allocated to the stack if it is small enough, but a reasonable compiler would allocate it on the heap if it is realatively big. Only small enough statically allocated variables are allocated on the stack, but can the stack dynamically grow?</p></li>
+<li><p>Garbage collectors do not work on the stack.</p></li>
+</ul>
+
+
+<h4>Dynamic</h4>
+
+<p>Then you don't know up front the size of the memory you want to allocate.</p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>Astro 585 discussion 6</h1>
 <p class="muted">17 February 2014</p>
 <div class="postContent">
@@ -871,131 +980,6 @@ Still sometimes the only thing to do is: <em>compile, and compile, and hope!</em
 <hr>
 
 
-<div class="well">
-<h1>Astro 585 discussion 2</h1>
-<p class="muted">03 February 2014</p>
-<div class="postContent">
-<p>One of the general themes of this course (and perhaps in real life as well?);</p>
-
-<p><code><i>Try not to do work that you don't need to do</i></code></p>
-
-<p><em>RISC</em>-y chips, and <em>CISC</em>-y chips</p>
-
-<h1>Comments about <i>Homework 2</i></h1>
-
-<h4>Coding habits in <code>Julia</code></h4>
-
-<p>Put an exclamation mark at the end of a function if your function modifies some of the input arguments.</p>
-
-<h4>Performance checking</h4>
-
-<p>People who did memory allocation in the for loop:</p>
-
-<ol>
-<li><p><code>asserts</code> didn't really make any difference in time</p></li>
-<li><p>making generic function calls didn't really make a difference either</p></li>
-</ol>
-
-
-<p>People who <b>didn't</b> do memory allocation in the for loop:</p>
-
-<ol>
-<li><p><code>asserts</code> didn't really make any difference in time</p></li>
-<li><p>making generic function calls did really make a difference</p></li>
-</ol>
-
-
-<h2>Explaining performance curves in homework 2</h2>
-
-<p>Check the following code:</p>
-
-<pre>
-    using PyPlot
-    n_list = [ 2^i for i=1:24 ] #Increasing i from 1:10 to 1:24 to see further
-    elapsed_list = map(calc_time_log_likelihood,n_list)
-    plot(log10(n_list), log10(elapsed_list), color="red", linewidth=2, marker="+", markersize=12);
-    xlabel("log N"); ylabel("log (Time/s)");    
-</pre>
-
-
-<p><i>Note that we are using <code>map</code> - next it might be cool to check out <code>pmap</code>.</i>
-This gives the following result on my computer:</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/coursework/astro585/performance.png"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Performance curve</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<p>Sometimes things that you think should take longer don't: look at the first part from 0.5 to around 2 - the curve is almost flat. There we are probably making good use of the <i>caches</i>.
-Then as we keep using bigger and bigger arrays, we see a linear increase in time: we are starting to use the main memory.</p>
-
-<p><b>Note:</b> <i>Some people saw strange bumps/spikes in their curves; probably due to memory-cache interactions, where the computer is trying to be smart, but pays a price in performance for it</i>.</p>
-
-<h2>What are caches though?</h2>
-
-<p>Caches, are a small amount of memory that is better accessible to the CPU; the memory access is much, much faster, than accessing the main memory.
-Accessing the memory is slow, and expensive.
-Smaller caches are relatively fast, while bigger ones are slower.</p>
-
-<hr></hr>
-
-
-<h1>Discussion on chapter 6: Computer Organization</h1>
-
-<h2>When do we need queues, and when do we need stacks?</h2>
-
-<p>If you wanna get a Starbucks - you stand in line and get your coffee the last.
-However, if you are the last one to check in your flight-luggage, then there is a good chance that you are the first to get it back (bags are usually stacked on top of each other).</p>
-
-<p><strong>Queues:</strong> - Well if you need to do things that require you to do them in a particular fixed order.</p>
-
-<p><strong>Stacks:</strong> - Function calls for small variables. They are not efficient when you have dynamic memory allocation. Moreover, you have to be careful with using stacks and recursive functions - can lead to <code>stack overflows!</code></p>
-
-<p><i>
-Check out <code>tail recursion</code> though: The ability to implement neat recursive algorithms without doing terrible things.
-</i></p>
-
-<h2>Registers, stacks, and heaps</h2>
-
-<p><strong>Registers</strong><br/>
-Registers are a <i>property of the hardware</i>, while the stacks, and heaps are <i>software constructs</i>.
-And accessing the registers is basically free - this is what you would like to do in an ideal world.</p>
-
-<p><strong><em>stack</em> vs <em>heap</em></strong> <br/>
-If its dynamically allocated, it is almost certain that the compiler will put it into the <code>heap</code> - its safer, and a reasonable thing to do. Still however, it costs time and performance.</p>
-
-<p>A function can return data types that are small, on the stack, or return a pointer to a memory location on the heap (if the return data is big).</p>
-
-<h2>Language choices</h2>
-
-<p>Some languages were written a long time ago. Ideas like <code>"I would like to access the web"</code> were non-existent when the people were developing the initial versions of <code>Fortran</code>.
-If you are doing text processing - then it makes sense to use Python or Perl - don't really try to do it in Fortran or C; you have to do some real acrobatics.</p>
-
-<p>In general if you use a higher level language - then hopefully you need a fewer lines of code; and hopefully you have less bugs, and are quicker to get things done.
-However using an interpreted language you have to live with the overhead it has to go through when interpreting.</p>
-
-<p>One of the nice things about <code>Julia</code> - is that it combines some of the best of the ides of high-level language, as high performance, but its syntax is similar to Python's.</p>
-
-<h2>Higher level language parallelism</h2>
-
-<p><strong>Macro-use-framework</strong> Sometimes referred to as <em>embarrassingly parallel</em>  - still, this is often the best parallelization you can come up with. Why? A) its easy for you, and B) its easy for the computer to do.</p>
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1084,6 +1068,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
   <p> 15 April 2014 <a href="/2014/04/15/portland/">Portland</a>  </p>
   
+  <p> 19 February 2014 <a href="/2014/02/19/astro585discussion/">Astro 585 discussion 7</a>  </p>
+  
   <p> 17 February 2014 <a href="/2014/02/17/astro585discussion/">Astro 585 discussion 6</a>  </p>
   
   <p> 12 February 2014 <a href="/2014/02/12/astro585discussion/">Astro 585 discussion 5</a>  </p>
@@ -1091,8 +1077,6 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <p> 10 February 2014 <a href="/2014/02/10/astro585discussion/">Astro 585 discussion 4</a>  </p>
   
   <p> 05 February 2014 <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a>  </p>
-  
-  <p> 03 February 2014 <a href="/2014/02/03/astro585discussion/">Astro 585 discussion 2</a>  </p>
   
 
 
@@ -1124,7 +1108,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li><a class="tag_list_link" href="/tag/astro+night"><code>astro night (1)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (7)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (8)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/bern"><code>bern (1)</code></a></li>
@@ -1251,6 +1235,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <ul class="posts">
     
     <li itemscope><span class="entry-date"><time datetime="2014-04-16T00:00:00-04:00" itemprop="datePublished">April 16, 2014</time></span> &raquo; <a href="/2014/04/16/astro585discussion/">Astro585 discussion</a></li>
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-02-19T00:00:00-05:00" itemprop="datePublished">February 19, 2014</time></span> &raquo; <a href="/2014/02/19/astro585discussion/">Astro 585 discussion 7</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-02-17T00:00:00-05:00" itemprop="datePublished">February 17, 2014</time></span> &raquo; <a href="/2014/02/17/astro585discussion/">Astro 585 discussion 6</a></li>
     
