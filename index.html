@@ -579,13 +579,9 @@ And once you have done then the idea is to try to make the hardware try to perfo
 <h5>Remember:</h5>
 
 <ul>
-<li><p><b>With great memory allocation comes great memory de-allocation</b></p></li>
-<li><p>Surprisingly, <strong>a lot of people forget to do the second part</strong>; those people fall in the group of <em>B-programmers</em> or <em>Bad-programmers</em> - a curious lot.</p></li>
+<li><b>With great memory allocation comes great memory de-allocation.</b> Surprisingly, <strong>a lot of people forget to do the second part</strong>; those people fall in the group of <em>B-programmers</em> or <em>Bad-programmers</em> - a curious lot. Its probably fine to be sloppy about memory issues if your program only runs for <em>a fifth of a second</em>.  But what if you are running a web-server that you want to run for months without crashing - then memory leaks <em>really are a bad thing</em>.</li>
 </ul>
 
-
-<p>Its probably fine to be sloppy about memory issues if your program only runs for <em>a fifth of a second</em>.
-But what if you are running a web-server that you want to run for months without crashing - then memory leaks <em>really are a bad thing</em>.</p>
 
 <p>At some point, someone got the idea to take this responsibility away from <em>bad</em>-programmers; this was the dawn of <em>garbage collection</em> - then the computer is responsible for de-allocating dynamically allocated memory.</p>
 
@@ -625,9 +621,7 @@ Static variables exist once it is allocated until the program ends.</p>
 <h2>Constant pointers</h2>
 
 <p>In C, C++, Fortran you can define constant pointers.
-Its a way to tell the compiler that this specific variable will not change over the course of the program.</p>
-
-<p>The reason Fortran used to be much faster than C was due to <code>aliasing</code>.</p>
+Its a way to tell the compiler that this specific variable will not change over the course of the program. The reason Fortran used to be much faster than C was due to <code>aliasing</code>.</p>
 
 <h2>Static vs Dynamic memory allocation</h2>
 
