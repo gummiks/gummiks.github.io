@@ -552,14 +552,9 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 <ul>
 <li><p>Don't call your functions too often</p></li>
 <li><p>Pass pointers rather than by reference</p></li>
-</ul>
-
-
-<p>++ Know what your computer is doing - what is going on under the hood?</p>
-
-<ul>
+<li><p>Know what your computer is doing - what is going on under the hood?</p></li>
 <li><p>Providing types at compile-time</p></li>
-<li><p>If using an interpreted language: Vectorize!</p></li>
+<li><p>If using an interpreted language: <em>Vectorize!</em></p></li>
 <li><p>Reduce branching</p></li>
 </ul>
 
@@ -569,31 +564,17 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 <p>Compilers can be smart, and can speed up one-dimensional loops.
 They have a harder time to figure out of how to make nested loops faster.</p>
 
-<h4>HDF - IO</h4>
-
-<ul>
-<li><p>The overhead associated with it can be significant for small file sizes, but for bigger file sizes, it starts to get negligible.</p></li>
-<li><p>It was faster to print to a file rather than STDOUT.</p></li>
-</ul>
-
-
 <h2>2. Difference between unit tests and regression tests</h2>
 
-<h4>Unit tests</h4>
+<h5>Unit tests</h5>
 
-<ul>
-<li>Making sure that one function works</li>
-</ul>
+<p>Making sure that one function works</p>
 
+<h5>Regression tests</h5>
 
-<h4>Regression tests</h4>
+<p>Combine writing and reading; making sure that they are inverses of each other</p>
 
-<ul>
-<li>Combine writing and reading; making sure that they are inverses of each other</li>
-</ul>
-
-
-<h2>Using try - catch</h2>
+<h2>Using <code>try - catch</code></h2>
 
 <p>Its a way to see if the program says: <em>"Hey! There is a problem here!"</em> - then if you don't have a <code>Try-Catch</code> clause your program will crash.
 An <code><em>IF</em></code> statement can also work if you know how it can fail.
@@ -602,7 +583,7 @@ Still, its a much more expensive way to deal with a problem, rather than using a
 Its for things that don't have a clear order. It doesn't really happen too often in scientific programming.
 Good places to use would be in <em>I/O</em>, and <em>networks</em>.</p>
 
-<h2>Q. Should we optimize serial code first, before parallelize it?</h2>
+<h2>Q. Should we optimize serial code first, before we parallelize it?</h2>
 
 <p>It kind of depends on your problem. They key is to think about: "How are you gonna parallelize it?"
 It can be <code>embarrassingly parallel</code> , and you can then basically distribute the serial code to a lot of workers and gain speedups that way. If not, then you can also go into the idea of parallelizing at multiple levels.</p>
