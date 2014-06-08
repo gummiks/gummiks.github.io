@@ -579,11 +579,9 @@ And once you have done then the idea is to try to make the hardware try to perfo
 <h5>Remember:</h5>
 
 <ul>
-<li><b>With great memory allocation comes great memory de-allocation.</b> Surprisingly, <strong>a lot of people forget to do the second part</strong>; those people fall in the group of <em>B-programmers</em> or <em>Bad-programmers</em> - a curious lot. Its probably fine to be sloppy about memory issues if your program only runs for <em>a fifth of a second</em>.  But what if you are running a web-server that you want to run for months without crashing - then memory leaks <em>really are a bad thing</em>.</li>
+<li><b>With great memory allocation comes great memory de-allocation.</b> Surprisingly, <strong>a lot of people forget to do the second part</strong>; those people fall in the group of <em>B-programmers</em> or <em>Bad-programmers</em> - a curious lot. Its probably fine to be sloppy about memory issues if your program only runs for <em>a fifth of a second</em>.  But what if you are running a web-server that you want to run for months without crashing - then memory leaks <em>really are a bad thing</em>. At some point, someone got the idea to take this responsibility away from <em>bad</em>-programmers; this was the dawn of <em>garbage collection</em> - then the computer is responsible for de-allocating dynamically allocated memory.</li>
 </ul>
 
-
-<p>At some point, someone got the idea to take this responsibility away from <em>bad</em>-programmers; this was the dawn of <em>garbage collection</em> - then the computer is responsible for de-allocating dynamically allocated memory.</p>
 
 <h2>Garbage collectors</h2>
 
@@ -592,7 +590,7 @@ And once you have done then the idea is to try to make the hardware try to perfo
 <p>The bottom line here is:</p>
 
 <ul>
-<li><code>There is no perfect garbage collector, but some are more equal than others.</code></li>
+<li><b>There is no perfect garbage collector, but some are more equal than others.</b></li>
 </ul>
 
 
@@ -629,7 +627,7 @@ Its a way to tell the compiler that this specific variable will not change over 
 <ul>
 <li><p>Then you know up front the size of the memory you want to allocate.</p></li>
 <li><p>If you only use this, you are probably very unlikely to run into memory leaks.</p></li>
-<li><p>The memory can be allocated to the stack if it is small enough, but a reasonable compiler would allocate it on the heap if it is realatively big. Only small enough statically allocated variables are allocated on the stack, but can the stack dynamically grow?</p></li>
+<li><p>The memory can be allocated to the stack if it is small enough, but a reasonable compiler would allocate it on the heap if it is relatively big. Only small enough statically allocated variables are allocated on the stack, but can the stack dynamically grow?</p></li>
 <li><p>Garbage collectors do not work on the stack.</p></li>
 </ul>
 
