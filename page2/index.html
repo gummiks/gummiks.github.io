@@ -87,6 +87,54 @@ v-collapse">
 	<div class="span8">
       
 <div class="well">
+<h1>Plotting Planck's Law</h1>
+<p class="muted">18 January 2014</p>
+<div class="postContent">
+<p>The <em>Planck function</em> or <em>Planck's law</em> describes the electromagnetic radiation emitted by a black body in thermal equilibrium at a given temperature
+\( T \).
+Max Planck - the originator of quantum theory - proposed it in 1900, solving the Ultraviolet catastrophe. It remains a very important in physics (and particularly so in astrophysics) to this day.</p>
+
+<p>Planck's law can be formulated in terms of frequency, \( \nu \) in the following way</p>
+
+<p>\begin{align}
+    B_\nu(T) = \frac{2 h \nu^{3} /c^{2}}{\exp\left( h\nu/kT \right)-1}
+    \label{eq:planck}
+\end{align}</p>
+
+<p>and equivalently, in terms of wavelength \( \lambda \)</p>
+
+<p>\begin{align}
+    B_{\lambda}(T) =\frac{2 h c^{2} / \lambda^{5}}{\exp\left( hc/\lambda kT \right) -1}.
+    \label{eq:bL}
+\end{align}</p>
+
+<p>In the figure below I plot the latter equation for two temperatures.
+Here is the <code>Python</code> script, <a href='https://github.com/gummiks/gummiks.github.io/blob/master/scripts/astro/planck.py'>planck.py</a>, which I used to produce the plot.</p>
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item">
+            <img class="carouselImage" src=" /img/planck.png"> 
+            <div class="container">
+                <div class="carousel-caption">
+                    <p class="lead"> Planck spectrum</p>
+                    <p class="muted"> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>Fossá - (The River of Waterfalls)</h1>
 <p class="muted">27 December 2013</p>
 <div class="postContent">
@@ -1138,91 +1186,6 @@ I know I would too. Second, some people seem to possess a natural talent in drin
 <hr>
 
 
-<div class="well">
-<h1>Canoeing!</h1>
-<p class="muted">07 September 2013</p>
-<div class="postContent">
-<p>Went canoeing in the <code>Juniata</code> river.
-It was great - a relieve from all of the duties that surround a new life in another country, in another continent.</p>
-
-<p>Overall the trip was deemed a success as we did not capsize the boat.
-I however fell in the water, in a well, <em>very unprofessional</em> manner.</p>
-
-<div class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canoe/canoe.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Canoe</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canoe/fishing.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Fishing</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canoe/paddling.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> </p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canoe/water.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> </p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1313,6 +1276,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
   <p> 15 April 2014 <a href="/2014/04/15/portland/">Portland</a>  </p>
   
+  <p> 10 February 2014 <a href="/2014/02/10/astro585discussion/">Astro 585 Discussion 4</a>  </p>
+  
   <p> 05 February 2014 <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a>  </p>
   
   <p> 03 February 2014 <a href="/2014/02/03/astro585discussion/">Astro 585 discussion 2</a>  </p>
@@ -1320,8 +1285,6 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <p> 29 January 2014 <a href="/2014/01/29/astro585discussion/">Astro 585 discussion 1</a>  </p>
   
   <p> 19 January 2014 <a href="/2014/01/19/northernlights/">Northern Lights</a>  </p>
-  
-  <p> 18 January 2014 <a href="/2014/01/18/planck/">Plotting Planck's Law</a>  </p>
   
 
 
@@ -1353,7 +1316,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li><a class="tag_list_link" href="/tag/astro+night"><code>astro night (1)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (4)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (5)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/bern"><code>bern (1)</code></a></li>
@@ -1480,6 +1443,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <ul class="posts">
     
     <li itemscope><span class="entry-date"><time datetime="2014-04-16T00:00:00-04:00" itemprop="datePublished">April 16, 2014</time></span> &raquo; <a href="/2014/04/16/astro585discussion/">Astro585 discussion</a></li>
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-02-10T00:00:00-05:00" itemprop="datePublished">February 10, 2014</time></span> &raquo; <a href="/2014/02/10/astro585discussion/">Astro 585 Discussion 4</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-02-05T00:00:00-05:00" itemprop="datePublished">February 05, 2014</time></span> &raquo; <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a></li>
     

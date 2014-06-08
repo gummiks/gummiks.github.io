@@ -542,6 +542,94 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 
 
 <div class="well">
+<h1>Astro 585 Discussion 4</h1>
+<p class="muted">10 February 2014</p>
+<div class="postContent">
+<p><code>Bottom lines:</code></p>
+
+<h2>Homework notes</h2>
+
+<h4>HDF - IO</h4>
+
+<ul>
+<li><p>The overhead associated with it can be significant for small file sizes, but for bigger file sizes, it starts to get negligible.</p></li>
+<li><p>If anyone finds that it is faster to print out to STDOUT rather than to a file - let me know!</p></li>
+</ul>
+
+
+<h2>Difference between unit tests and regression tests</h2>
+
+<h4>Unit tests</h4>
+
+<ul>
+<li>Making sure that one function works</li>
+</ul>
+
+
+<h4>Regression tests</h4>
+
+<ul>
+<li>Combine writing and reading; making sure that they are inverses of each other</li>
+</ul>
+
+
+<h3>Using try - catch</h3>
+
+<p>An <em>IF</em> statement can also work if you know how it can fail</p>
+
+<p>What <em>Try and Catch</em> is throwing an exception. Its a way to see if the program says: <em>"Hey! There is a problem here!"</em> - Then if you don't have a <em>Try-Catch</em> clause your program will crash.</p>
+
+<p>The advantage of Try-Catch is that you can catch some errors that are buried deep down maybe. However, its a much more expensive way to deal with a problem, rather than using an IF statement.</p>
+
+<p>Its for things that don't have a clear order. It doesn't really happen too often in scientific programming.
+Good places to use would be in I/O, and networks.</p>
+
+<p>Still, with an IF statement, then you can</p>
+
+<h3>Project Proposals</h3>
+
+<p><em>Don't choose anything obnoxious.</em> Spend time up front to make your life a lot easier.</p>
+
+<p>Do a small project well, rather than a lot of stuff quick and dirty.
+Still, not trivially annoying.</p>
+
+<p>Dealing with inevitable weirdness.</p>
+
+<h1>Basic optimization techniques for serial code</h1>
+
+<h3>Ideas for simple optimizations</h3>
+
+<ul>
+<li><p>Don't call your functions too often</p></li>
+<li><p>Pass pointers rather than by reference</p></li>
+</ul>
+
+
+<p>++ Know what your computer is doing - what is going on under the hood?</p>
+
+<ul>
+<li><p>Providing types at compile-time</p></li>
+<li><p>If using an interpreted language: Vectorize!</p></li>
+<li><p>Reduce branching</p></li>
+</ul>
+
+
+<h3>Loops</h3>
+
+<p>Compilers can be smart, and can speed up one-dimensional loops.
+They have a harder time to figure out of how to make nested loops faster.</p>
+
+<h2>Should we optimize serial code first, before parallelize it?</h2>
+
+<p>It kind of depends on your problem. They key is to think about: "How are you gonna parallelize it?"
+It can be <code>embarrassingly parallel</code> , and you can then basically distribute the serial code to a lot of workers and gain speedups that way. If not, then you can also go into the idea of parallelizing at multiple levels.</p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>Astro 585 discussion 3</h1>
 <p class="muted">05 February 2014</p>
 <div class="postContent">
@@ -555,7 +643,7 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 
 <h2>Worrying about hardware?</h2>
 
-<p>Not so much. The thing is: in a few years you will be running your code on a different chip on a different system, maybe somewhere on the cloud. So at this point, don't worry too much about the low level hardware side of the coding. Moreover, ignore <em>RISCs</em> and <em>CISCs</em> - except if you are planning on buying a supercomputer!</p>
+<p>Not so much. The thing is: in a few years you will be running your code on a different chip on a different system, maybe somewhere on the cjoud. So at this point, don't worry too much about the low level hardware side of the coding. Moreover, ignore <em>RISCs</em> and <em>CISCs</em> - except if you are planning on buying a supercomputer!</p>
 
 <h2>When should we use vector processors?</h2>
 
@@ -907,54 +995,6 @@ Below you can see the result:</p>
 <hr>
 
 
-<div class="well">
-<h1>Plotting Planck's Law</h1>
-<p class="muted">18 January 2014</p>
-<div class="postContent">
-<p>The <em>Planck function</em> or <em>Planck's law</em> describes the electromagnetic radiation emitted by a black body in thermal equilibrium at a given temperature
-\( T \).
-Max Planck - the originator of quantum theory - proposed it in 1900, solving the Ultraviolet catastrophe. It remains a very important in physics (and particularly so in astrophysics) to this day.</p>
-
-<p>Planck's law can be formulated in terms of frequency, \( \nu \) in the following way</p>
-
-<p>\begin{align}
-    B_\nu(T) = \frac{2 h \nu^{3} /c^{2}}{\exp\left( h\nu/kT \right)-1}
-    \label{eq:planck}
-\end{align}</p>
-
-<p>and equivalently, in terms of wavelength \( \lambda \)</p>
-
-<p>\begin{align}
-    B_{\lambda}(T) =\frac{2 h c^{2} / \lambda^{5}}{\exp\left( hc/\lambda kT \right) -1}.
-    \label{eq:bL}
-\end{align}</p>
-
-<p>In the figure below I plot the latter equation for two temperatures.
-Here is the <code>Python</code> script, <a href='https://github.com/gummiks/gummiks.github.io/blob/master/scripts/astro/planck.py'>planck.py</a>, which I used to produce the plot.</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/planck.png"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Planck spectrum</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1043,6 +1083,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
   <p> 15 April 2014 <a href="/2014/04/15/portland/">Portland</a>  </p>
   
+  <p> 10 February 2014 <a href="/2014/02/10/astro585discussion/">Astro 585 Discussion 4</a>  </p>
+  
   <p> 05 February 2014 <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a>  </p>
   
   <p> 03 February 2014 <a href="/2014/02/03/astro585discussion/">Astro 585 discussion 2</a>  </p>
@@ -1050,8 +1092,6 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <p> 29 January 2014 <a href="/2014/01/29/astro585discussion/">Astro 585 discussion 1</a>  </p>
   
   <p> 19 January 2014 <a href="/2014/01/19/northernlights/">Northern Lights</a>  </p>
-  
-  <p> 18 January 2014 <a href="/2014/01/18/planck/">Plotting Planck's Law</a>  </p>
   
 
 
@@ -1083,7 +1123,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li><a class="tag_list_link" href="/tag/astro+night"><code>astro night (1)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (4)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (5)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/bern"><code>bern (1)</code></a></li>
@@ -1210,6 +1250,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <ul class="posts">
     
     <li itemscope><span class="entry-date"><time datetime="2014-04-16T00:00:00-04:00" itemprop="datePublished">April 16, 2014</time></span> &raquo; <a href="/2014/04/16/astro585discussion/">Astro585 discussion</a></li>
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-02-10T00:00:00-05:00" itemprop="datePublished">February 10, 2014</time></span> &raquo; <a href="/2014/02/10/astro585discussion/">Astro 585 Discussion 4</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-02-05T00:00:00-05:00" itemprop="datePublished">February 05, 2014</time></span> &raquo; <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a></li>
     

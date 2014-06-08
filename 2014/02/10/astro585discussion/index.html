@@ -85,128 +85,91 @@ v-collapse">
 
 <div class="row-fluid">
 	<div class="span8">
-		<h1>Astro 585 discussion 2</h1>
+		<h1>Astro 585 Discussion 4</h1>
 		<hr/>
-		03 February 2014 
+		10 February 2014 
 		
 		<a class="tag_list_link" href="/tag/astro585"> <code>astro585</code></a> 
 		
 		<hr/>
-      <p>One of the general themes of this course (and perhaps in real life as well?);</p>
+      <p><code>Bottom lines:</code></p>
 
-<p><code><i>Try not to do work that you don't need to do</i></code></p>
+<h2>Homework notes</h2>
 
-<p><em>RISC</em>-y chips, and <em>CISC</em>-y chips</p>
+<h4>HDF - IO</h4>
 
-<h1>Comments about <i>Homework 2</i></h1>
-
-<h4>Coding habits in <code>Julia</code></h4>
-
-<p>Put an exclamation mark at the end of a function if your function modifies some of the input arguments.</p>
-
-<h4>Performance checking</h4>
-
-<p>People who did memory allocation in the for loop:</p>
-
-<ol>
-<li><p><code>asserts</code> didn't really make any difference in time</p></li>
-<li><p>making generic function calls didn't really make a difference either</p></li>
-</ol>
+<ul>
+<li><p>The overhead associated with it can be significant for small file sizes, but for bigger file sizes, it starts to get negligible.</p></li>
+<li><p>If anyone finds that it is faster to print out to STDOUT rather than to a file - let me know!</p></li>
+</ul>
 
 
-<p>People who <b>didn't</b> do memory allocation in the for loop:</p>
+<h2>Difference between unit tests and regression tests</h2>
 
-<ol>
-<li><p><code>asserts</code> didn't really make any difference in time</p></li>
-<li><p>making generic function calls did really make a difference</p></li>
-</ol>
+<h4>Unit tests</h4>
 
-
-<h2>Explaining performance curves in homework 2</h2>
-
-<p>Check the following code:</p>
-
-<pre>
-    using PyPlot
-    n_list = [ 2^i for i=1:24 ] #Increasing i from 1:10 to 1:24 to see further
-    elapsed_list = map(calc_time_log_likelihood,n_list)
-    plot(log10(n_list), log10(elapsed_list), color="red", linewidth=2, marker="+", markersize=12);
-    xlabel("log N"); ylabel("log (Time/s)");    
-</pre>
+<ul>
+<li>Making sure that one function works</li>
+</ul>
 
 
-<p><i>Note that we are using <code>map</code> - next it might be cool to check out <code>pmap</code>.</i>
-This gives the following result on my computer:</p>
+<h4>Regression tests</h4>
 
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/coursework/astro585/performance.png"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Performance curve</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<ul>
+<li>Combine writing and reading; making sure that they are inverses of each other</li>
+</ul>
 
 
-<p>Sometimes things that you think should take longer don't: look at the first part from 0.5 to around 2 - the curve is almost flat. There we are probably making good use of the <i>caches</i>.
-Then as we keep using bigger and bigger arrays, we see a linear increase in time: we are starting to use the main memory.</p>
+<h3>Using try - catch</h3>
 
-<p><b>Note:</b> <i>Some people saw strange bumps/spikes in their curves; probably due to memory-cache interactions, where the computer is trying to be smart, but pays a price in performance for it</i>.</p>
+<p>An <em>IF</em> statement can also work if you know how it can fail</p>
 
-<h2>What are caches though?</h2>
+<p>What <em>Try and Catch</em> is throwing an exception. Its a way to see if the program says: <em>"Hey! There is a problem here!"</em> - Then if you don't have a <em>Try-Catch</em> clause your program will crash.</p>
 
-<p>Caches, are a small amount of memory that is better accessible to the CPU; the memory access is much, much faster, than accessing the main memory.
-Accessing the memory is slow, and expensive.
-Smaller caches are relatively fast, while bigger ones are slower.</p>
+<p>The advantage of Try-Catch is that you can catch some errors that are buried deep down maybe. However, its a much more expensive way to deal with a problem, rather than using an IF statement.</p>
 
-<hr></hr>
+<p>Its for things that don't have a clear order. It doesn't really happen too often in scientific programming.
+Good places to use would be in I/O, and networks.</p>
+
+<p>Still, with an IF statement, then you can</p>
+
+<h3>Project Proposals</h3>
+
+<p><em>Don't choose anything obnoxious.</em> Spend time up front to make your life a lot easier.</p>
+
+<p>Do a small project well, rather than a lot of stuff quick and dirty.
+Still, not trivially annoying.</p>
+
+<p>Dealing with inevitable weirdness.</p>
+
+<h1>Basic optimization techniques for serial code</h1>
+
+<h3>Ideas for simple optimizations</h3>
+
+<ul>
+<li><p>Don't call your functions too often</p></li>
+<li><p>Pass pointers rather than by reference</p></li>
+</ul>
 
 
-<h1>Discussion on chapter 6: Computer Organization</h1>
+<p>++ Know what your computer is doing - what is going on under the hood?</p>
 
-<h2>When do we need queues, and when do we need stacks?</h2>
+<ul>
+<li><p>Providing types at compile-time</p></li>
+<li><p>If using an interpreted language: Vectorize!</p></li>
+<li><p>Reduce branching</p></li>
+</ul>
 
-<p>If you wanna get a Starbucks - you stand in line and get your coffee the last.
-However, if you are the last one to check in your flight-luggage, then there is a good chance that you are the first to get it back (bags are usually stacked on top of each other).</p>
 
-<p><strong>Queues:</strong> - Well if you need to do things that require you to do them in a particular fixed order.</p>
+<h3>Loops</h3>
 
-<p><strong>Stacks:</strong> - Function calls for small variables. They are not efficient when you have dynamic memory allocation. Moreover, you have to be careful with using stacks and recursive functions - can lead to <code>stack overflows!</code></p>
+<p>Compilers can be smart, and can speed up one-dimensional loops.
+They have a harder time to figure out of how to make nested loops faster.</p>
 
-<p><i>
-Check out <code>tail recursion</code> though: The ability to implement neat recursive algorithms without doing terrible things.
-</i></p>
+<h2>Should we optimize serial code first, before parallelize it?</h2>
 
-<h2>Registers, stacks, and heaps</h2>
-
-<p><strong>Registers</strong><br/>
-Registers are a <i>property of the hardware</i>, while the stacks, and heaps are <i>software constructs</i>.
-And accessing the registers is basically free - this is what you would like to do in an ideal world.</p>
-
-<p><strong><em>stack</em> vs <em>heap</em></strong> <br/>
-If its dynamically allocated, it is almost certain that the compiler will put it into the <code>heap</code> - its safer, and a reasonable thing to do. Still however, it costs time and performance.</p>
-
-<p>A function can return data types that are small, on the stack, or return a pointer to a memory location on the heap (if the return data is big).</p>
-
-<h2>Language choices</h2>
-
-<p>Some languages were written a long time ago. Ideas like <code>"I would like to access the web"</code> were non-existent when the people were developing the initial versions of <code>Fortran</code>.
-If you are doing text processing - then it makes sense to use Python or Perl - don't really try to do it in Fortran or C; you have to do some real acrobatics.</p>
-
-<p>In general if you use a higher level language - then hopefully you need a fewer lines of code; and hopefully you have less bugs, and are quicker to get things done.
-However using an interpreted language you have to live with the overhead it has to go through when interpreting.</p>
-
-<p>One of the nice things about <code>Julia</code> - is that it combines some of the best of the ides of high-level language, as high performance, but its syntax is similar to Python's.</p>
-
-<h2>Higher level language parallelism</h2>
-
-<p><strong>Macro-use-framework</strong> Sometimes referred to as <em>embarrassingly parallel</em>  - still, this is often the best parallelization you can come up with. Why? A) its easy for you, and B) its easy for the computer to do.</p>
+<p>It kind of depends on your problem. They key is to think about: "How are you gonna parallelize it?"
+It can be <code>embarrassingly parallel</code> , and you can then basically distribute the serial code to a lot of workers and gain speedups that way. If not, then you can also go into the idea of parallelizing at multiple levels.</p>
 
       </div>
       <div class="span4">
