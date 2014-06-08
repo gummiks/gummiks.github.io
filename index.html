@@ -542,6 +542,77 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 
 
 <div class="well">
+<h1>Astro 585 Discussion 6</h1>
+<p class="muted">17 February 2014</p>
+<div class="postContent">
+<p><em>Now we are getting to the most interesting part of the curse.</em></p>
+
+<h2>Q: How are matrices stored in memory?</h2>
+
+<p>It really helps knowing to know how matrices are stored in memory.
+Are they <strong>colum-major</strong>, or <strong>row-major</strong>? <em>Julia</em> is like <em>Fortran</em>, storing matrices as <em>column-major</em> data structures; while <em>C</em> uses <em>row-major</em> data structures.</p>
+
+<p>So then in your implementation of the simulation of <em>Life, the Universe, and Everything</em>, then might need to have <strong>big matrices</strong>; and you might save a lot of Big-Thought's computing time by knowing if it is faster to traverse your Big-Matrix by the columns-first, or by rows-first.</p>
+
+<h2>Q: What about sparse matrices?</h2>
+
+<p>If you have a lot of 0 entries in your matrix, then instead of allocating a big rectangular block of memory for it, then rather store it as a list of non-zero entries instead.
+For example, if you had a diagonal-matrix you really would only need one vector to store the data, right? And similarily, a tri-diagonal one would need 3.</p>
+
+<h2>The power of <em>views</em></h2>
+
+<p>A powerful example: <em>What's a clever algorithm to transpose a matrix?</em> <strong>Just flip the indices!</strong></p>
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item">
+            <img class="carouselImage" src=" /img/coursework/astro585/bandwith.png"> 
+            <div class="container">
+                <div class="carousel-caption">
+                    <p class="lead"> Latency Bandwith diagram</p>
+                    <p class="muted"> Image gotten from IHPCfSE by G Hager, and G Wellein</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h2>Cache associativity</h2>
+
+<p>When you have data in the big memory and you want it in the cache - what do you do? Where can it be?
+The main philosophy here is: <em>How do we reuse data that is already in the cache?</em></p>
+
+<h5>Non-associative cache?</h5>
+
+<p>It might go something like this:</p>
+
+<ul>
+<li><p>Byte-1 of main memory can only go to Byte-1 in the cache</p></li>
+<li><p>Byte-2 of main memory can only go to Byte-2 in the cache</p></li>
+</ul>
+
+
+<p>...</p>
+
+<ul>
+<li><p>Byte-1024 of main memory can only go to Byte-1024 in the cache</p></li>
+<li><p>Byte-1025 of main memory can only go to Byte-1 in the cache</p></li>
+</ul>
+
+
+<p>Reading a cache like this is <em>very fast</em>, as you don't have to search for the data too long - every byte has a fixed and known location.
+But the main downside is: <em>you rarely use the whole cache!</em></p>
+
+<p>Solution to this is called <em>padding</em>.</p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>Astro 585 discussion 5</h1>
 <p class="muted">12 February 2014</p>
 <div class="postContent">
@@ -923,81 +994,6 @@ However using an interpreted language you have to live with the overhead it has 
 <hr>
 
 
-<div class="well">
-<h1>Astro 585 discussion 1</h1>
-<p class="muted">29 January 2014</p>
-<div class="postContent">
-<p>I'm taking Eric's class: Astro 585, topics in Astronomy and Astrophysics; <em>High-Performance Scientific Computing for Astrophysics</em>.
-Its a very discussion based class, and I thought I might try to post my notes here.</p>
-
-<p><em>These notes are typed quite quickly during class - but I'll try my best to minimize wrong spelling!</em></p>
-
-<p><strong><em>Anyways, lets see how it goes!</em></strong></p>
-
-<h1>Discussion Wed Jan 29, 2014</h1>
-
-<h3>Q: IDL precision, single or double?</h3>
-
-<p>IDL's default is <code>single precision</code> - many oblivious grad students have suffered through history because of this.</p>
-
-<p><em>I myself, a grad-student am started to be exposed to this! - Why are we still using a thing born in the 70s of which you can almost physically see the rust covering it? - Not even mentioning the digital handcuffs...</em> Stallman, are you picking your feet about this?</p>
-
-<h3>Automating processes</h3>
-
-<h4>Using scripts like <em>make</em></h4>
-
-<p>Often if you find yourself doing stuff <em>again, and again (3 or 4 times)</em>. Then automating might be useful. Say you have a humongous table that lists lots of things about a new planet you found. For the next planet you find, you might want to have this table be automated.</p>
-
-<p>You can automate things pretty easily in <em>Julia</em>.</p>
-
-<h3>Reusing code</h3>
-
-<h4>The difference between writing astronomical software and developing drugs for a pharmaceutical company</h4>
-
-<p>The readings were pretty supportive of reusing code. However, you have to have two things in mind:</p>
-
-<p><strong>Beware of Licenses</strong> - This can be troublesome, and can become very hindering for the expansion of projects. - Remember Eric's story about <em>Numerical Recipes</em> - sort of like: <code>All of your thoughts belong to us</code> type of deal.</p>
-
-<p><strong>Libraries</strong> - Be sure to know that they are actually doing what you want them to do!</p>
-
-<h3>Any tips about refactoring code, or start from scratch?</h3>
-
-<p><strong>Difficult to answer, depends on the problem</strong>. Rather than rewrite everything maybe focus on rewrite a few functions. And do it in a ridiculously incremental level. Use <em>assertions, debuggers, warnings, print statements etc.</em></p>
-
-<h3>Q: Top-Down vs. Bottom-Up type programming</h3>
-
-<h4>Difference between academic programming and commercial programming</h4>
-
-<p>In the old days, everybody had these massive plans (in the <em>Extreme Programming movement</em>) to make everything perfect from the beginning. Then it sort of transitioned to the <em>quick-and-dirty</em> movement (sometimes making programs that didn't even work!). Nowadays its a kind of pendulum between the two extremes.</p>
-
-<p><strong>For an academic setting:</strong> Its very good to make small incremental changes. Still you have to have some overview. So maybe actually <em>programming from the middle might be the right thing to do</em>. Do keep in mind Donald Knuth's words: <code><em>"Premature optimization is the root of all evil"</em></code></p>
-
-<p>Somebody suggested: <em>Bottom up, but keep it general.</em></p>
-
-<h3>Q: Functional programming vs. Object oriented programming</h3>
-
-<h4>Reusing objects as containers, or making functions do all the work.</h4>
-
-<p>For example, you can have a galaxy-class and you can make it do photometry, redshifts, etc.</p>
-
-<p><strong>Object oriented</strong> Languages like C++, and Java, make it easy to think in that way.
-Once you start writing functions that have.
-You don't need classes really, you can do things you want in C!</p>
-
-<p><strong>Template meta programming</strong> <em>(still not exactly sure what this is - you can do it, but supposedly it is a little bit obnoxious)</em>.</p>
-
-<p>Say you have a function, <em>an abstract integrator say</em>, and you are gonna pass it a variable.
-But what if your function doesn't know what type you are gonna pass it?
-Those types have different internal data structures.
-If you had a pre-compiled language, the compiler wouldn't really know what type you are gonna pass it - and it might barf.
-<em>Julias</em> approach is to compile everything at runtime, so it then knows the type, and does it right.
-So it is a way of getting a compile-type function arguments.</p>
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1086,6 +1082,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
   <p> 15 April 2014 <a href="/2014/04/15/portland/">Portland</a>  </p>
   
+  <p> 17 February 2014 <a href="/2014/02/17/astro585discussion/">Astro 585 Discussion 6</a>  </p>
+  
   <p> 12 February 2014 <a href="/2014/02/12/astro585discussion/">Astro 585 discussion 5</a>  </p>
   
   <p> 10 February 2014 <a href="/2014/02/10/astro585discussion/">Astro 585 discussion 4</a>  </p>
@@ -1093,8 +1091,6 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <p> 05 February 2014 <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a>  </p>
   
   <p> 03 February 2014 <a href="/2014/02/03/astro585discussion/">Astro 585 discussion 2</a>  </p>
-  
-  <p> 29 January 2014 <a href="/2014/01/29/astro585discussion/">Astro 585 discussion 1</a>  </p>
   
 
 
@@ -1126,7 +1122,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li><a class="tag_list_link" href="/tag/astro+night"><code>astro night (1)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (6)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (7)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/bern"><code>bern (1)</code></a></li>
@@ -1253,6 +1249,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <ul class="posts">
     
     <li itemscope><span class="entry-date"><time datetime="2014-04-16T00:00:00-04:00" itemprop="datePublished">April 16, 2014</time></span> &raquo; <a href="/2014/04/16/astro585discussion/">Astro585 discussion</a></li>
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-02-17T00:00:00-05:00" itemprop="datePublished">February 17, 2014</time></span> &raquo; <a href="/2014/02/17/astro585discussion/">Astro 585 Discussion 6</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-02-12T00:00:00-05:00" itemprop="datePublished">February 12, 2014</time></span> &raquo; <a href="/2014/02/12/astro585discussion/">Astro 585 discussion 5</a></li>
     
