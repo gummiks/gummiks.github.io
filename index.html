@@ -547,7 +547,7 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 <div class="postContent">
 <h2>1. Basic optimization techniques for serial code</h2>
 
-<h4>1a) Ideas for simple optimizations</h4>
+<h5>Ideas for simple optimizations</h5>
 
 <ul>
 <li><p>Don't call your functions too often</p></li>
@@ -559,7 +559,7 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 </ul>
 
 
-<h4>1b) Loops</h4>
+<h5>Loops</h5>
 
 <p>Compilers can be smart, and can speed up one-dimensional loops.
 They have a harder time to figure out of how to make nested loops faster.</p>
@@ -568,13 +568,14 @@ They have a harder time to figure out of how to make nested loops faster.</p>
 
 <h5>Unit tests</h5>
 
-<p>Making sure that one function works</p>
+<p>A test that makes sure that one function in your code (or one small, and very well defined part of your code) works properly.</p>
 
 <h5>Regression tests</h5>
 
-<p>Combine writing and reading; making sure that they are inverses of each other</p>
+<p>Bigger scale tests, that usually combine many functions, and to check if they are working correctly together. For example:
+Calculating the Planck spectrum and then write the results to an external ASCII file.</p>
 
-<h2>Using <code>try - catch</code></h2>
+<h2>Using _Try-Catch</h2>
 
 <p>Its a way to see if the program says: <em>"Hey! There is a problem here!"</em> - then if you don't have a <code>Try-Catch</code> clause your program will crash.
 An <code><em>IF</em></code> statement can also work if you know how it can fail.
