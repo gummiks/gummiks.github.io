@@ -85,66 +85,16 @@ v-collapse">
 
 <div class="row-fluid">
 	<div class="span8">
-		<h1>Astro 585 Discussion 4</h1>
+		<h1>Astro 585 discussion 4</h1>
 		<hr/>
 		10 February 2014 
 		
 		<a class="tag_list_link" href="/tag/astro585"> <code>astro585</code></a> 
 		
 		<hr/>
-      <p><code>Bottom lines:</code></p>
+      <h2>1. Basic optimization techniques for serial code</h2>
 
-<h2>Homework notes</h2>
-
-<h4>HDF - IO</h4>
-
-<ul>
-<li><p>The overhead associated with it can be significant for small file sizes, but for bigger file sizes, it starts to get negligible.</p></li>
-<li><p>If anyone finds that it is faster to print out to STDOUT rather than to a file - let me know!</p></li>
-</ul>
-
-
-<h2>Difference between unit tests and regression tests</h2>
-
-<h4>Unit tests</h4>
-
-<ul>
-<li>Making sure that one function works</li>
-</ul>
-
-
-<h4>Regression tests</h4>
-
-<ul>
-<li>Combine writing and reading; making sure that they are inverses of each other</li>
-</ul>
-
-
-<h3>Using try - catch</h3>
-
-<p>An <em>IF</em> statement can also work if you know how it can fail</p>
-
-<p>What <em>Try and Catch</em> is throwing an exception. Its a way to see if the program says: <em>"Hey! There is a problem here!"</em> - Then if you don't have a <em>Try-Catch</em> clause your program will crash.</p>
-
-<p>The advantage of Try-Catch is that you can catch some errors that are buried deep down maybe. However, its a much more expensive way to deal with a problem, rather than using an IF statement.</p>
-
-<p>Its for things that don't have a clear order. It doesn't really happen too often in scientific programming.
-Good places to use would be in I/O, and networks.</p>
-
-<p>Still, with an IF statement, then you can</p>
-
-<h3>Project Proposals</h3>
-
-<p><em>Don't choose anything obnoxious.</em> Spend time up front to make your life a lot easier.</p>
-
-<p>Do a small project well, rather than a lot of stuff quick and dirty.
-Still, not trivially annoying.</p>
-
-<p>Dealing with inevitable weirdness.</p>
-
-<h1>Basic optimization techniques for serial code</h1>
-
-<h3>Ideas for simple optimizations</h3>
+<h4>1a) Ideas for simple optimizations</h4>
 
 <ul>
 <li><p>Don't call your functions too often</p></li>
@@ -161,12 +111,45 @@ Still, not trivially annoying.</p>
 </ul>
 
 
-<h3>Loops</h3>
+<h4>1b) Loops</h4>
 
 <p>Compilers can be smart, and can speed up one-dimensional loops.
 They have a harder time to figure out of how to make nested loops faster.</p>
 
-<h2>Should we optimize serial code first, before parallelize it?</h2>
+<h4>HDF - IO</h4>
+
+<ul>
+<li><p>The overhead associated with it can be significant for small file sizes, but for bigger file sizes, it starts to get negligible.</p></li>
+<li><p>It was faster to print to a file rather than STDOUT.</p></li>
+</ul>
+
+
+<h2>2. Difference between unit tests and regression tests</h2>
+
+<h4>Unit tests</h4>
+
+<ul>
+<li>Making sure that one function works</li>
+</ul>
+
+
+<h4>Regression tests</h4>
+
+<ul>
+<li>Combine writing and reading; making sure that they are inverses of each other</li>
+</ul>
+
+
+<h2>Using try - catch</h2>
+
+<p>Its a way to see if the program says: <em>"Hey! There is a problem here!"</em> - then if you don't have a <code>Try-Catch</code> clause your program will crash.
+An <code><em>IF</em></code> statement can also work if you know how it can fail.
+However, the advantage of Try-Catch is that you can catch some errors that are buried deep down maybe.
+Still, its a much more expensive way to deal with a problem, rather than using an <code>IF</code> statement.
+Its for things that don't have a clear order. It doesn't really happen too often in scientific programming.
+Good places to use would be in <em>I/O</em>, and <em>networks</em>.</p>
+
+<h2>Q. Should we optimize serial code first, before parallelize it?</h2>
 
 <p>It kind of depends on your problem. They key is to think about: "How are you gonna parallelize it?"
 It can be <code>embarrassingly parallel</code> , and you can then basically distribute the serial code to a lot of workers and gain speedups that way. If not, then you can also go into the idea of parallelizing at multiple levels.</p>
@@ -213,7 +196,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
   <p> 15 April 2014 <a href="/2014/04/15/portland/">Portland</a>  </p>
   
-  <p> 10 February 2014 <a href="/2014/02/10/astro585discussion/">Astro 585 Discussion 4</a>  </p>
+  <p> 10 February 2014 <a href="/2014/02/10/astro585discussion/">Astro 585 discussion 4</a>  </p>
   
   <p> 05 February 2014 <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a>  </p>
   
@@ -381,7 +364,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     
     <li itemscope><span class="entry-date"><time datetime="2014-04-16T00:00:00-04:00" itemprop="datePublished">April 16, 2014</time></span> &raquo; <a href="/2014/04/16/astro585discussion/">Astro585 discussion</a></li>
     
-    <li itemscope><span class="entry-date"><time datetime="2014-02-10T00:00:00-05:00" itemprop="datePublished">February 10, 2014</time></span> &raquo; <a href="/2014/02/10/astro585discussion/">Astro 585 Discussion 4</a></li>
+    <li itemscope><span class="entry-date"><time datetime="2014-02-10T00:00:00-05:00" itemprop="datePublished">February 10, 2014</time></span> &raquo; <a href="/2014/02/10/astro585discussion/">Astro 585 discussion 4</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-02-05T00:00:00-05:00" itemprop="datePublished">February 05, 2014</time></span> &raquo; <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a></li>
     
