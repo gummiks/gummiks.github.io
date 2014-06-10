@@ -542,6 +542,85 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 
 
 <div class="well">
+<h1>Astro 585 discussion 8</h1>
+<p class="muted">24 February 2014</p>
+<div class="postContent">
+<p><strong>Bottom lines</strong></p>
+
+<ul>
+<li><p>Write your parallel code as if the machine doesn't have a shared memory system (more distributed), and then if it has, spend time to optimize it for shared memory.</p></li>
+<li><p>If there is a doubt in your mind that you need a sync statement - <code>use it!</code>. Also, help yourself (and potentially others) out by commenting on how confident you are on this sync statement.</p></li>
+<li><p><em>Optimize later</em> is a good motto to keep in mind when parallelizing code.</p></li>
+</ul>
+
+
+<h2>Interactive vs batch machines</h2>
+
+<h5>Interactive</h5>
+
+<p>They usually have very short walltimes (maybe something like 5 minutes or so)
+Good for rapidly debugging your code, but they might have very short walltimes - (like 5 minutes!).</p>
+
+<p>Examples of such clusters here at <em>Penn State:</em></p>
+
+<ul>
+<li><p><strong>Tesla</strong> - has GPUs</p></li>
+<li><p><strong>Hammer</strong></p></li>
+</ul>
+
+
+<h5>Batch</h5>
+
+<p>More queue oriented. Has a <em>scheduler,</em> and a <em>load-balancer</em></p>
+
+<h2>Infiniband vs Gigabit</h2>
+
+<p><b>Gigabit</b> has very low latency vs <b>Infiniband</b>.
+Moreover, Infiniband has more bandwidth.</p>
+
+<h2>Scheduling jobs on a cluster</h2>
+
+<p>When you are starting out it might get good get the cluster to send you an email when your program <em>starts</em>, <em>ends</em>, and/or <em>aborts</em>. It can be done <em>per-core</em> or <em>per-node</em>.</p>
+
+<h2>False sharing</h2>
+
+<p>Too frequent updates on caches between different processors.
+This can severly hurt application performance.</p>
+
+<h5>Common strategies to reduce this traffic</h5>
+
+<p>You can intentionally group all your writes into a single job.</p>
+
+<h2>Julia's three datastructures that are good for parallel</h2>
+
+<h5>Normal arrays</h5>
+
+<h5>Distributed arrays</h5>
+
+<p>Can be spread across many processors. Each processor owns a chunk of the array. Other processors can ask for other chunks of it - costs communication time though. As slow as the network is, it is still faster than a hard-disk, if you really need a lot of memory using distributed arrays might be a good choice.</p>
+
+<h5>Shared arrays</h5>
+
+<p><strong>Warning this is labeled as experimental</strong> <em>but this actually worked well for our semester project.</em></p>
+
+<p>This type of array is shared between multiple cores at a workstation.
+So with a <em>shared array</em>, there is one copy of the array in the shared memory, and the multiple cores each have a part of it, but all of them can access the other parts that are on the other cores (this access is slower than just accessing the local part of the array).</p>
+
+<p><strong>Downside:</strong> You have to be careful if you have multiple processes that are reading and writing simultaneously to the shared array. You can use <code>sync</code> or other types of <code>barriers</code> to prevent running into unvanted troubles, but if you have a lot of synchronization statements then the parallization might not work to well for you.</p>
+
+<p><strong>Advice:</strong> If there is a doubt in your mind that you need a sync statement - <code>use it!</code>.
+Also, help yourself (and others) out by commenting on how confident you are on this sync statement.</p>
+
+<h2>Virtualizing</h2>
+
+<p>Very good for debugging parallel code, and stress test it. <em>People who work in cloud computing really love this.</em></p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>Astro 585 discussion 7</h1>
 <p class="muted">19 February 2014</p>
 <div class="postContent">
@@ -863,108 +942,6 @@ It can be <code>embarrassingly parallel</code> , and you can then basically dist
 <hr>
 
 
-<div class="well">
-<h1>Astro 585 discussion 3</h1>
-<p class="muted">05 February 2014</p>
-<div class="postContent">
-<p><code>Bottom lines:</code></p>
-
-<ul>
-<li><strong>Profile your code!</strong></li>
-<li>If you are going to be running a code a lot - <strong>benchmark it.</strong></li>
-</ul>
-
-
-<h2>Worrying about hardware?</h2>
-
-<p>Not so much. The thing is: in a few years you will be running your code on a different chip on a different system, maybe somewhere on the cjoud. So at this point, don't worry too much about the low level hardware side of the coding. Moreover, ignore <em>RISCs</em> and <em>CISCs</em> - except if you are planning on buying a supercomputer!</p>
-
-<h2>When should we use vector processors?</h2>
-
-<p>The most common vector processors today are graphics chips.
-If you are doing the same operations on the same data again, and again, and again, then you might be better off using a graphics card, letting it perform these operations. It is not uncommon to get around 2x performance or more that way, with little effort.</p>
-
-<p>Make your compiler optimize for your computer?
-Can get around 10x performance.</p>
-
-<h2>Jobs on a supercomputer</h2>
-
-<p><strong>If the supercomputer is homogeneous</strong>, i.e. has the same type of chips as computing nodes, then it might be very advisable to compile your code for that exact chip. It might just be worth your while to spend those 5 minutes reading that <code>man</code> page to check what flags you need to use in order to optimize the code, to get that performance increase you are looking for!</p>
-
-<p><strong>If your supercomputer is heterogeneous</strong>, i.e. has different types of chips as computing nodes, some AMD over here, and some Intel chips over there. Then you have to two choices:</p>
-
-<ol>
-<li><p><em>You compiled it and optimized it for one particular chip.</em> Then it won't run on the other types (it will probably crash!). The code might run faster, but you might just be spending your time waiting in the queue line!</p></li>
-<li><p><em>You compiled it more generally, not optimizing for a particular chip.</em> Then the code will probably run slower, but you'll be quicker out of the queue line!</p></li>
-</ol>
-
-
-<h2>Real world testing vs micro-benchmarking</h2>
-
-<p><em>Where you are blazingly fast at multiplying a bunch of numbers, but Microsoft Word performs differently.</em></p>
-
-<h2>More about caches</h2>
-
-<p>In practice a computer has multiple cache levels.
-Normally what you do is specify the L2 cache size, as the L1 is usually more constrained in size, and sometimes you see the effect of the computer moving data around in these different levels.</p>
-
-<h4>Can cache sometimes be too big - so that it might actually slow you down?</h4>
-
-<p>Yes, this applies to L1 caches. For a larger cache it is harder to have a fast clock speed; it takes longer to move electrons over a bigger distance, than a smaller distance.</p>
-
-<h4>Is there an optimal ratio of processor clock speed, and cache size?</h4>
-
-<p><strong><em>Yes, the fastest, and the biggest L2 cache size!</em></strong> Well, still its not exactly that simple. The chip manufacturers are kind of trying to figure this out for you - they want to make chips that people buy.</p>
-
-<p><strong>Example (see graph in last class)</strong>:
-If I were to go from 2mb to 8mb in L2 cache size, the range of which it took the same amount of time while still increasing the data size steadily, would probably be around 4 times as big (see graph in last class).</p>
-
-<h2>Using SSD drives - does it mean performance increase vs. using magnetic disks?</h2>
-
-<p><strong>It depends on what you want to do.</strong></p>
-
-<p><b>For sequential reading, and sequential writing</b> the old magnetic disk actually perform quite well with respect to the SSD drives (the platter is reading of a very fast spinning disk), and the old fashioned ones are still a cheaper option if you are working with huge amount of data.</p>
-
-<p><b>However, for random reading</b> the old fashioned disks are much slower, while SSD are much better - physically moving things like the platter needle in the old hard drives is much slower than moving electrons around in an SSD.</p>
-
-<h2>Are there hybrid systems, that combine a normal processor, and a vector processor?</h2>
-
-<p>Yes, there are; usually it is a CPU processor, bundled with a graphics co-processor.</p>
-
-<h2>Two different parallelisms</h2>
-
-<h4>Structure-level-parallelism</h4>
-
-<p>When you can have your code such that is making use of <strong>structure-level-parallelism</strong>; you can get the benefit of the hardware doing different instructions at the same time - meaning performance increase via pipelining.</p>
-
-<h4>Data-level-parallelism</h4>
-
-<p>Write your code so that is easy for the compiler to find ways to do <strong>data-level-parallelism.</strong>
-Modern compilers, have instruction level cache, and are constantly trying to figure out how they can use its computation units effectively. They break the instructions into smaller chunks, and try to order them in a smart way.</p>
-
-<p>Write the working set data small enough so that it can fit into the cache - this way you can potentially get an increase the performance several times.</p>
-
-<h2>When optimizing - optimize the slowest part!</h2>
-
-<p>Still you have to be aware that the total execution time will still depend on all the parts of the program. <em>For example:</em></p>
-
-<ul>
-<li><p>You have a program that is 10 parts, each of which takes 10% of the time to run. You choose one part to optimize, making it effectively free to perform. - <em>This way, you only make the program 10% faster.</em></p></li>
-<li><p>You have a program that is 10 parts, where one of the part takes 90% of the time to run. You choose this part to optimize, making it effectively free to perform. - <em>This way, you make the program 10x faster!</em></p></li>
-</ul>
-
-
-<h2>Branch predictions</h2>
-
-<p>Pretty cool way to make your compiler to work for you - <code>Need to look better into this!</code>
-You can speed things up by reducing the instructions performed on your branch.
-Still sometimes the only thing to do is: <em>compile, and compile, and hope!</em></p>
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1053,6 +1030,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
   <p> 15 April 2014 <a href="/2014/04/15/portland/">Portland</a>  </p>
   
+  <p> 24 February 2014 <a href="/2014/02/24/astro585discussion/">Astro 585 discussion 8</a>  </p>
+  
   <p> 19 February 2014 <a href="/2014/02/19/astro585discussion/">Astro 585 discussion 7</a>  </p>
   
   <p> 17 February 2014 <a href="/2014/02/17/astro585discussion/">Astro 585 discussion 6</a>  </p>
@@ -1060,8 +1039,6 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <p> 12 February 2014 <a href="/2014/02/12/astro585discussion/">Astro 585 discussion 5</a>  </p>
   
   <p> 10 February 2014 <a href="/2014/02/10/astro585discussion/">Astro 585 discussion 4</a>  </p>
-  
-  <p> 05 February 2014 <a href="/2014/02/05/astro585discussion/">Astro 585 discussion 3</a>  </p>
   
 
 
@@ -1093,7 +1070,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li><a class="tag_list_link" href="/tag/astro+night"><code>astro night (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (<b>8</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (<b>9</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/bern"><code>bern (<b>1</b>)</code></a></li>
@@ -1220,6 +1197,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <ul class="posts">
     
     <li itemscope><span class="entry-date"><time datetime="2014-04-16T00:00:00-04:00" itemprop="datePublished">April 16, 2014</time></span> &raquo; <a href="/2014/04/16/astro585discussion/">Astro585 discussion</a></li>
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-02-24T00:00:00-05:00" itemprop="datePublished">February 24, 2014</time></span> &raquo; <a href="/2014/02/24/astro585discussion/">Astro 585 discussion 8</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-02-19T00:00:00-05:00" itemprop="datePublished">February 19, 2014</time></span> &raquo; <a href="/2014/02/19/astro585discussion/">Astro 585 discussion 7</a></li>
     

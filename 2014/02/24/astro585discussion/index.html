@@ -85,59 +85,82 @@ v-collapse">
 
 <div class="row-fluid">
 	<div class="span8">
-      <h1>Outreach</h1>
+		<h1>Astro 585 discussion 8</h1>
+		<hr/>
+		24 February 2014 
+		
+		<a class="tag_list_link" href="/tag/astro585"> <code>astro585</code></a> 
+		
+		<hr/>
+      <p><strong>Bottom lines</strong></p>
 
-<p><br/></p>
-
-<h4>Interview with John Ellis</h4>
-
-<p>The CERN Summer student editorial board of 2014 interviewed John Ellis about Life, the Universe, and Everything: <a href="http://ph-news.web.cern.ch/content/interview-john-ellis">Interview with John Ellis, CERN</a></p>
-
-<h4>CERN Summer Student Map</h4>
-
-<p>Article I wrote about my stay at CERN (hint: look for Iceland!): <a href="http://phsummer2013.web.cern.ch/PHsummer2013/PH_SummerStudents_2013.html">CERN Summer Student Map</a></p>
-
-<h4>AstroNight 2013</h4>
-
-<p>Volunteering for AstroNight @PennState: <a href="http://gummiks.github.io/2013/10/05/astronight/">Blog Post</a></p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/astroNight/people.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> </p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<ul>
+<li><p>Write your parallel code as if the machine doesn't have a shared memory system (more distributed), and then if it has, spend time to optimize it for shared memory.</p></li>
+<li><p>If there is a doubt in your mind that you need a sync statement - <code>use it!</code>. Also, help yourself (and potentially others) out by commenting on how confident you are on this sync statement.</p></li>
+<li><p><em>Optimize later</em> is a good motto to keep in mind when parallelizing code.</p></li>
+</ul>
 
 
-<h4>Studying Physics at the University of Iceland</h4>
+<h2>Interactive vs batch machines</h2>
 
-<p>Thinking of studying physics at the University of Iceland? Check out our presentation-slides that we gave in some collages in Iceland: <a href="kynningMR.pdf">Kynning MR</a></p>
+<h5>Interactive</h5>
 
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /outreach/kynningmr.png"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Kynning MR</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<p>They usually have very short walltimes (maybe something like 5 minutes or so)
+Good for rapidly debugging your code, but they might have very short walltimes - (like 5 minutes!).</p>
+
+<p>Examples of such clusters here at <em>Penn State:</em></p>
+
+<ul>
+<li><p><strong>Tesla</strong> - has GPUs</p></li>
+<li><p><strong>Hammer</strong></p></li>
+</ul>
 
 
+<h5>Batch</h5>
 
+<p>More queue oriented. Has a <em>scheduler,</em> and a <em>load-balancer</em></p>
+
+<h2>Infiniband vs Gigabit</h2>
+
+<p><b>Gigabit</b> has very low latency vs <b>Infiniband</b>.
+Moreover, Infiniband has more bandwidth.</p>
+
+<h2>Scheduling jobs on a cluster</h2>
+
+<p>When you are starting out it might get good get the cluster to send you an email when your program <em>starts</em>, <em>ends</em>, and/or <em>aborts</em>. It can be done <em>per-core</em> or <em>per-node</em>.</p>
+
+<h2>False sharing</h2>
+
+<p>Too frequent updates on caches between different processors.
+This can severly hurt application performance.</p>
+
+<h5>Common strategies to reduce this traffic</h5>
+
+<p>You can intentionally group all your writes into a single job.</p>
+
+<h2>Julia's three datastructures that are good for parallel</h2>
+
+<h5>Normal arrays</h5>
+
+<h5>Distributed arrays</h5>
+
+<p>Can be spread across many processors. Each processor owns a chunk of the array. Other processors can ask for other chunks of it - costs communication time though. As slow as the network is, it is still faster than a hard-disk, if you really need a lot of memory using distributed arrays might be a good choice.</p>
+
+<h5>Shared arrays</h5>
+
+<p><strong>Warning this is labeled as experimental</strong> <em>but this actually worked well for our semester project.</em></p>
+
+<p>This type of array is shared between multiple cores at a workstation.
+So with a <em>shared array</em>, there is one copy of the array in the shared memory, and the multiple cores each have a part of it, but all of them can access the other parts that are on the other cores (this access is slower than just accessing the local part of the array).</p>
+
+<p><strong>Downside:</strong> You have to be careful if you have multiple processes that are reading and writing simultaneously to the shared array. You can use <code>sync</code> or other types of <code>barriers</code> to prevent running into unvanted troubles, but if you have a lot of synchronization statements then the parallization might not work to well for you.</p>
+
+<p><strong>Advice:</strong> If there is a doubt in your mind that you need a sync statement - <code>use it!</code>.
+Also, help yourself (and others) out by commenting on how confident you are on this sync statement.</p>
+
+<h2>Virtualizing</h2>
+
+<p>Very good for debugging parallel code, and stress test it. <em>People who work in cloud computing really love this.</em></p>
 
       </div>
       <div class="span4">
