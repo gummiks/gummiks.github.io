@@ -561,13 +561,7 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 <p>They usually have very short walltimes (maybe something like 5 minutes or so)
 Good for rapidly debugging your code, but they might have very short walltimes - (like 5 minutes!).</p>
 
-<p>Examples of such clusters here at <em>Penn State:</em></p>
-
-<ul>
-<li><p><strong>Tesla</strong> - has GPUs</p></li>
-<li><p><strong>Hammer</strong></p></li>
-</ul>
-
+<p>Examples of such clusters here at <em>Penn State:</em> <strong>Tesla</strong> (has GPUs), and <strong>Hammer</strong></p>
 
 <h5>Batch</h5>
 
@@ -593,15 +587,15 @@ This can severly hurt application performance.</p>
 
 <h2>Julia's three datastructures that are good for parallel</h2>
 
-<h5>Normal arrays</h5>
+<h5>1. Normal arrays</h5>
 
-<h5>Distributed arrays</h5>
+<p>Good!</p>
+
+<h5>2. Distributed arrays</h5>
 
 <p>Can be spread across many processors. Each processor owns a chunk of the array. Other processors can ask for other chunks of it - costs communication time though. As slow as the network is, it is still faster than a hard-disk, if you really need a lot of memory using distributed arrays might be a good choice.</p>
 
-<h5>Shared arrays</h5>
-
-<p><strong>Warning this is labeled as experimental</strong> <em>but this actually worked well for our semester project.</em></p>
+<h5>3. Shared arrays - <em>Warning this is labeled as experimental</em></h5>
 
 <p>This type of array is shared between multiple cores at a workstation.
 So with a <em>shared array</em>, there is one copy of the array in the shared memory, and the multiple cores each have a part of it, but all of them can access the other parts that are on the other cores (this access is slower than just accessing the local part of the array).</p>
