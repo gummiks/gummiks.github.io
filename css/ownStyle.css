@@ -111,6 +111,7 @@ footer {
 	opacity:.50;
 	filter:alpha(opacity=50);
 }
+
 #lightbox{
 	display:none;
 	position:absolute;
@@ -120,7 +121,28 @@ footer {
 	height:400px;
 	background-color:#fff;
 }
+
 .carouselImage{
 	width: 100%;
+}
+
+.carousel-caption {
+	position: relative;
+	top: -10px;
+	width: 64%;
+	background: rgba(27, 27, 27, 0.08);
+	border-radius: 10px;
+}
+
+.carousel-caption .lead {
+	color: #000000;
+	top:-9px;
+	padding: 2px;
+	font-style:italic;
+	font-weight:bold;
+}
+
+.carousel-caption .muted {
+	color: #000000;
 }
 
