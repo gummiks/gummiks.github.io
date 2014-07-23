@@ -87,6 +87,161 @@ v-collapse">
 	<div class="span8">
       
 <div class="well">
+<h1>Astro 585 discussion 5</h1>
+<p class="muted">12 February 2014</p>
+<div class="postContent">
+<p><code>Bottom lines:</code></p>
+
+<ul>
+<li><p>Try to find the thing that takes the longest - <strong>and do something about it!</strong></p></li>
+<li><p>Every bit of code that you write, <em>write it as you were trying to convince somebody else to use it</em>. Make it public (push on Github), and sure enough the person that is going to be reusing your code is,<em> well, most likely yourself!</em> Your group is also likely to benefit; and maybe somebody else in the world - <em>and there is that off chance that he/she might benefit you someday!</em></p></li>
+</ul>
+
+
+<h2>Profiling</h2>
+
+<p>A profiler is a program to see where a program is spending most of its time (examples: <code>prof</code>, and <code>gprof</code>). Early profiling tools were mostly based on counting; monitoring how often, and how long calling a function takes.</p>
+
+<h5>Downsides</h5>
+
+<p>You are adding more instructions to your program! In a way you are interrupting the whole enterprise every time you call a function. If you are limited by caches, and writing in registers running a profiler on it makes the program run slower - so in fact you are timing a slower version of your program with the additional overhead the profiler inserts.</p>
+
+<h5>Perks</h5>
+
+<p>You get information about where the program is spending most of its time - then you can see what places you might want to speed up! Some hardware actually offer <strong>hardware profiling</strong> where the hardware has special registers only used for profiling - not interfering with the main program too much (however, you are still disrupting things - you need to unwind the pipeline, creating additional overhead, etc.)</p>
+
+<h5>Timed profiler</h5>
+
+<p>You can <strong>interfere less</strong>: instead of checking every line with a statistical profiler - you can check the program at a fixed interval, asking the program: <em>"Where are you now?"</em> in a fixed time interval.
+Note: you can have <em>resonance</em> in for-loops - which gives a bad representation of how the program is actually running.</p>
+
+<p>This is how the <code>Julia</code> profiler works.</p>
+
+<p>If you are trying to figure out something about <em>branching</em>, then statistical profiling is better.</p>
+
+<h2>Overloaded functions, profiling and <em>name mangling</em></h2>
+
+<p>C++ supports overloaded functions i.e. functions that have the same names.
+Then if you are profiling C++ code the profiler puts extra identifiers to distinguish the different versions of the overloaded functions. The identifiers have sometimes something to do with the variables that the functions use, or sometimes <em>just complete random gibberish</em> - this is called: <strong>name mangling</strong>.</p>
+
+<h2>Astronomers and code writing</h2>
+
+<p>Most of what astronomers do isn't so complicated that we really need to talk to a computer scientist about our code.</p>
+
+<p>However, if you are gonna ask <code>NSF</code> about of a lot of computer resources - then it really helps to have collaborated a bit with a computer scientist, or at least <em>had conversations over lunch with a computer scientist.</em> And if you <em>really, really care</em> then you would write the proposal with one.</p>
+
+<p>Still, computer scientists are expensive (compare 1 month of a computer scientist's time vs funding 2 grad students for a semester).
+And yet, sometimes you are required to write the proposal with one.</p>
+
+<p>In an ideal world these things would be well matched; <em>but sometimes a bit of bending is needed</em>.</p>
+
+<p>The world of writing code between CS students, and astronomy students are different.
+In astronomy we don't really care if you solve a problem cleverly, just that you solve it.
+The typical scenario is that an <em>astronomy graduate student is thrown into a pond to solve a problem, hopefully to reach shore with the solution in hand</em>.</p>
+
+<p>Taking people into lunch (for example a computer scientist - or maybe that particular girl you like) can be very productive.
+If you converse with the former then you can potentially get hints on how to solve a particular problem efficiently, and you can expand upon it by googling about it; a very high-yielding collaboration per unit time, per unit dollar.</p>
+
+<p>For the latter party you might ask: "Are there proposals that we want to work together on?"</p>
+
+<p>In any case, <em>don't spend too much of your time to reinvent the wheel, when somebody else has already done it for you.</em></p>
+
+<h2>Some things that we should do more of</h2>
+
+<h5>Code reviews</h5>
+
+<p>Make somebody else review your code. It doesn't need to be too formal - the bottom line is: <em>getting feedback can be beneficial!</em></p>
+
+<p>It can be good for spotting coding standards, and other small bugs - but doesn't necessarily catch the <em>Big-Picture</em> things.</p>
+
+<h2>Q: How do you organize your code into files and folders?</h2>
+
+<p>Not a single magic answer.</p>
+
+<h5>Using a bottom-up approach</h5>
+
+<p>What usually works: Do a bottom up approach (<em>i.e. the start-without-a-plan plan</em>), starting with 1 file, and then expand it to a few files, grouping similar ones together, and then from there branching into dividing the code into subdirectories, again grouping similar-purpose code together.</p>
+
+<p>There are tools that can be used to automate complex work flow issues - like <em>make-files</em>.
+This can lead to a multi-step process: even before you type make - then you might need to <em>configure</em> the code, and then you have to <em>make</em> it, and then to <em>make install it</em> etc.</p>
+
+<h5>Using Cmake</h5>
+
+<p>If you have a complex thing that is not related to operating system issues, then <em>cmake</em> might be useful.
+It makes a lot easier to have logic in your build system - you can have if and loops, and variables - to do <em>logic!</em>.</p>
+
+<h2>Q: How should we use Git tags?</h2>
+
+<p>If you cloned an ever changing code to use for a project, and then when you update it something doesn't work as it did, then in principle you can revert to an earlier point in time.
+However, it might not be obvious to what point in time to revert to!
+Then, <code>tags</code> can come in handy: you can tag your version that you used, making it much easier to find that specific version later.</p>
+
+<p><b>Tag-example:</b> <em>Final-version-that-was-used-for-my-paper</em></p>
+
+<h2>Q: What is the difference between <em>libraries</em> and <em>packages</em>?</h2>
+
+<p>In the old days people compiled code into libraries and then linked other code to those libraries.
+Programming languages like Python now offer you to manage your code in packages - which is much more convenient (you don't have to spend time with linking issues - usually you are just an <code>addPackage()</code> away from using somebody else's packaged code!) This has saved many a person a lot of time.</p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
+<h1>Astro 585 discussion 4</h1>
+<p class="muted">10 February 2014</p>
+<div class="postContent">
+<h2>Basic optimization techniques for serial code</h2>
+
+<h5>Ideas for simple optimizations</h5>
+
+<ul>
+<li><p>Don't call your functions too often</p></li>
+<li><p>Pass pointers rather than by reference</p></li>
+<li><p>Know what your computer is doing - what is going on under the hood?</p></li>
+<li><p>Providing types at compile-time</p></li>
+<li><p>If using an interpreted language: <em>Vectorize!</em></p></li>
+<li><p>Reduce branching</p></li>
+</ul>
+
+
+<h5>Loops</h5>
+
+<p>Compilers can be smart, and can speed up one-dimensional loops.
+They have a harder time to figure out of how to make nested loops faster.</p>
+
+<h2>Difference between unit tests and regression tests</h2>
+
+<h5>Unit tests</h5>
+
+<p>A test that makes sure that one function in your code (or one small, and very well defined part of your code) works properly.</p>
+
+<h5>Regression tests</h5>
+
+<p>Bigger scale tests, that usually combine many functions, and to check if they are working correctly together. For example:
+Calculating the Planck spectrum and then write the results to an external ASCII file.</p>
+
+<h2>Using _Try-Catch</h2>
+
+<p>Its a way to see if the program says: <em>"Hey! There is a problem here!"</em> - then if you don't have a <code>Try-Catch</code> clause your program will crash.
+An <code><em>IF</em></code> statement can also work if you know how it can fail.
+However, the advantage of Try-Catch is that you can catch some errors that are buried deep down maybe.
+Still, its a much more expensive way to deal with a problem, rather than using an <code>IF</code> statement.
+Its for things that don't have a clear order. It doesn't really happen too often in scientific programming.
+Good places to use would be in <em>I/O</em>, and <em>networks</em>.</p>
+
+<h2>Q. Should we optimize serial code first, before we parallelize it?</h2>
+
+<p>It kind of depends on your problem. They key is to think about: "How are you gonna parallelize it?"
+It can be <code>embarrassingly parallel</code> , and you can then basically distribute the serial code to a lot of workers and gain speedups that way. If not, then you can also go into the idea of parallelizing at multiple levels.</p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>Astro 585 discussion 3</h1>
 <p class="muted">05 February 2014</p>
 <div class="postContent">
@@ -996,242 +1151,6 @@ From that day forward every place in the valley was safe, and the Wind wrested n
 <hr>
 
 
-<div class="well">
-<h1>Reno, Nevada</h1>
-<p class="muted">10 November 2013</p>
-<div class="postContent">
-<p><i>"I wonder how tall people feel in long flights?"</i> my friend once asked me.
-Generously speaking she is only around 165cm, not a centimeter more.
-I'm 192cm.
-Upon arrival in a new country, 8 and a half hours of flight-time later, my legs felt like a pair of stiff logs.
-Those logs somehow got me past the gate, for my next flight.</p>
-
-<p>I remember sleeping, or dozing off, with my head leaning to the brown fabric off the airline seat in front of me.
-It smelled a bit, I couldn't place of what. Lemon peanut butter? Anyways,  - "... dear passengers, we will be arriving in Reno, Nevada, in approximately 1 hour and 50 minutes - we want to remind you to remain seated... ".
-When I woke up, I was already there.</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/reno/DSC_1324.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Another state</p>
-                    <p class="muted"> <a href="http://www.youtube.com/watch?v=zSAJ0l4OBHM">a horse with no name</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<p>It definitely felt different.
-As I walked the tapered isles of the airport, I saw a box covered with flashy and colorful lights, spinning wheels. The box played joyful tunes, the kind you quickly get tired of if you have nothing better to do.
-I however wasn't bored at all; some of the lights even blinked in sync as the tunes played.
-<i>Yes, this was a slot machine:</i> a box that keenly takes in bills or coins, that never seems to give anything in return, except for the pretty lights and playful tunes.</p>
-
-<p>For a moment my right brain hemisphere wondered; should I? My left hemisphere then thought about negative expectation values combined with The Law of Large Numbers - I walked on.
-As I walked, I noticed other boxes - they were everywhere, some neatly arranged in groups; 4 over here, 16 symmetrically placed over there; dozens and dozens along the isles you walked.
-Waiting passengers tried their luck, with that gleam in their eye that said, <i>this time, this time it will work</i>. The wheels spinned.</p>
-
-<p>I remembered my friend telling me that you will never find a clock in a casino, as they don't want you to be able to tell the time.  But wait, this was in an airport, one of those places you really, <i>really</i> want to be able to tell the time!
-As I sunk into ideas about the distribution of clocks in this peculiar airport; wondering if the combination of singing slot boxes and the lack of clocks could potentially lead people to miss their flights, I heard Icelandic!
-2 friends, and surely enough I had met one of them before. We left the airport.</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/reno/3_i_reno.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Team Iceland</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<p>The next days were packed. I was in the midst of the internationals, and there were quite a few of us.
-A typical introduction went like this:</p>
-
-<blockquote>
-"Hi! Where do you come from? <br/> 
-What do you study? <br/>
-What school are you going to?" <br/>
-</blockquote>
-
-
-<p><i>"Well, I come from Iceland, and I'm going to PSU to study the stars. Next!"</i>
-- This perhaps might sound superficial, but all of us immediately became good friends.
-We were in the honeymoon stage: we came from all around the world, with our own cultural luggage; <i>everything and everybody looked interesting.</i></p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/reno/DSC_1355.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Hi! What do you study?</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/reno/DSC_1334.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Go geothermal energy!</p>
-                    <p class="muted"> Left, Equador; right, Iceland</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/reno/DSC_1364.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> ¿Qué pasó, loco/parce/maije?</p>
-                    <p class="muted"> <i>What's up, man? (Equador/Colombia/Guatemala)</i></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<p>One thing I immediately noticed how few of us where going into science related fields.
-Management, Law, Economics, Fine Arts, Economics, Political Theory, and Public Administration seemed more popular career choices.
-For a while I introduced myself as a student of astronomy, which in some rare cases was confused with <i>astrology</i>.
-A bit disappointed, I quickly corrected them.
-I wondered; how does this miscommunication happen?
-Was it purely a language error (being nonnative English speakers), or was it the plain misconception that astronomy and astrology deal with the same thing?
-I hoped for the first.
-I then tried a few variations; <i>Hi, I'm the Icelander with the unpronounceable name that studies law: the laws of the universe</i>. Well.., I quickly just defaulted to plain <i>astrophysics</i>.</p>
-
-<p>I had a hell of a time, my lenses and my vague colloquial S-American Spanish skills did too. We travelled, we visited places, we took pictures, we told stories, and shared jokes about our respective countries and cultures, we got our personality traits analyzed (supposedly I'm an extrovert analyzer with a very unclean desk - those who have ever my desk will be quick to know if I was classified correctly or not!), we all caught a cold with the ultra-cool air-conditioning, we ate &amp; drunk well, and took various on-the-fly decisions that in the end turned out pretty good.</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/reno/DSC_1352.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Cuiyui Ticutta</p>
-                    <p class="muted"> A band of Northern Paiute, <i>the cui-ui eaters</i></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/reno/DSC_1382.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Tahoe</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/reno/DSC_1385.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> </p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<p>What I took most from these days was not necessarily the seminars I attended (although those were very good, I won't complain at all!), but rather getting to meet the other students. Even though we knew we came from such vastly different places, we had more things in common than we thought; <i>we were all starting out a big trip in a new place.</i> I think a good measure of your friendship is how long you are willing to stay up with people on the night before you have a long flight (or a chain of flights for that matter): With that as a measure, I can surely say I made many. Leaving to the strange airport-casino again, direction first West and then a lot more East, I knew I would be making good use of of sofas in various locations around the US, hopefully sooner rather than later.</p>
-
-<p>A chain of flights later, I arrived in central PA; a place I noticed that is is characterized with having the word <i>Nittany</i> in front of everything.
-"Spontaneously, your luggage decided to take a trip to the edge of the universe" - <i>What?</i> Of course it hadn't, not <i>that far</i>, it was still somewhere in the western spiral arm of our Galaxy, still orbiting our small unregarded Sun, it had just taken a ride to the third largest city of a <i>very remote state</i>, I daydreamed in a Douglas Adam-ish fashion.</p>
-
-<p>On that note, without luggage, without a towel, I Hitchhiked a ride, I hit the road again.</p>
-
-</div>
-</div>
-<hr>
-
-
-<div class="well">
-<h1>Kóperníkus</h1>
-<p class="muted">28 October 2013</p>
-<div class="postContent">
-<p>Ég er að læra stjarneðlisfræði.
-Í íslenskutíma í MR var eitt ljóð sem stóð upp úr; ég hef ekki gleymt því síðan:</p>
-
-<p><b>Kóperníkus</b> - eftir <i>Hannes Pétursson</i></p>
-
-<blockquote>
-    Á kvöldin undir kveiktu tungli og stjörnum <br/>
-    koma þeir heim af ökrunum. Lágan óm <br/>
-    ber vindur frá klukku er álútu höfði og hljóðir <br/>
-    halda þeir stíginn hjá veðruðum róðukrossi með <br/>
-    feðranna gömlu, gnúðu amboð á herðum <br/>
-    en glaðir að allt skuli bundið svo föstum skorðum: <br/>
-    sjá þarna tungl og vindar, hér vegur og blóm.<br/>
-    <br/>
-    Þeir vita' ekki að hann sem heilsar þeim oft á daginn <br/>
-    hjó þessa jörð af feyskinni rót - og henti <br/>
-    sem litlum steini langt út í myrkur og tóm.<br/>
-</blockquote>
-
-
-<p>Kvæðið virðist kannski einfalt við fyrstu sýn; auðskyld orð og tákn (róðukross - ítök kirkjunnar), smá rím, ljóðstafir (yfirleitt) og einfaldar myndlíkingar.</p>
-
-<p>Ástæðan að ég held upp á þetta ljóð er undirliggjandi hugmyndin að það þarf bara eina athugasemd frá einum manni, vel studda af sönnunargögnum, til að kollvarpa heimsmynd heils samfélags algjörlega.
-<i>Við búum ekki sérstakan stað í alheiminum, heldur ósköp lítin stein í gapandi tómi</i> - ég er óviss hvort hægt sé að komast betur að orði.</p>
-
-<p>Pældu í því að vera Kóperníkus á þessum tíma; kannski búinn að átta sig á þessu öllu saman; ekki búinn að segja neinum frá, meðan allt annað er enn á sínum stað og gengur óafvitandi sinn vanagang.</p>
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1312,6 +1231,10 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
 
 <h4>Recent posts!</h4>
   
+  <p> 21 July 2014 <a href="/2014/07/21/astrofest/">Astrofest 2014</a>  </p>
+  
+  <p> 13 June 2014 <a href="/2014/06/13/hpf_keeping_it_cool/">HPF - Keeping it cool</a>  </p>
+  
   <p> 03 June 2014 <a href="/2014/06/03/springbreak_part2/">Part II; Portland seminar</a>  </p>
   
   <p> 27 May 2014 <a href="/2014/05/27/springbreak_part1/">Part I; The ride East to go West</a>  </p>
@@ -1328,15 +1251,11 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
   <p> 17 February 2014 <a href="/2014/02/17/astro585discussion/">Astro 585 discussion 6</a>  </p>
   
-  <p> 12 February 2014 <a href="/2014/02/12/astro585discussion/">Astro 585 discussion 5</a>  </p>
-  
-  <p> 10 February 2014 <a href="/2014/02/10/astro585discussion/">Astro 585 discussion 4</a>  </p>
-  
 
 
-<!-- site_tags: helloworld,travel,switzerland,cern,hiking,photography,france,interlaken,paris,bern,poetry,birthdays,pennsylvania,america,penn state,astro night,outreach,homecoming,blues,concerts,iceland,reno,fulbright,canada,plotting,python,astro,coding,videography,northern lights,erasmus,astro585,portland,parking,shortstory -->
+<!-- site_tags: helloworld,travel,switzerland,cern,hiking,photography,france,interlaken,paris,bern,poetry,birthdays,pennsylvania,america,penn state,astro night,outreach,homecoming,blues,concerts,iceland,reno,fulbright,canada,plotting,python,astro,coding,videography,northern lights,erasmus,astro585,portland,parking,shortstory,research,hpf,astrofest -->
 
-<!-- tag_words: americaastroastro nightastro585bernbirthdaysbluescanadacerncodingconcertserasmusfrancefulbrighthelloworldhikinghomecomingicelandinterlakennorthern lightsoutreachparisparkingpenn statepennsylvaniaphotographyplottingpoetryportlandpythonrenoshortstoryswitzerlandtravelvideography -->
+<!-- tag_words: americaastroastro nightastro585astrofestbernbirthdaysbluescanadacerncodingconcertserasmusfrancefulbrighthelloworldhikinghomecominghpficelandinterlakennorthern lightsoutreachparisparkingpenn statepennsylvaniaphotographyplottingpoetryportlandpythonrenoresearchshortstoryswitzerlandtravelvideography -->
 
 <br/>
 <br/>
@@ -1363,6 +1282,9 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
     
     <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (<b>9</b>)</code></a></li>
+  
+    
+    <li><a class="tag_list_link" href="/tag/astrofest"><code>astrofest (<b>1</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/bern"><code>bern (<b>1</b>)</code></a></li>
@@ -1404,6 +1326,9 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li><a class="tag_list_link" href="/tag/homecoming"><code>homecoming (<b>1</b>)</code></a></li>
   
     
+    <li><a class="tag_list_link" href="/tag/hpf"><code>hpf (<b>2</b>)</code></a></li>
+  
+    
     <li><a class="tag_list_link" href="/tag/iceland"><code>iceland (<b>3</b>)</code></a></li>
   
     
@@ -1413,7 +1338,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li><a class="tag_list_link" href="/tag/northern+lights"><code>northern lights (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/outreach"><code>outreach (<b>1</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/outreach"><code>outreach (<b>2</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/paris"><code>paris (<b>1</b>)</code></a></li>
@@ -1422,7 +1347,7 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li><a class="tag_list_link" href="/tag/parking"><code>parking (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/penn+state"><code>penn state (<b>2</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/penn+state"><code>penn state (<b>3</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/pennsylvania"><code>pennsylvania (<b>3</b>)</code></a></li>
@@ -1444,6 +1369,9 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   
     
     <li><a class="tag_list_link" href="/tag/reno"><code>reno (<b>1</b>)</code></a></li>
+  
+    
+    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>1</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/shortstory"><code>shortstory (<b>1</b>)</code></a></li>
@@ -1505,6 +1433,14 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     <li itemscope><span class="entry-date"><time datetime="2014-02-03T00:00:00-05:00" itemprop="datePublished">February 03, 2014</time></span> &raquo; <a href="/2014/02/03/astro585discussion/">Astro 585 discussion 2</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-01-29T00:00:00-05:00" itemprop="datePublished">January 29, 2014</time></span> &raquo; <a href="/2014/01/29/astro585discussion/">Astro 585 discussion 1</a></li>
+    
+  </ul>
+  
+    
+  <h2 id="astrofest">astrofest</h2>
+  <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-07-21T00:00:00-04:00" itemprop="datePublished">July 21, 2014</time></span> &raquo; <a href="/2014/07/21/astrofest/">Astrofest 2014</a></li>
     
   </ul>
   
@@ -1629,6 +1565,16 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   </ul>
   
     
+  <h2 id="hpf">hpf</h2>
+  <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-07-21T00:00:00-04:00" itemprop="datePublished">July 21, 2014</time></span> &raquo; <a href="/2014/07/21/astrofest/">Astrofest 2014</a></li>
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-06-13T00:00:00-04:00" itemprop="datePublished">June 13, 2014</time></span> &raquo; <a href="/2014/06/13/hpf_keeping_it_cool/">HPF - Keeping it cool</a></li>
+    
+  </ul>
+  
+    
   <h2 id="iceland">iceland</h2>
   <ul class="posts">
     
@@ -1660,6 +1606,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <h2 id="outreach">outreach</h2>
   <ul class="posts">
     
+    <li itemscope><span class="entry-date"><time datetime="2014-07-21T00:00:00-04:00" itemprop="datePublished">July 21, 2014</time></span> &raquo; <a href="/2014/07/21/astrofest/">Astrofest 2014</a></li>
+    
     <li itemscope><span class="entry-date"><time datetime="2013-10-05T00:00:00-04:00" itemprop="datePublished">October 05, 2013</time></span> &raquo; <a href="/2013/10/05/astronight/">AstroNight</a></li>
     
   </ul>
@@ -1683,6 +1631,8 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
     
   <h2 id="penn+state">penn state</h2>
   <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-07-21T00:00:00-04:00" itemprop="datePublished">July 21, 2014</time></span> &raquo; <a href="/2014/07/21/astrofest/">Astrofest 2014</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2013-10-11T00:00:00-04:00" itemprop="datePublished">October 11, 2013</time></span> &raquo; <a href="/2013/10/11/homecoming/">Homecoming</a></li>
     
@@ -1763,6 +1713,14 @@ However, it is usually bundled with good luck. I guess I put it here thinking I 
   <ul class="posts">
     
     <li itemscope><span class="entry-date"><time datetime="2013-11-10T00:00:00-05:00" itemprop="datePublished">November 10, 2013</time></span> &raquo; <a href="/2013/11/10/reno/">Reno, Nevada</a></li>
+    
+  </ul>
+  
+    
+  <h2 id="research">research</h2>
+  <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-06-13T00:00:00-04:00" itemprop="datePublished">June 13, 2014</time></span> &raquo; <a href="/2014/06/13/hpf_keeping_it_cool/">HPF - Keeping it cool</a></li>
     
   </ul>
   

@@ -129,9 +129,9 @@ footer {
 .carousel-caption {
 	position: relative;
 	top: -10px;
-	width: 64%;
+	width: 60%;
 	background: rgba(27, 27, 27, 0.08);
-	border-radius: 10px;
+	border-radius: 8px;
 }
 
 .carousel-caption .lead {
