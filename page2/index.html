@@ -87,6 +87,100 @@ v-collapse">
 	<div class="span8">
       
 <div class="well">
+<h1>Astro 585 discussion 7</h1>
+<p class="muted">19 February 2014</p>
+<div class="postContent">
+<h2>Q: What is TLB?</h2>
+
+<p><em>The translation-look-aside-buffer</em> (TLB) is a cache that memory management hardware uses to improve virtual address translation speed. Issues:</p>
+
+<ul>
+<li><p>But then what happens if this buffer isn't big enough?</p></li>
+<li><p>The way the TLB works is likely different between different processors.</p></li>
+</ul>
+
+
+<h2><em>Virtual Memory Space/Virtual Address Space</em></h2>
+
+<p>In the old days when you had only say 2MB of RAM, then you could use a feature called <em>'Virtual memory space'</em> to simulate that you might actually have 4MB of data.
+This was came in handy when you were running <em>Windows</em>, and running both <em>Word</em>, and <em>Excel</em> at the same time, and both were hogging your memory.
+So when you alt-tabbed you could actually save the memory on the window that was not being used to disk.</p>
+
+<h2>Using higher level interfaces vs knowing the minute details</h2>
+
+<p><strong>Higher level interfaces:</strong> <em>You don't really know what you are doing, but the good thing is, you are much quicker at it!</em></p>
+
+<h2>Q: Why are <em>micro commands</em> reordered by the compiler/assembler?</h2>
+
+<p>Lets say we are doing the computation: <code>A*B + C</code>.
+Once you have translated the high-level language to micro-commands like <em>move this byte over here, and that one over there,</em> - you can figure out which ones depend on one another.
+And once you have done then the idea is to try to make the hardware try to perform as many operations that it can concurrently, while not breaking any of the dependencies.
+<b>Use the hardware better = performance gains.</b></p>
+
+<h2>Memory and garbage collection</h2>
+
+<p>If you say: <em>Get me this memory</em> and your computer gives it to you, you also have the responsibility to <em>de-allocate it</em>.</p>
+
+<h5>Remember:</h5>
+
+<p><b>With great memory allocation comes great memory de-allocation.</b> Surprisingly, <strong>a lot of people forget to do the second part</strong>; those people fall in the group of <em>B-programmers</em> or <em>Bad-programmers</em> - a curious lot. Its probably fine to be sloppy about memory issues if your program only runs for <em>a fifth of a second</em>.  But what if you are running a web-server that you want to run for months without crashing - then memory leaks <em>really are a bad thing</em>. At some point, someone got the idea to take this responsibility away from <em>bad</em>-programmers; this was the dawn of <em>garbage collection</em> - then the computer is responsible for de-allocating dynamically allocated memory.</p>
+
+<h2>Garbage collectors</h2>
+
+<p>They do make life easier, but you pay the price of slowing things down. So: <em><strong>you can be sloppy, and not worry about it.</strong></em> Don't be sloppy though - then you will need to collect less of it!</p>
+
+<p>The bottom line here is:</p>
+
+<p><b>There is no perfect garbage collector, but some are more equal than others.</b></p>
+
+<p>In Julia you can disable the garbage collector when you want. To turn it on: <code>gc()</code></p>
+
+<p>You can even specify your own memory manager.</p>
+
+<h2>Electric fence</h2>
+
+<p>Checkout using <code>efence</code> within <code>gcc</code> to check for memory leaks.
+Static variables exist once it is allocated until the program ends.</p>
+
+<h2>Smart pointers</h2>
+
+<p>Pointers that contain information of how many other pointers are currently pointing to that place in memory.</p>
+
+<h4>Bad side:</h4>
+
+<ul>
+<li><p>Overhead of changing the increment/decrement information</p></li>
+<li><p>Can be hard to deal with those if you have a circular linked list. <em>Solution:</em> even smarter pointers??  --> more overhead.</p></li>
+</ul>
+
+
+<h2>Constant pointers</h2>
+
+<p>In C, C++, Fortran you can define constant pointers.
+Its a way to tell the compiler that this specific variable will not change over the course of the program. The reason Fortran used to be much faster than C was due to <code>aliasing</code>.</p>
+
+<h2>Static vs Dynamic memory allocation</h2>
+
+<h5>Static</h5>
+
+<ul>
+<li><p>Then you know up front the size of the memory you want to allocate.</p></li>
+<li><p>If you only use this, you are probably very unlikely to run into memory leaks.</p></li>
+<li><p>The memory can be allocated to the stack if it is small enough, but a reasonable compiler would allocate it on the heap if it is relatively big. Only small enough statically allocated variables are allocated on the stack, but can the stack dynamically grow?</p></li>
+<li><p>Garbage collectors do not work on the stack.</p></li>
+</ul>
+
+
+<h4>Dynamic</h4>
+
+<p>Then you don't know up front the size of the memory you want to allocate.</p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>Astro 585 discussion 6</h1>
 <p class="muted">17 February 2014</p>
 <div class="postContent">
@@ -974,149 +1068,6 @@ When you got tired you had fun by photographing the others working their asses o
 <hr>
 
 
-<div class="well">
-<h1>A trip to the North; Canada</h1>
-<p class="muted">01 December 2013</p>
-<div class="postContent">
-<p><em>"What are you doing for Thanksgiving break, and more importantly: where are you eating turkey?"</em> a friend asked me.
-<em>"Who, me? I'm heading North, to Canada - I might not eat any Thanksgiving-turkey this year. Don't worry though, I'll just eat twice as much next year!"</em></p>
-
-<p>We don't celebrate Thanksgiving in Iceland, so I didn't really mind missing out on the turkey (also: my family eats it during New Years Eve).
-And yes, my Thanksgiving dinner ended up being a quick wrap-sandwich on the cold road, somewhere in the province of Quebéc.</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canada/niagarafalls.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Niagara Falls</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canada/theCrew.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> The Crew</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<p>We headed out, a crew of 4; three French, and one Icelander, travelling over 1800km in 5 days, covering 2 states, 2 provinces, in 2 countries.
-We had a rough destination outline: A) Niagara Falls, from there swing up to B) Toronto to check out the CN-Tower; and then spend the remainder of the holidays in C) Montreal.
-It was an ambitious goal.
-It took some resiliance (mostly on the driver's part), some enthusiasm, and some power-music, but we did it.</p>
-
-<p>As anticipated, the journey itself was a large part of the trip.
-However, for me - the co-pilot and one of two master DJs - the time passed relatively quickly; for the driver I'm not as sure.
-We did come prepared with a carefully crafted music playlist, consisting largely of songs made by indie and electronic groups that originate from an island a part of the Mid-Atlantic Ridge.
-Judging by the fact that we all had certain songs playing in our mind for the rest of the trip, I might have played some of them once or twice too often.
-Moreover, countless stories were told (some in French with English <i>subtitles</i>) about things that first came to our minds. Those stories will not be listed here - <em>they would fill volumes</em>.</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canada/edgeWalkers.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Living on the Edge</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<p>As we were heading straight to the capital of Québec, the French-speaking state of Canada, I felt I had to shape up my (totally non-existent) French skills.
-And sure I did: I learned some very crucial first words, providing me with a diverse and lucid vocabulary, forming a sturdy basis to further build on.
-In return, I provided an equally descriptive vocabulary in my own mother tongue; words that ended up forming an effective and encrypted code language used in the midst of the French speaking Canadians - nobody speaks Icelandic, right?</p>
-
-<p>I immediately felt that there was something about Canada that I resonated with.
-Maybe it was the chilly weather, temperatures routinely dropping to -8C or -10C, and sometimes to -15C.
-It was very interesting to see the Mediterranians' expressions seeing the temperature drop by one degree for every hour we drove North. The Icelander grinned.
-Or maybe, maybe I was just glad to be finally travelling again.</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canada/coldCar.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Our Trusty Ride</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canada/montrealBandit.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Rorschach</p>
-                    <p class="muted"> This city is afraid of me, I have seen its true face</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<p>Having only a rough outline of what to do, this trip - like all good trips are - was largely characterized by on-the-fly decisions and last minute finalizations.
-Despite a few minor delays, everything went quite smoothly.
-Living in a digital age where your smartphone has a better idea where you are going than yourself, and where you can find, read reviews, book, and pay for a hostel in less than 5 minutes,
-it is getting exceedingly easy to travel.
-So what are you waiting for dear reader, give yourself the time (and some money - but money is best <em>invested</em> in travelling), open your door and step out!</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/canada/church2.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Notre Dame Basilica</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1197,6 +1148,8 @@ So what are you waiting for dear reader, give yourself the time (and some money 
 
 <h4>Recent posts!</h4>
   
+  <p> 19 September 2014 <a href="/2014/09/19/mli/">MLI Blankets</a>  </p>
+  
   <p> 11 August 2014 <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a>  </p>
   
   <p> 21 July 2014 <a href="/2014/07/21/astrofest/">Astrofest 2014</a>  </p>
@@ -1215,13 +1168,11 @@ So what are you waiting for dear reader, give yourself the time (and some money 
   
   <p> 24 February 2014 <a href="/2014/02/24/astro585discussion/">Astro 585 discussion 8</a>  </p>
   
-  <p> 19 February 2014 <a href="/2014/02/19/astro585discussion/">Astro 585 discussion 7</a>  </p>
-  
 
 
-<!-- site_tags: helloworld,travel,switzerland,cern,hiking,photography,france,interlaken,paris,bern,poetry,birthdays,pennsylvania,america,penn state,astro night,outreach,homecoming,blues,concerts,iceland,reno,fulbright,canada,plotting,python,astro,coding,videography,northern lights,erasmus,astro585,portland,parking,shortstory,research,hpf,astrofest -->
+<!-- site_tags: helloworld,travel,switzerland,cern,hiking,photography,france,interlaken,paris,bern,poetry,birthdays,pennsylvania,america,penn state,astro night,outreach,homecoming,blues,concerts,iceland,reno,fulbright,canada,plotting,python,astro,coding,videography,northern lights,erasmus,astro585,portland,parking,shortstory,research,hpf,astrofest,mli -->
 
-<!-- tag_words: americaastroastro nightastro585astrofestbernbirthdaysbluescanadacerncodingconcertserasmusfrancefulbrighthelloworldhikinghomecominghpficelandinterlakennorthern lightsoutreachparisparkingpenn statepennsylvaniaphotographyplottingpoetryportlandpythonrenoresearchshortstoryswitzerlandtravelvideography -->
+<!-- tag_words: americaastroastro nightastro585astrofestbernbirthdaysbluescanadacerncodingconcertserasmusfrancefulbrighthelloworldhikinghomecominghpficelandinterlakenmlinorthern lightsoutreachparisparkingpenn statepennsylvaniaphotographyplottingpoetryportlandpythonrenoresearchshortstoryswitzerlandtravelvideography -->
 
 <br/>
 <br/>
@@ -1292,13 +1243,16 @@ So what are you waiting for dear reader, give yourself the time (and some money 
     <li><a class="tag_list_link" href="/tag/homecoming"><code>homecoming (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/hpf"><code>hpf (<b>3</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/hpf"><code>hpf (<b>4</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/iceland"><code>iceland (<b>3</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/interlaken"><code>interlaken (<b>1</b>)</code></a></li>
+  
+    
+    <li><a class="tag_list_link" href="/tag/mli"><code>mli (<b>1</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/northern+lights"><code>northern lights (<b>1</b>)</code></a></li>
@@ -1337,7 +1291,7 @@ So what are you waiting for dear reader, give yourself the time (and some money 
     <li><a class="tag_list_link" href="/tag/reno"><code>reno (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>2</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>3</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/shortstory"><code>shortstory (<b>1</b>)</code></a></li>
@@ -1534,6 +1488,8 @@ So what are you waiting for dear reader, give yourself the time (and some money 
   <h2 id="hpf">hpf</h2>
   <ul class="posts">
     
+    <li itemscope><span class="entry-date"><time datetime="2014-09-19T00:00:00-04:00" itemprop="datePublished">September 19, 2014</time></span> &raquo; <a href="/2014/09/19/mli/">MLI Blankets</a></li>
+    
     <li itemscope><span class="entry-date"><time datetime="2014-08-11T00:00:00-04:00" itemprop="datePublished">August 11, 2014</time></span> &raquo; <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-07-21T00:00:00-04:00" itemprop="datePublished">July 21, 2014</time></span> &raquo; <a href="/2014/07/21/astrofest/">Astrofest 2014</a></li>
@@ -1559,6 +1515,14 @@ So what are you waiting for dear reader, give yourself the time (and some money 
   <ul class="posts">
     
     <li itemscope><span class="entry-date"><time datetime="2013-07-09T00:00:00-04:00" itemprop="datePublished">July 09, 2013</time></span> &raquo; <a href="/2013/07/09/interlaken/">Interlaken</a></li>
+    
+  </ul>
+  
+    
+  <h2 id="mli">mli</h2>
+  <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-09-19T00:00:00-04:00" itemprop="datePublished">September 19, 2014</time></span> &raquo; <a href="/2014/09/19/mli/">MLI Blankets</a></li>
     
   </ul>
   
@@ -1687,6 +1651,8 @@ So what are you waiting for dear reader, give yourself the time (and some money 
     
   <h2 id="research">research</h2>
   <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-09-19T00:00:00-04:00" itemprop="datePublished">September 19, 2014</time></span> &raquo; <a href="/2014/09/19/mli/">MLI Blankets</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-08-11T00:00:00-04:00" itemprop="datePublished">August 11, 2014</time></span> &raquo; <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a></li>
     

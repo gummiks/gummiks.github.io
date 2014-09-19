@@ -87,6 +87,98 @@ v-collapse">
 	<div class="span8">
       
 <div class="well">
+<h1>MLI Blankets</h1>
+<p class="muted">19 September 2014</p>
+<div class="postContent">
+<p>In recent weeks much progress has been made in making Multi-Layer Insulation (MLI) blankets for the HPF spectrograph.
+But what are they, how do they work, and why are they needed for the HPF?</p>
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item">
+            <img class="carouselImage" src=" /img/research/mli/hpf_mli.jpg"> 
+            <div class="container">
+                <div class="carousel-caption">
+                    <p class="lead"> HPF</p>
+                    <p class="muted"> A test cross-sectional block of the HPF; practice for MLI-folding.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h4>What are MLI blankets?</h4>
+
+<p>MLI blankets are blankets made out of multiple alternating thin sheets of <em>a highly reflective material</em> - in our case we use aluminized Mylar (looks a lot like aluminum foil but more durable) - and <em>a netted spacer material</em> - Tulle in our case which is yes, commonly used to make bridal veils.
+MLI primarily reduces heat loss by <em>thermal radiation</em>, but is ineffective at reducing thermal losses by <em>heat conduction</em> and <em>convection</em>.
+They are therefore widely used as thermal control elements for vacuum applications where radiation losses dominate.
+Satellites are a great example: MLI gives them the characteristic appearance of being covered with aluminum, or sometimes gold foil.</p>
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item">
+            <img class="carouselImage" src=" /img/research/mli/hst.jpg"> 
+            <div class="container">
+                <div class="carousel-caption">
+                    <p class="lead"> The Hubble Space Telescope</p>
+                    <p class="muted"> With MLI blankets (Image from <a href="http://en.wikipedia.org/wiki/Hubble_Space_Telescope#mediaviewer/File:HST-SM4.jpeg">Wikipedia</a>.)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h4>How do they work?</h4>
+
+<p>The main idea behind MLI blankets is the principle of radiation balance and the Stephan-Boltzmann law.
+Ideally, the perfectly insulating blanket would be a blanket that reflects 100% of the incident radiation.
+It is however very hard to fabricate a single-sheet blanket that accomplishes this, but by stacking many highly reflective layers on top of each other we can achieve higher and higher reflectivity, and reduce radiation losses further.
+The individual reflective layers can't touch, as then they would transfer heat between them resulting in no added insulation benefit (short-circuits the heat transfer); we need a spacer material to space them apart.
+A netted plastic material such as <em>tulle</em> (bridal veil) is great for this purpose.
+It is very thin and light allowing for very easy handling of the overall multi-layered blanket.</p>
+
+<h4>Why do we need them for HPF?</h4>
+
+<p>HPF is an infrared spectrograph which will operate at cryogenic temperatures of 180K cooled with liquid nitrogen.
+These low temperatures are needed so we don't saturate the infrared detector with background radiation.
+Moreover, the spectrograph operates under vacuum so radiation thermal losses will dominate, which makes MLI a great choice for thermal insulation.</p>
+
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item">
+            <img class="carouselImage" src=" /img/research/mli/mli_making.jpg"> 
+            <div class="container">
+                <div class="carousel-caption">
+                    <p class="lead"> MLI blanket making</p>
+                    <p class="muted"> The blankets are assembled in a clean-room to reduce particulates, which are unfavorable for vacuum pump-down</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<p>Traditionally, MLI blankets are sewn together; the multi-layered blanket being held together by stitches.
+However, any kind of hole that punches through the layers tends to degrade the overall thermal performance of the blanket.
+Another method, of using <em>tag-pins</em> - the small nylon "I" looking pins that are used to hook price tags to clothes in stores - to fix the layers in place, has been mentioned in the literature, see paper by R. Hatakenaka, <a href="http://arc.aiaa.org/doi/abs/10.2514/6.2013-3503">here</a>).
+That way you don't need to punch as many holes as when you are sewing, and tagging - a few inches between tags - is faster and less error-prone than sewing around the whole perimeter of the blanket.
+Moreover, the tag-pins allow you to fasten the layers together without compressing them, which reduces stress around the holes.
+Lastly, the blankets tend to contract in the direction of sewing which might lead them to be to small if not oversized properly.</p>
+
+<p>The blankets need to be properly sized, aligned, and held together to cover the whole radiation shield, liquid nitrogen tank, and copper thermal straps.
+Strategically placed Velcro-pads are used to align and hold the blankets in place on the instrument. We sew the Velcro on the blankets to strongly fix them to the blankets.  This results in more holes punched on the area of the Velcro than the tag-only method, but sewing makes fixes them better to the blankets.</p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>HPF subsystem assembly</h1>
 <p class="muted">11 August 2014</p>
 <div class="postContent">
@@ -867,100 +959,6 @@ Also, help yourself (and others) out by commenting on how confident you are on t
 <hr>
 
 
-<div class="well">
-<h1>Astro 585 discussion 7</h1>
-<p class="muted">19 February 2014</p>
-<div class="postContent">
-<h2>Q: What is TLB?</h2>
-
-<p><em>The translation-look-aside-buffer</em> (TLB) is a cache that memory management hardware uses to improve virtual address translation speed. Issues:</p>
-
-<ul>
-<li><p>But then what happens if this buffer isn't big enough?</p></li>
-<li><p>The way the TLB works is likely different between different processors.</p></li>
-</ul>
-
-
-<h2><em>Virtual Memory Space/Virtual Address Space</em></h2>
-
-<p>In the old days when you had only say 2MB of RAM, then you could use a feature called <em>'Virtual memory space'</em> to simulate that you might actually have 4MB of data.
-This was came in handy when you were running <em>Windows</em>, and running both <em>Word</em>, and <em>Excel</em> at the same time, and both were hogging your memory.
-So when you alt-tabbed you could actually save the memory on the window that was not being used to disk.</p>
-
-<h2>Using higher level interfaces vs knowing the minute details</h2>
-
-<p><strong>Higher level interfaces:</strong> <em>You don't really know what you are doing, but the good thing is, you are much quicker at it!</em></p>
-
-<h2>Q: Why are <em>micro commands</em> reordered by the compiler/assembler?</h2>
-
-<p>Lets say we are doing the computation: <code>A*B + C</code>.
-Once you have translated the high-level language to micro-commands like <em>move this byte over here, and that one over there,</em> - you can figure out which ones depend on one another.
-And once you have done then the idea is to try to make the hardware try to perform as many operations that it can concurrently, while not breaking any of the dependencies.
-<b>Use the hardware better = performance gains.</b></p>
-
-<h2>Memory and garbage collection</h2>
-
-<p>If you say: <em>Get me this memory</em> and your computer gives it to you, you also have the responsibility to <em>de-allocate it</em>.</p>
-
-<h5>Remember:</h5>
-
-<p><b>With great memory allocation comes great memory de-allocation.</b> Surprisingly, <strong>a lot of people forget to do the second part</strong>; those people fall in the group of <em>B-programmers</em> or <em>Bad-programmers</em> - a curious lot. Its probably fine to be sloppy about memory issues if your program only runs for <em>a fifth of a second</em>.  But what if you are running a web-server that you want to run for months without crashing - then memory leaks <em>really are a bad thing</em>. At some point, someone got the idea to take this responsibility away from <em>bad</em>-programmers; this was the dawn of <em>garbage collection</em> - then the computer is responsible for de-allocating dynamically allocated memory.</p>
-
-<h2>Garbage collectors</h2>
-
-<p>They do make life easier, but you pay the price of slowing things down. So: <em><strong>you can be sloppy, and not worry about it.</strong></em> Don't be sloppy though - then you will need to collect less of it!</p>
-
-<p>The bottom line here is:</p>
-
-<p><b>There is no perfect garbage collector, but some are more equal than others.</b></p>
-
-<p>In Julia you can disable the garbage collector when you want. To turn it on: <code>gc()</code></p>
-
-<p>You can even specify your own memory manager.</p>
-
-<h2>Electric fence</h2>
-
-<p>Checkout using <code>efence</code> within <code>gcc</code> to check for memory leaks.
-Static variables exist once it is allocated until the program ends.</p>
-
-<h2>Smart pointers</h2>
-
-<p>Pointers that contain information of how many other pointers are currently pointing to that place in memory.</p>
-
-<h4>Bad side:</h4>
-
-<ul>
-<li><p>Overhead of changing the increment/decrement information</p></li>
-<li><p>Can be hard to deal with those if you have a circular linked list. <em>Solution:</em> even smarter pointers??  --> more overhead.</p></li>
-</ul>
-
-
-<h2>Constant pointers</h2>
-
-<p>In C, C++, Fortran you can define constant pointers.
-Its a way to tell the compiler that this specific variable will not change over the course of the program. The reason Fortran used to be much faster than C was due to <code>aliasing</code>.</p>
-
-<h2>Static vs Dynamic memory allocation</h2>
-
-<h5>Static</h5>
-
-<ul>
-<li><p>Then you know up front the size of the memory you want to allocate.</p></li>
-<li><p>If you only use this, you are probably very unlikely to run into memory leaks.</p></li>
-<li><p>The memory can be allocated to the stack if it is small enough, but a reasonable compiler would allocate it on the heap if it is relatively big. Only small enough statically allocated variables are allocated on the stack, but can the stack dynamically grow?</p></li>
-<li><p>Garbage collectors do not work on the stack.</p></li>
-</ul>
-
-
-<h4>Dynamic</h4>
-
-<p>Then you don't know up front the size of the memory you want to allocate.</p>
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1039,6 +1037,8 @@ Its a way to tell the compiler that this specific variable will not change over 
 
 <h4>Recent posts!</h4>
   
+  <p> 19 September 2014 <a href="/2014/09/19/mli/">MLI Blankets</a>  </p>
+  
   <p> 11 August 2014 <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a>  </p>
   
   <p> 21 July 2014 <a href="/2014/07/21/astrofest/">Astrofest 2014</a>  </p>
@@ -1057,13 +1057,11 @@ Its a way to tell the compiler that this specific variable will not change over 
   
   <p> 24 February 2014 <a href="/2014/02/24/astro585discussion/">Astro 585 discussion 8</a>  </p>
   
-  <p> 19 February 2014 <a href="/2014/02/19/astro585discussion/">Astro 585 discussion 7</a>  </p>
-  
 
 
-<!-- site_tags: helloworld,travel,switzerland,cern,hiking,photography,france,interlaken,paris,bern,poetry,birthdays,pennsylvania,america,penn state,astro night,outreach,homecoming,blues,concerts,iceland,reno,fulbright,canada,plotting,python,astro,coding,videography,northern lights,erasmus,astro585,portland,parking,shortstory,research,hpf,astrofest -->
+<!-- site_tags: helloworld,travel,switzerland,cern,hiking,photography,france,interlaken,paris,bern,poetry,birthdays,pennsylvania,america,penn state,astro night,outreach,homecoming,blues,concerts,iceland,reno,fulbright,canada,plotting,python,astro,coding,videography,northern lights,erasmus,astro585,portland,parking,shortstory,research,hpf,astrofest,mli -->
 
-<!-- tag_words: americaastroastro nightastro585astrofestbernbirthdaysbluescanadacerncodingconcertserasmusfrancefulbrighthelloworldhikinghomecominghpficelandinterlakennorthern lightsoutreachparisparkingpenn statepennsylvaniaphotographyplottingpoetryportlandpythonrenoresearchshortstoryswitzerlandtravelvideography -->
+<!-- tag_words: americaastroastro nightastro585astrofestbernbirthdaysbluescanadacerncodingconcertserasmusfrancefulbrighthelloworldhikinghomecominghpficelandinterlakenmlinorthern lightsoutreachparisparkingpenn statepennsylvaniaphotographyplottingpoetryportlandpythonrenoresearchshortstoryswitzerlandtravelvideography -->
 
 <br/>
 <br/>
@@ -1134,13 +1132,16 @@ Its a way to tell the compiler that this specific variable will not change over 
     <li><a class="tag_list_link" href="/tag/homecoming"><code>homecoming (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/hpf"><code>hpf (<b>3</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/hpf"><code>hpf (<b>4</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/iceland"><code>iceland (<b>3</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/interlaken"><code>interlaken (<b>1</b>)</code></a></li>
+  
+    
+    <li><a class="tag_list_link" href="/tag/mli"><code>mli (<b>1</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/northern+lights"><code>northern lights (<b>1</b>)</code></a></li>
@@ -1179,7 +1180,7 @@ Its a way to tell the compiler that this specific variable will not change over 
     <li><a class="tag_list_link" href="/tag/reno"><code>reno (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>2</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>3</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/shortstory"><code>shortstory (<b>1</b>)</code></a></li>
@@ -1376,6 +1377,8 @@ Its a way to tell the compiler that this specific variable will not change over 
   <h2 id="hpf">hpf</h2>
   <ul class="posts">
     
+    <li itemscope><span class="entry-date"><time datetime="2014-09-19T00:00:00-04:00" itemprop="datePublished">September 19, 2014</time></span> &raquo; <a href="/2014/09/19/mli/">MLI Blankets</a></li>
+    
     <li itemscope><span class="entry-date"><time datetime="2014-08-11T00:00:00-04:00" itemprop="datePublished">August 11, 2014</time></span> &raquo; <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-07-21T00:00:00-04:00" itemprop="datePublished">July 21, 2014</time></span> &raquo; <a href="/2014/07/21/astrofest/">Astrofest 2014</a></li>
@@ -1401,6 +1404,14 @@ Its a way to tell the compiler that this specific variable will not change over 
   <ul class="posts">
     
     <li itemscope><span class="entry-date"><time datetime="2013-07-09T00:00:00-04:00" itemprop="datePublished">July 09, 2013</time></span> &raquo; <a href="/2013/07/09/interlaken/">Interlaken</a></li>
+    
+  </ul>
+  
+    
+  <h2 id="mli">mli</h2>
+  <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-09-19T00:00:00-04:00" itemprop="datePublished">September 19, 2014</time></span> &raquo; <a href="/2014/09/19/mli/">MLI Blankets</a></li>
     
   </ul>
   
@@ -1529,6 +1540,8 @@ Its a way to tell the compiler that this specific variable will not change over 
     
   <h2 id="research">research</h2>
   <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-09-19T00:00:00-04:00" itemprop="datePublished">September 19, 2014</time></span> &raquo; <a href="/2014/09/19/mli/">MLI Blankets</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-08-11T00:00:00-04:00" itemprop="datePublished">August 11, 2014</time></span> &raquo; <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a></li>
     
