@@ -87,6 +87,24 @@ v-collapse">
 	<div class="span8">
       
 <div class="well">
+<h1>HPF MLI blanket fabrication</h1>
+<p class="muted">29 September 2014</p>
+<div class="postContent">
+<p>A video of the Multi-Layer Insulation (MLI) blanket layout and clean-room fabrication for the Habitable Zone Planet Finder (HPF) spectrograph:</p>
+
+<center>
+<iframe width="730" height="410" src="//www.youtube.com/embed/vRh0Jkqd27Q" frameborder="0" allowfullscreen></iframe>
+</center>
+
+
+
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>MLI Blankets</h1>
 <p class="muted">19 September 2014</p>
 <div class="postContent">
@@ -886,79 +904,6 @@ Common, friend, at the end of the day, this is supposed to be useful!</p>
 <hr>
 
 
-<div class="well">
-<h1>Astro 585 discussion 8</h1>
-<p class="muted">24 February 2014</p>
-<div class="postContent">
-<p><strong>Bottom lines</strong></p>
-
-<ul>
-<li><p>Write your parallel code as if the machine doesn't have a shared memory system (more distributed), and then if it has, spend time to optimize it for shared memory.</p></li>
-<li><p>If there is a doubt in your mind that you need a sync statement - <code>use it!</code>. Also, help yourself (and potentially others) out by commenting on how confident you are on this sync statement.</p></li>
-<li><p><em>Optimize later</em> is a good motto to keep in mind when parallelizing code.</p></li>
-</ul>
-
-
-<h2>Interactive vs batch machines</h2>
-
-<h5>Interactive</h5>
-
-<p>They usually have very short walltimes (maybe something like 5 minutes or so)
-Good for rapidly debugging your code, but they might have very short walltimes - (like 5 minutes!).</p>
-
-<p>Examples of such clusters here at <em>Penn State:</em> <strong>Tesla</strong> (has GPUs), and <strong>Hammer</strong></p>
-
-<h5>Batch</h5>
-
-<p>More queue oriented. Has a <em>scheduler,</em> and a <em>load-balancer</em></p>
-
-<h2>Infiniband vs Gigabit</h2>
-
-<p><b>Gigabit</b> has very low latency vs <b>Infiniband</b>.
-Moreover, Infiniband has more bandwidth.</p>
-
-<h2>Scheduling jobs on a cluster</h2>
-
-<p>When you are starting out it might get good get the cluster to send you an email when your program <em>starts</em>, <em>ends</em>, and/or <em>aborts</em>. It can be done <em>per-core</em> or <em>per-node</em>.</p>
-
-<h2>False sharing</h2>
-
-<p>Too frequent updates on caches between different processors.
-This can severly hurt application performance.</p>
-
-<h5>Common strategies to reduce this traffic</h5>
-
-<p>You can intentionally group all your writes into a single job.</p>
-
-<h2>Julia's three datastructures that are good for parallel</h2>
-
-<h5>1. Normal arrays</h5>
-
-<p>Good!</p>
-
-<h5>2. Distributed arrays</h5>
-
-<p>Can be spread across many processors. Each processor owns a chunk of the array. Other processors can ask for other chunks of it - costs communication time though. As slow as the network is, it is still faster than a hard-disk, if you really need a lot of memory using distributed arrays might be a good choice.</p>
-
-<h5>3. Shared arrays - <em>Warning this is labeled as experimental</em></h5>
-
-<p>This type of array is shared between multiple cores at a workstation.
-So with a <em>shared array</em>, there is one copy of the array in the shared memory, and the multiple cores each have a part of it, but all of them can access the other parts that are on the other cores (this access is slower than just accessing the local part of the array).</p>
-
-<p><strong>Downside:</strong> You have to be careful if you have multiple processes that are reading and writing simultaneously to the shared array. You can use <code>sync</code> or other types of <code>barriers</code> to prevent running into unvanted troubles, but if you have a lot of synchronization statements then the parallization might not work to well for you.</p>
-
-<p><strong>Advice:</strong> If there is a doubt in your mind that you need a sync statement - <code>use it!</code>.
-Also, help yourself (and others) out by commenting on how confident you are on this sync statement.</p>
-
-<h2>Virtualizing</h2>
-
-<p>Very good for debugging parallel code, and stress test it. <em>People who work in cloud computing really love this.</em></p>
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -981,6 +926,10 @@ Also, help yourself (and others) out by commenting on how confident you are on t
         
           
           <li><a href="/page4">4</a></li>
+          
+        
+          
+          <li><a href="/page5">5</a></li>
           
         
         
@@ -1037,6 +986,8 @@ Also, help yourself (and others) out by commenting on how confident you are on t
 
 <h4>Recent posts!</h4>
   
+  <p> 29 September 2014 <a href="/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a>  </p>
+  
   <p> 19 September 2014 <a href="/2014/09/19/mli/">MLI Blankets</a>  </p>
   
   <p> 11 August 2014 <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a>  </p>
@@ -1055,13 +1006,11 @@ Also, help yourself (and others) out by commenting on how confident you are on t
   
   <p> 15 April 2014 <a href="/2014/04/15/portland/">Portland</a>  </p>
   
-  <p> 24 February 2014 <a href="/2014/02/24/astro585discussion/">Astro 585 discussion 8</a>  </p>
-  
 
 
-<!-- site_tags: helloworld,travel,cern,hiking,photography,poetry,penn state,outreach,music,iceland,fulbright,shortstory,plotting,programming,videography,erasmus,astro585,research,hpf -->
+<!-- site_tags: helloworld,travel,cern,hiking,photography,poetry,penn state,outreach,music,iceland,fulbright,shortstory,plotting,programming,videography,erasmus,astro585,research,hpf,HPF -->
 
-<!-- tag_words: astro585cernerasmusfulbrighthelloworldhikinghpficelandmusicoutreachpenn statephotographyplottingpoetryprogrammingresearchshortstorytravelvideography -->
+<!-- tag_words: HPFastro585cernerasmusfulbrighthelloworldhikinghpficelandmusicoutreachpenn statephotographyplottingpoetryprogrammingresearchshortstorytravelvideography -->
 
 <br/>
 <br/>
@@ -1076,6 +1025,9 @@ Also, help yourself (and others) out by commenting on how confident you are on t
 <br/>
   <div id="tagcloud">
   <ul class="tag-box inline">
+  
+    
+    <li><a class="tag_list_link" href="/tag/HPF"><code>HPF (<b>1</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/astro585"><code>astro585 (<b>9</b>)</code></a></li>
@@ -1123,7 +1075,7 @@ Also, help yourself (and others) out by commenting on how confident you are on t
     <li><a class="tag_list_link" href="/tag/programming"><code>programming (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>3</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>4</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/shortstory"><code>shortstory (<b>2</b>)</code></a></li>
@@ -1132,11 +1084,19 @@ Also, help yourself (and others) out by commenting on how confident you are on t
     <li><a class="tag_list_link" href="/tag/travel"><code>travel (<b>15</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/videography"><code>videography (<b>3</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/videography"><code>videography (<b>4</b>)</code></a></li>
   
   </ul>
 
  <!-- 
+    
+  <h2 id="HPF">HPF</h2>
+  <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-09-29T00:00:00-04:00" itemprop="datePublished">September 29, 2014</time></span> &raquo; <a href="/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a></li>
+    
+  </ul>
+  
     
   <h2 id="astro585">astro585</h2>
   <ul class="posts">
@@ -1333,6 +1293,8 @@ Also, help yourself (and others) out by commenting on how confident you are on t
   <h2 id="research">research</h2>
   <ul class="posts">
     
+    <li itemscope><span class="entry-date"><time datetime="2014-09-29T00:00:00-04:00" itemprop="datePublished">September 29, 2014</time></span> &raquo; <a href="/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a></li>
+    
     <li itemscope><span class="entry-date"><time datetime="2014-09-19T00:00:00-04:00" itemprop="datePublished">September 19, 2014</time></span> &raquo; <a href="/2014/09/19/mli/">MLI Blankets</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-08-11T00:00:00-04:00" itemprop="datePublished">August 11, 2014</time></span> &raquo; <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a></li>
@@ -1390,6 +1352,8 @@ Also, help yourself (and others) out by commenting on how confident you are on t
     
   <h2 id="videography">videography</h2>
   <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-09-29T00:00:00-04:00" itemprop="datePublished">September 29, 2014</time></span> &raquo; <a href="/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-08-11T00:00:00-04:00" itemprop="datePublished">August 11, 2014</time></span> &raquo; <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a></li>
     
