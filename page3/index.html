@@ -87,6 +87,81 @@ v-collapse">
 	<div class="span8">
       
 <div class="well">
+<h1>Astro 585 discussion 1</h1>
+<p class="muted">29 January 2014</p>
+<div class="postContent">
+<p>I'm taking Eric's class: Astro 585, topics in Astronomy and Astrophysics; <em>High-Performance Scientific Computing for Astrophysics</em>.
+Its a very discussion based class, and I thought I might try to post my notes here.</p>
+
+<p><em>These notes are typed quite quickly during class - but I'll try my best to minimize wrong spelling!</em></p>
+
+<p><strong><em>Anyways, lets see how it goes!</em></strong></p>
+
+<h1>Discussion Wed Jan 29, 2014</h1>
+
+<h3>Q: IDL precision, single or double?</h3>
+
+<p>IDL's default is <code>single precision</code> - many oblivious grad students have suffered through history because of this.</p>
+
+<p><em>I myself, a grad-student am started to be exposed to this! - Why are we still using a thing born in the 70s of which you can almost physically see the rust covering it? - Not even mentioning the digital handcuffs...</em> Stallman, are you picking your feet about this?</p>
+
+<h3>Automating processes</h3>
+
+<h4>Using scripts like <em>make</em></h4>
+
+<p>Often if you find yourself doing stuff <em>again, and again (3 or 4 times)</em>. Then automating might be useful. Say you have a humongous table that lists lots of things about a new planet you found. For the next planet you find, you might want to have this table be automated.</p>
+
+<p>You can automate things pretty easily in <em>Julia</em>.</p>
+
+<h3>Reusing code</h3>
+
+<h4>The difference between writing astronomical software and developing drugs for a pharmaceutical company</h4>
+
+<p>The readings were pretty supportive of reusing code. However, you have to have two things in mind:</p>
+
+<p><strong>Beware of Licenses</strong> - This can be troublesome, and can become very hindering for the expansion of projects. - Remember Eric's story about <em>Numerical Recipes</em> - sort of like: <code>All of your thoughts belong to us</code> type of deal.</p>
+
+<p><strong>Libraries</strong> - Be sure to know that they are actually doing what you want them to do!</p>
+
+<h3>Any tips about refactoring code, or start from scratch?</h3>
+
+<p><strong>Difficult to answer, depends on the problem</strong>. Rather than rewrite everything maybe focus on rewrite a few functions. And do it in a ridiculously incremental level. Use <em>assertions, debuggers, warnings, print statements etc.</em></p>
+
+<h3>Q: Top-Down vs. Bottom-Up type programming</h3>
+
+<h4>Difference between academic programming and commercial programming</h4>
+
+<p>In the old days, everybody had these massive plans (in the <em>Extreme Programming movement</em>) to make everything perfect from the beginning. Then it sort of transitioned to the <em>quick-and-dirty</em> movement (sometimes making programs that didn't even work!). Nowadays its a kind of pendulum between the two extremes.</p>
+
+<p><strong>For an academic setting:</strong> Its very good to make small incremental changes. Still you have to have some overview. So maybe actually <em>programming from the middle might be the right thing to do</em>. Do keep in mind Donald Knuth's words: <code><em>"Premature optimization is the root of all evil"</em></code></p>
+
+<p>Somebody suggested: <em>Bottom up, but keep it general.</em></p>
+
+<h3>Q: Functional programming vs. Object oriented programming</h3>
+
+<h4>Reusing objects as containers, or making functions do all the work.</h4>
+
+<p>For example, you can have a galaxy-class and you can make it do photometry, redshifts, etc.</p>
+
+<p><strong>Object oriented</strong> Languages like C++, and Java, make it easy to think in that way.
+Once you start writing functions that have.
+You don't need classes really, you can do things you want in C!</p>
+
+<p><strong>Template meta programming</strong> <em>(still not exactly sure what this is - you can do it, but supposedly it is a little bit obnoxious)</em>.</p>
+
+<p>Say you have a function, <em>an abstract integrator say</em>, and you are gonna pass it a variable.
+But what if your function doesn't know what type you are gonna pass it?
+Those types have different internal data structures.
+If you had a pre-compiled language, the compiler wouldn't really know what type you are gonna pass it - and it might barf.
+<em>Julias</em> approach is to compile everything at runtime, so it then knows the type, and does it right.
+So it is a way of getting a compile-type function arguments.</p>
+
+</div>
+</div>
+<hr>
+
+
+<div class="well">
 <h1>Northern Lights</h1>
 <p class="muted">19 January 2014</p>
 <div class="postContent">
@@ -1052,121 +1127,6 @@ BB King; the undefeated, a legend to the last.</p>
 <hr>
 
 
-<div class="well">
-<h1>AstroNight</h1>
-<p class="muted">05 October 2013</p>
-<div class="postContent">
-<p>I decided to volunteer for AstroNight, an annual outreach event held by the astronomy department, supposedly a smaller variant of its bigger brother <a href="http://www.astro.psu.edu/public-outreach/astrofest">AstroFest</a> which I haven't attended yet.
-I took my new <code>1.4 aperture</code> with me - I wanted to test it out.</p>
-
-<p>Regretfully the weather wasn't good.
-Some of us feared that the people that really wanted to do the observing wouldn't come at all.
-Nevertheless, a lot of people showed up, and all volunteers had a lot to do.</p>
-
-<p>Initially not knowing my place, I ended up being a greeter.
-I have never seen so many people in Davey.
-It seemed like <i>the place to be at</i>!
-The two main elevators just brought waves, and waves of new people.
-Sometimes I greeted people twice. It didn't matter I think - they just asked more questions instead!</p>
-
-<p>There were many stations; non-newtonian fluids, lots of <code>3D shows</code>, <code>various talks</code>, <code>planetarium shows</code>, <code>observations</code> (mostly showing them the telescopes - but supposedly the weather got a <i>little bit</i> better with time), <code>comet making</code>, <code>simple spectrographs</code>, <code>quizzes</code> <i>with prizes</i>, and whatnot related to astronomy &amp; astrophysics.</p>
-
-<p>In all it was very similar to the outreach activites I've done back in Iceland, as a part of the math &amp; physics community there.
-Thus, empirically I conclude; people from two different continents seem to behave in a very similar manner at science outreach activities.</p>
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/astroNight/people.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Walking the mile</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/astroNight/he.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Spectral Signals!</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/astroNight/diffraction.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Diffraction</p>
-                    <p class="muted"> Putting the gratings in front of the camera was a great idea - experimental spectrum photography followed.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/astroNight/radio.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Observing in radio</p>
-                    <p class="muted"> </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div class="active item">
-            <img class="carouselImage" src=" /img/astroNight/comet.jpg"> 
-            <div class="container">
-                <div class="carousel-caption">
-                    <p class="lead"> Astrolab 101 - Making Comets</p>
-                    <p class="muted"> Too bad I don't get to teach this in Astro 11</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-</div>
-</div>
-<hr>
-
-
 
 <div class="row-fluid">
   <div class="span8">
@@ -1248,6 +1208,8 @@ Thus, empirically I conclude; people from two different continents seem to behav
 
 <h4>Recent posts!</h4>
   
+  <p> 12 November 2014 <a href="/2014/11/12/het_trip_results/">HET trip - Results</a>  </p>
+  
   <p> 11 November 2014 <a href="/2014/11/11/het_trip_day1/">HET trip - day 1</a>  </p>
   
   <p> 01 October 2014 <a href="/2014/10/01/black_moshannon_park/">Black Moshannon State Park Observing</a>  </p>
@@ -1265,8 +1227,6 @@ Thus, empirically I conclude; people from two different continents seem to behav
   <p> 03 June 2014 <a href="/2014/06/03/springbreak_part2/">Part II; Portland seminar</a>  </p>
   
   <p> 27 May 2014 <a href="/2014/05/27/springbreak_part1/">Part I; The ride East to go West</a>  </p>
-  
-  <p> 27 April 2014 <a href="/2014/04/27/parking/">The Parking Lot</a>  </p>
   
 
 
@@ -1306,13 +1266,13 @@ Thus, empirically I conclude; people from two different continents seem to behav
     <li><a class="tag_list_link" href="/tag/helloworld"><code>helloworld (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/het"><code>het (<b>1</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/het"><code>het (<b>2</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/hiking"><code>hiking (<b>3</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/hpf"><code>hpf (<b>6</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/hpf"><code>hpf (<b>7</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/iceland"><code>iceland (<b>3</b>)</code></a></li>
@@ -1339,7 +1299,7 @@ Thus, empirically I conclude; people from two different continents seem to behav
     <li><a class="tag_list_link" href="/tag/programming"><code>programming (<b>1</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>5</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/research"><code>research (<b>6</b>)</code></a></li>
   
     
     <li><a class="tag_list_link" href="/tag/shortstory"><code>shortstory (<b>2</b>)</code></a></li>
@@ -1348,7 +1308,7 @@ Thus, empirically I conclude; people from two different continents seem to behav
     <li><a class="tag_list_link" href="/tag/travel"><code>travel (<b>15</b>)</code></a></li>
   
     
-    <li><a class="tag_list_link" href="/tag/videography"><code>videography (<b>4</b>)</code></a></li>
+    <li><a class="tag_list_link" href="/tag/videography"><code>videography (<b>5</b>)</code></a></li>
   
   </ul>
 
@@ -1423,6 +1383,8 @@ Thus, empirically I conclude; people from two different continents seem to behav
   <h2 id="het">het</h2>
   <ul class="posts">
     
+    <li itemscope><span class="entry-date"><time datetime="2014-11-12T00:00:00-05:00" itemprop="datePublished">November 12, 2014</time></span> &raquo; <a href="/2014/11/12/het_trip_results/">HET trip - Results</a></li>
+    
     <li itemscope><span class="entry-date"><time datetime="2014-11-11T00:00:00-05:00" itemprop="datePublished">November 11, 2014</time></span> &raquo; <a href="/2014/11/11/het_trip_day1/">HET trip - day 1</a></li>
     
   </ul>
@@ -1442,6 +1404,8 @@ Thus, empirically I conclude; people from two different continents seem to behav
     
   <h2 id="hpf">hpf</h2>
   <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-11-12T00:00:00-05:00" itemprop="datePublished">November 12, 2014</time></span> &raquo; <a href="/2014/11/12/het_trip_results/">HET trip - Results</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-11-11T00:00:00-05:00" itemprop="datePublished">November 11, 2014</time></span> &raquo; <a href="/2014/11/11/het_trip_day1/">HET trip - day 1</a></li>
     
@@ -1563,6 +1527,8 @@ Thus, empirically I conclude; people from two different continents seem to behav
   <h2 id="research">research</h2>
   <ul class="posts">
     
+    <li itemscope><span class="entry-date"><time datetime="2014-11-12T00:00:00-05:00" itemprop="datePublished">November 12, 2014</time></span> &raquo; <a href="/2014/11/12/het_trip_results/">HET trip - Results</a></li>
+    
     <li itemscope><span class="entry-date"><time datetime="2014-11-11T00:00:00-05:00" itemprop="datePublished">November 11, 2014</time></span> &raquo; <a href="/2014/11/11/het_trip_day1/">HET trip - day 1</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-09-29T00:00:00-04:00" itemprop="datePublished">September 29, 2014</time></span> &raquo; <a href="/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a></li>
@@ -1624,6 +1590,8 @@ Thus, empirically I conclude; people from two different continents seem to behav
     
   <h2 id="videography">videography</h2>
   <ul class="posts">
+    
+    <li itemscope><span class="entry-date"><time datetime="2014-11-12T00:00:00-05:00" itemprop="datePublished">November 12, 2014</time></span> &raquo; <a href="/2014/11/12/het_trip_results/">HET trip - Results</a></li>
     
     <li itemscope><span class="entry-date"><time datetime="2014-09-29T00:00:00-04:00" itemprop="datePublished">September 29, 2014</time></span> &raquo; <a href="/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a></li>
     
