@@ -1,0 +1,8 @@
+#Summary Statistics for plots/LakeShoreLogTotal_today_stats
+Sensor #	Mean	std	Median	Max	Min	Range
+Sensor #1	16.087	0.022	16.087	16.139	16.051	0.088	
+Sensor #2	15.735	0.030	15.731	15.791	15.674	0.117	
+Sensor #3	15.658	0.052	15.667	15.762	15.463	0.299	
+Sensor #4	16.796	0.459	16.831	18.311	15.873	2.438	
+Sensor #5	16.010	0.017	16.006	16.054	15.970	0.084	
+Sensor #6	16.207	0.007	16.207	16.222	16.186	0.036	
