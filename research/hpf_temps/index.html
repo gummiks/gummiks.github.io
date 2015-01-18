@@ -19,21 +19,15 @@
 
 	<!--JavaScripts -->
 	<script src="/js/jquery-2.0.3.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-
 	<script type="text/javascript"
+	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
 	// $('.carousel').carousel();
-
 	$('.carousel').pause();
+	});
     </script> 
-    <script type="text/javascript">
-	    $.get('plots/LakeShoreLogTotal_stats.txt', function(data) {
-	      $("#het_pi_totalstats").html(data);
-	    }, 'text');
-    </script>
 
 
     <!--Meta -->
@@ -88,15 +82,26 @@ v-collapse">
 
     <div class="container">
 
-<div id="het_pi_totalstats"></div>
 
 <div class="row-fluid">
 	<div class="span8">
-      <h1>HPF Temperature Monitoring</h1>
+      <p>  <script>
+    $.get('plots/LakeShoreLogTotal_stats.html', function(data) {
+      $("#het_pi_totalstats").html(data);
+    }, 'text');
+    $.get('plots/LakeShoreLogTotal_week_stats.html', function(data) {
+      $("#het_pi_weekstats").html(data);
+    }, 'text');
+    $.get('plots/LakeShoreLogTotal_today_stats.html', function(data) {
+      $("#het_pi_todaystats").html(data);
+    }, 'text');
+  </script></p>
+
+<h1>HPF Temperature Monitoring</h1>
 
 <h3>Total Dataset</h3>
 
-<div class="row-fluid">
+<div class="row-fluid" id="total">
     <div class="span12">
         <p>
             <center>
@@ -104,12 +109,22 @@ v-collapse">
             </center>
         </p>
     </div>
+    <center>
+    Data from <b>plots/LakeShoreLogTotal_stats.html</b>. Unit: degrees C. 
+    <div id="het_pi_totalstats">
+    </div>
+    </center>
 </div>
+
+
+
+
+<hr>
 
 
 <h3>Last Week (or last 7 days)</h3>
 
-<div class="row-fluid">
+<div class="row-fluid" id="week">
     <div class="span12">
         <p>
             <center>
@@ -117,12 +132,22 @@ v-collapse">
             </center>
         </p>
     </div>
+        <center>
+        Data from <b>plots/LakeShoreLogTotal_week_stats.html</b>. Unit: degrees C. 
+        <div id="het_pi_weekstats">
+        </div>
+        </center>
 </div>
+
+
+
+
+<hr>
 
 
 <h3>Today</h3>
 
-<div class="row-fluid">
+<div class="row-fluid" id="today">
     <div class="span12">
         <p>
             <center>
@@ -130,6 +155,11 @@ v-collapse">
             </center>
         </p>
     </div>
+        <center>
+        Data from <b>plots/LakeShoreLogTotal_today_stats.html</b>. Unit: degrees C. 
+        <div id="het_pi_todaystats">
+        </div>
+        </center>
 </div>
 
 
