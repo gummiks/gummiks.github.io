@@ -19,15 +19,21 @@
 
 	<!--JavaScripts -->
 	<script src="/js/jquery-2.0.3.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 	<script type="text/javascript"
-	src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 	<script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript">
 	$(document).ready(function() {
 	// $('.carousel').carousel();
+
 	$('.carousel').pause();
-	});
     </script> 
+    <script type="text/javascript">
+	    $.get('plots/LakeShoreLogTotal_stats.txt', function(data) {
+	      $("#het_pi_totalstats").html(data);
+	    }, 'text');
+    </script>
 
 
     <!--Meta -->
@@ -82,6 +88,7 @@ v-collapse">
 
     <div class="container">
 
+<div id="het_pi_totalstats"></div>
 
 <div class="row-fluid">
 	<div class="span8">
