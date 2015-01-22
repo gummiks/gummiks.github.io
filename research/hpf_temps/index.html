@@ -89,6 +89,9 @@ v-collapse">
     $.get('plots/LakeShoreLogTotal_stats.html', function(data) {
       $("#het_pi_totalstats").html(data);
     }, 'text');
+    $.get('plots/LakeShoreLogTotal_month_stats.html', function(data) {
+      $("#het_pi_monthstats").html(data);
+    }, 'text');
     $.get('plots/LakeShoreLogTotal_week_stats.html', function(data) {
       $("#het_pi_weekstats").html(data);
     }, 'text');
@@ -122,7 +125,30 @@ v-collapse">
 <hr>
 
 
-<h3>Last Week (or last 7 days)</h3>
+<h3>Last Month (last 30 days)</h3>
+
+<div class="row-fluid" id="week">
+    <div class="span12">
+        <p>
+            <center>
+                <img src=" plots/LakeShoreLogTotal_month.png">
+            </center>
+        </p>
+    </div>
+        <center>
+        Data from <b>plots/LakeShoreLogTotal_month_stats.html</b>. Unit: degrees C. 
+        <div id="het_pi_monthstats">
+        </div>
+        </center>
+</div>
+
+
+
+
+<hr>
+
+
+<h3>Last Week (last 7 days)</h3>
 
 <div class="row-fluid" id="week">
     <div class="span12">
