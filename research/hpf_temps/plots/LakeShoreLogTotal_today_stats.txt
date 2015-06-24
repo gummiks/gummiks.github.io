@@ -1,0 +1,8 @@
+#Summary Statistics for plots/LakeShoreLogTotal_today_stats
+Sensor	Mean	std	Median	Max	Min	Range
+Cal_Low	16.360	0.005	16.360	16.371	16.347	0.024	
+Cal_High	15.992	0.012	15.992	16.019	15.965	0.054	
+Out_Low	16.124	0.108	16.125	16.343	15.868	0.475	
+Out_High	17.168	0.181	17.163	17.513	16.819	0.694	
+HPF_High	16.343	0.008	16.345	16.359	16.321	0.038	
+HPF_Low	16.542	0.007	16.543	16.554	16.522	0.032	
