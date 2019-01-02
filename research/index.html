@@ -64,12 +64,14 @@ v-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">@gummiks</a>
+          <a class="brand" href="/">@gummiks</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="/">home</a></li>
 	      <li><a href="/blog">blog</a></li>
 	      <li><a href="/research">research</a></li>
+	      <li><a href="/publications">publications</a></li>
+	      <li><a href="/cv">cv</a></li>
 	      <li><a href="/teaching">teaching</a></li>
 	      <li><a href="/outreach">outreach</a></li>
 	      <li><a href="/photography">photography</a></li>
@@ -79,48 +81,109 @@ v-collapse">
         </div>
       </div>
     </div>
+    </div>
 
-    <div class="container">
 
+
+
+<div class="container">
 
 <div class="row-fluid">
 	<div class="span8">
-      <h1>Current Research</h1>
-
-<h4>(2014-2015) <a href="http://hpf.psu.edu/">The Habitable-Zone Planet Finder</a></h4>
+      <h1>Research Interests</h1>
 
 <div class="row-fluid">
-        <div class="span8">
-            <p> I am working with Suvrath Mahadevan on the <a href="http://arxiv.org/abs/1209.1686">Habitable-Zone Planet Finder</a> (HPF), a fiber-fed near-infrared (NIR) spectrograph to be commissioned at the 10m meter class <a href="http://www.as.utexas.edu/mcdonald/het/het.html">Hobby-Eberly Telescope (HET)</a> in early 2016. 
-            It will be used to search for terrestrial-mass planets around M stars using ultra precise <a href="http://en.wikipedia.org/wiki/Radial_velocity">radial velocity methods</a> (<1 m/s).
-            This level of precision requires a high degree of temperature stability (sub mK) to prevent mechanical drifts and index of refraction changes.
-            Currently my work is focused on the implementation and testing of the HPF environmental control system, which sets out to achieve these stability requirements.</p>
-
-        <p>
-        For newer updates either check the <a href="http://hpf.psu.edu/">HPF research blog</a>, or check blog posts on this website tagged: <a class="tag_list_link" href="/tag/research"><code>research</code></a> <a class="tag_list_link" href="/tag/hpf"><code>hpf</code></a>
-        </p>
-        <br/>
-        <p>Click <a href="/research/hpf_temps/">here</a> to see frequently updated temperature monitoring plots of the HPF Enclosure in the HET Spectrograph Room.</p>
+<div class="span12">
+<p class="headerparagraph">I am interested in developing and using next generation instrumentation to better detect and characterizing exciting exoplanet systems.</p>
+</div>
 </div>
 
+
+<h1>Current Research Projects</h1>
+
+<h3>(2017-Current) Precise RVs with the Habitable-zone Planet Finder</h3>
+
+<div class="row-fluid">
+<div class="span8">
+<p>Since we installed HPF on the 10m Hobby-Eberly Telescope at McDonald Observatory in Texas, I have been actively involved in using HPF to detect and characterize new exoplanets. I am currently actively involved in maintaining and executing the HPF commissioning and the instrument team Guaranteed-Time Observations (GTO).</p>
+
+<p>In recent observations of the bright M-dwarf Barnard's star, I adapted the <a href="https://arxiv.org/abs/1710.10114">Spectrum Radial Velocity Analyzer (SERVAL, Zechmeister et al. 2018) code</a> to demonstrate that HPF is capable of achieving 1.53m/s radial velocity precision in the NIR. This result is currently in press in <i>Metcalf et al. 2018 (in press)</i>.
+</p>
+
+<!--
+Excited about its capability to observe Rossiter-McLaughlin effects in M-dwarfs.
+The RM effect around M-dwarfs is expected to be orders of magnitude larger than the RV semi-amplitude (Clautier et al. 2016).
+-->
+</div>
 <div class="span4">
-    <img src=" /research/files/psu/het.jpg">
-    <img src=" /research/files/psu/mdwarf.jpg">
+<img class="researchImg" src=" /img/graphics/logos/hpf/hpf_comb_planet_m_dwarf_short_color.png">
+<img class="researchImg" src="/img/research/hpf_rvs.png">
+</div>
+</div>
+
+
+
+
+<hr>
+
+
+<h3>(2016-Current) Towards Space-Quality Photometry from the Ground with Engineered Diffusers</h3>
+
+<div class="row-fluid">
+<div class="span8">
+<p>
+<p>Precision ground-based photometric facilities play a critical role in precisely characterizing transiting systems. In <a href="https://arxiv.org/abs/1710.01790">Stefansson et al. 2017</a>, I led the design and implementation of an <a href="https://www.rpcphotonics.com/product-category/polymer-on-glass/">Engineered Diffuser</a> for the <a href="https://www.apo.nmsu.edu/arc35m/Instruments/ARCTIC/">ARCTIC instrument</a> on the 3.5m Telescope at APO. Produced using specialized nanofabrication techniques, Engineered Diffusers are micro-structured optical components capable of molding the image of a star into a broad and stable top-hat shape (see video below) minimizing photometric errors due to non-uniform pixel response, atmospheric seeing effects, imperfect guiding, and telescope-induced variable aberrations seen in defocusing. Using the Engineered Diffuser on the 3.5m at APO, in our paper, we demonstrated some of the highest photometric precisions ever achieved from the ground, or 62ppm precision in 30 minute bins on 16 Cyg A—within a factor of 2 of Kepler observations of the same star.</p>
+
+<p>In preparation for diffuser-assisted followup observations of TESS targets, we have used diffuser-assisted photometry to better constrain the orbital parameters of the Neptune-sized planets K2-28b and K2-100b (<a href="https://arxiv.org/abs/1807.04420">Stefansson et al. 2018a</a>). In addition, in <a href="https://arxiv.org/abs/1808.02187">Stefansson et al. 2018b</a>, we discussed our package <a href="https://gummiks.github.io/idiffuse/">iDiffuse</a> to help plan diffuser-assisted observations.</p>
+
+<p>As Engineered Diffusers are relatively inexpensive and easily scalable, I am collaborating with a number of different groups to adapt our diffuser design to other telescopes, creating a network of precision photometric followup facilities. Currently, similar diffusers have been incorporated and/or are under testing at over 10 optical and/or NIR telescopes around the world. If you are interested in trying a diffuser on your telescope, please don't hesitate to send me an email!</p>
+
+<p>Lastly, our diffuser-assisted work has received some press by the <a href="https://news.psu.edu/story/485112/2017/10/05/research/you-can-see-here">Penn State Press Office</a>.</p>
+
+<!--
+Produced using specialized nanofabrication techniques, Engineered Diffusers (EDs) are micro-structured optical components capable of molding the image of a star into a broad and stable top-hat shape (Figure 5a) minimizing photometric errors due to non-uniform pixel response, atmospheric seeing effects, imperfect guiding, and telescope-induced variable aberrations seen in defocusing. In Stefansson et al. 2017, I led the design and implementation of an Engineered Diffuser (ED) on the 3.5m Telescope at APO, where I demonstrated some of the highest photometric precisions ever achieved from the ground, or 62ppm precision in 30 minute bins on 16 Cyg A—within a factor of 2 of Kepler observations of the same star. These hitherto unachievable photometric precisions from the ground are enabling precise ground-based transit observations to characterize the orbital parameters of transiting exoplanets (e.g., Stefansson et al. 2017, 2018a, b), and to study stellar activity, and to measure obliquities through starspot crossing events during transit (e.g., Morris et al. 2018; see recent starspot crossing ‘bump’ of K2-25b in Figure 5b).</p>
+
+<p>As ED technology is inexpensive and easily scalable, I am collaborating with a number of different groups to adapt our ED design to other telescopes, creating a network of precision photometric follow-up facilities to follow up TESS targets. Currently, EDs have been incorporated and/or are under testing at over 10 optical and/or NIR telescopes. I have already started a conversation with Dr. Daniel Harbeck at LCOGT to investigate the efficacy of incorporating diffusers into the LCOGT network of telescopes, and as a Harlan J. Smith Fellow at UT I would investigate the possibility of incorporating a diffuser in the LCOGT telescope at McDonald Observatory to enable extreme precision photometric observations.</p>-->
+</div>
+<div class="span4">
+<img src="/img/research/diffuser_panel.jpg">
+<!--<img src="/img/research/diffuser_arctic.jpg">-->
+</div>
+</div>
+
+
+
+
+<div class="row-fluid">
+<div class="span12">
+<div class="videoWrapper">
+<iframe width="750" height="400" src="https://www.youtube.com/embed/U6cv1_-qA0o" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 </div>
 
 
 <p></br></p>
 
+<hr>
+
+
+<h3>(2015-Current) NEID: the NASA/NSF-EXPLORE Doppler spectrograph</h3>
+
 <div class="row-fluid">
-        <div class="span11">
+<div class="span8">
+<p>I am part of the core instrument and science team for the <a href="https://exoplanets.nasa.gov/exep/NNExplore/">NASA/NSF-EXPLORE NEID Doppler spectrograph</a> that we are building, testing, and commissioning for the 3.5m WIYN Telescope at Kitt Peak for delivery in early/mid 2019. The design specifications of NEID are to achieve <50cm/s radial velocity (RV) precision with a goal precision of 25cm/s or better. 
+</p>
 
 <p>
-Below you can see a quick video of the clean-room fabrication of the HPF <a href="http://gummiks.github.io/2014/09/19/mli/">MLI blankets</a>:
-<center>
-<iframe width="730" height="410" src="//www.youtube.com/embed/vRh0Jkqd27Q" frameborder="0" allowfullscreen></iframe>
-</center>
+Similarily to HPF, to achieve these RV precision levels, exquisite temperature and pressure stability is required. Using lessons learned from the HPF Environmental Control System, we have demonstrated even better temperature stability than HPF or 0.4mK temperature stability over 30 days, to be published in <i>Robertson et al. 2019 (submitted)</i>.
 </p>
+
+<p>For newer updates on NEID check out the <a href="https://neid.psu.edu/">NEID research blog</a>.</p>
+</div>
+<div class="span4">
+<img class="researchImg" src=" http://sites.psu.edu/neid/wp-content/uploads/sites/44097/2016/03/WIYNtelescope1.jpg">
+<img class="researchImg" src=" /img/graphics/logos/neid/MainLogo.png">
 </div>
 </div>
 
@@ -128,156 +191,183 @@ Below you can see a quick video of the clean-room fabrication of the HPF <a href
 
 
 <hr>
+
+
+<h3>(2013-Current) Building, Testing, and Commissioning the Habitable-zone Planet Finder</h3>
+
+<div class="row-fluid">
+<div class="span8">
+<p> I am working with Prof. Mahadevan on the <a href="http://arxiv.org/abs/1209.1686">Habitable-Zone Planet Finder</a> (HPF) fiber-fed near-infrared (NIR) spectrograph we recently commissioned at the 10m <a href="http://www.as.utexas.edu/mcdonald/het/het.html">Hobby-Eberly Telescope (HET)</a> at McDonald Observatory in Texas. We have designed HPF to carry out a survey of nearby M-dwarfs to look for low-mass terrestrial exoplanets at a 1-3m/s radial-velocity (RV) precision.</p>
+
+<p>1-3m/s RV precision has not been achieved in the NIR before and requires a high degree of temperature stability (sub mK) and pressure stability (<1e-5 Torr) to prevent mechanical drifts and index of refraction changes within the spectrograph. In <a href="https://arxiv.org/abs/1610.06216">Stefansson et al. 2016</a>, we demonstrated that the HPF Environmental Control System is capable of maintaining sub-milliKelvin temperature stability long-term. If you are interested in downloading all of the <a href="https://scholarsphere.psu.edu/concern/generic_works/7p88cg66f">3D-CAD/SolidWorks models of the HPF cryostat they are freely available here</a> and further described in our <a href="https://arxiv.org/abs/1610.06216">paper</a>.</p>
+
+<p>For newer updates on HPF check out the <a href="http://hpf.psu.edu/">HPF research blog</a>.</p>
+
+<!--
+It will be used to search for terrestrial-mass planets around M stars using ultra precise <a href="http://en.wikipedia.org/wiki/Radial_velocity">radial velocity methods</a> (<1 m/s).
+<p>Click <a href="/research/hpf_temps/">here</a> to see frequently updated temperature monitoring plots of the HPF Enclosure in the HET Spectrograph Room.</p>
+-->
+
+<p>Below you can see a timelapse video of HPF being delivered at McDonald Observatory in October 2017. You can read more about it on the <a href="http://hpf.psu.edu/2017/12/03/hpf-goes-on-sky/">HPF blog</a>.</p>
+
+</br>
+
+</div>
+
+<div class="span4">
+<img src=" /research/files/psu/het.jpg">
+<img src=" /research/files/psu/mdwarf.jpg">
+</div>
+</div>
+
+
+
+
+<div class="row-fluid">
+<div class="span12">
+<div class="videoWrapper">
+<iframe width="750" height="400" src="https://www.youtube.com/embed/dZio-aGqKeM" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+
+
+
+
+<hr>
+
+
+
+
+<!--
+<div class="row-fluid">
+<div class="span11">
+<p>Below you can see a quick video of the clean-room fabrication of the HPF <a href="http://gummiks.github.io/2014/09/19/mli/">MLI blankets</a>:</p>
+<div class="videoWrapper">
+<iframe width="560" height="350" src="//www.youtube.com/embed/vRh0Jkqd27Q" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+-->
 
 
 <h1>Past Research Projects</h1>
 
-<h4>(2013) Research project at CERN</h4>
-
-<p><code>High Purity Germanium Detector Calibration at ISOLDE</code></p>
+<h3>(2013) High Purity Germanium Detector Calibration at ISOLDE@CERN</h3>
 
 <div class="row-fluid">
-    <div class="span8">
-        <p>Currently I am working on a blog post about the research I did at CERN, meanwhile you can find my CERN Summer student project report below.<br/><br/>
-        <i>In short:</i> My project involved experimental operation and characterization of two High Purity Germanium (HPGe) detectors, operated and used in the ISOLDE experiment at CERN.</p>
-    </div>
-    <div class="span4">
-        <img src=" /research/files/cern/isoldeLab.jpg">
-    </div>
-</div>
-
-
-<p><a href="/research/files/cern/cern_report.pdf">CERN Research Project Report</a></p>
-
-<h4>(2013) Bachelor Thesis Project</h4>
-
-<p><code> Observational Constraints on Dark Energy </code></p>
-
-<div class="row-fluid">
-    <div class="span8">
-        <p>My bachelor's thesis topic was in observational Cosmology. You can find my thesis below encoded in <code>Icelandic</code> and <code>math</code>. <br/><br/>
-
-        The project revolved around constraining the values for Dark Energy density parameter, \( \Omega_{\Lambda} \), in two ways: <br/>
-        First, using observational evidence from SNIa explosions from Reiss et al. (1998) and Perlmutter et al. (1999).
-        Second, performing Markov-Chain Monte-Carlo calculations using various cosmological observations to explore the likelood density projected on the \( \Omega_{\Lambda} \)- \( \Omega_{m} \) parameter space. The calculations were done on the <a href='http://rhi.hi.is/en/jotunn_cluster'>Jötunn</a> computer cluster at the University of Iceland.
-        </p>
-    </div>
-    <div class="span4">
-        <img src=" /research/files/hi/sn.png">
-    </div>
-</div>
-
-
-<p><a href="/research/files/hi/bs_thesis.pdf">Bachelor Thesis</a></p>
-
-<p class="muted">
+<div class="span8">
+<p>My project involved experimental operation and characterization of two High Purity Germanium (HPGe) detectors, operated and used in the ISOLDE experiment at CERN. You can find my CERN Summer student project report below.
 </p>
-
-
-<h4>(2012) Summer Research Project</h4>
-
-<p><code>Fluorescent Polymers as Integrated Light Sources</code></p>
-
-<div class="row-fluid">
-    <div class="span8">
-        <p>
-        In the project we studied the use of fluorescent polymers in dielectric waveguides, but fluorescent polymers have developed rapidly in recent years, with direct applications in optical biosensing. Fluorescent polymers can induce an optical gain, enabling fabrication of optically pumped amplification and laser-sources. In the project we demonstrated the fabrication of planar waveguides, where a symmetric waveguide supporting a single guided mode was desired, which could then be directly integrated with microfluidic circuits that had been studied by the group (see project 2011).
-        </p>
-    </div>
-    <div class="span4">
-        <img src=" /research/files/hi/labWork.jpg">
-    </div>
+<p><a href="/research/files/cern/cern_report.pdf">CERN Research Project Report</a></p>
+</div>
+<div class="span4">
+<img src=" /research/files/cern/isoldeLab.jpg">
+</div>
 </div>
 
 
-<p><a href="/research/files/hi/nsn2012.pdf">Final Report</a></p>
 
-<p><a href="/research/files/hi/nanoPatterning.pdf">Presentation</a></p>
-
-<h4>(2011) Summer Research Project</h4>
-
-<p><code>Fabrication of Integrated Optical and Microfluidic Devices</code></p>
-
-<div class="row-fluid">
-    <div class="span8">
-        <p>
-        I did a research project under the guidance of Dr. Kristján Leósson.
-        The project aimed at developing a methodology for fabricating microfluidic devices on different substrates, in order to integrate them with optical circuits also studied by the Leosson Group, but PDMS microfluidic devices had not been fabricated in Iceland before. 
-        Together these integrated optical devices can be used for live cell imaging applications.
-        </p>
-    </div>
-    <div class="span4">
-        <img src=" /research/files/hi/mold.png">
-    </div>
-
-</div>
-
-
-<p><a href="/research/files/hi/nsn2011.pdf">Final Report</a></p>
-
-<p><a href="/research/files/hi/micro_procedure.pdf">Fabrication Procedure - Outline</a></p>
 
 <hr>
 
 
-<h1>Publications</h1>
+<h3>(2013) Bachelor Thesis: Observational Constraints on Dark Energy</h3>
 
-<p><span class="badge">4</span> Suvrath Mahadevan; Lawrence W. Ramsey; Ryan Terrien; Samuel Halverson; Arpita Roy; Fred Hearty; Eric Levi; <b>Gudmundur K. Stefansson</b>; Paul Robertson; Chad Bender; Chris Schwab; Matt Nelson. <a href="http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1891837">The Habitable-zone Planet Finder: A status update on the development of a stabilized fiber-fed near-infrared spectrograph for the for the Hobby-Eberly telescope</a>, SPIE (2014)</p>
+<div class="row-fluid">
+<div class="span8">
+<p>My bachelor's thesis topic was in observational Cosmology. The project revolved around constraining the values for Dark Energy density parameter, \( \Omega_{\Lambda} \), in two ways. First, using observational evidence from SNIa explosions from Reiss et al. (1998) and Perlmutter et al. (1999). Second, performing Markov-Chain Monte-Carlo calculations using various cosmological observations to explore the likelood density projected on the \( \Omega_{\Lambda} \)- \( \Omega_{m} \) parameter space. The calculations were done on the <a href='http://rhi.hi.is/en/jotunn_cluster'>Jötunn</a> computer cluster at the University of Iceland.</p>
+<p><a href="/research/files/hi/bs_thesis.pdf">Bachelor Thesis</a></p>
+</div>
+<div class="span4">
+<img src=" /research/files/hi/sn.png">
+</div>
+</div>
 
-<p><span class="badge">3</span> Fred Hearty; Eric Levi; Matt Nelson; Suvrath Mahadevan; Adam Burton; Lawrence Ramsey; Chad Bender; Ryan Terrien; Samuel Halverson; Paul Robertson; Arpita Roy; Basil Blank; Ken Blanchard; <b>Gudmundur Stefansson</b>. <a href="http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1888271">Environmental control system for Habitable-zone Planet Finder (HPF)</a>, SPIE (2014)</p>
 
-<p><span class="badge">2</span> I. Slovinsky, <b>G. K. Stefansson</b>, A. Kossoy, K. Leosson, <a href="http://link.springer.com/article/10.1007/s11468-013-9578-y">Propagation Loss of Long-Range Surface Plasmon Polariton Gold Stripe Waveguides in the Thin-Film Limit</a>, Plasmonics (2013)</p>
 
-<p><span class="badge">1</span> <b>G. K. Stefansson</b>, D. Bjarnason og K. Leosson, <a title="Fabrication of integrated optical and microfluidic devices" href="http://raust.is/2011/1/03/raust2011-1-03.pdf">Samþætting vökvarása og ljósrása á örflögum,</a>, Raust (2011) <i>[ICELANDIC]</i></p>
+
+<hr>
+
+
+<h3>(2012) Summer Research: Fluorescent Polymers as Integrated Light Sources</h3>
+
+<div class="row-fluid">
+<div class="span8">
+<p>
+In the project we studied the use of fluorescent polymers in dielectric waveguides, but fluorescent polymers have developed rapidly in recent years, with direct applications in optical biosensing. Fluorescent polymers can induce an optical gain, enabling fabrication of optically pumped amplification and laser-sources. In the project we demonstrated the fabrication of planar waveguides, where a symmetric waveguide supporting a single guided mode was desired, which could then be directly integrated with microfluidic circuits that had been studied by the group (see project 2011).
+</p>
+<p><a href="/research/files/hi/nsn2012.pdf">Final Report</a></p>
+<p><a href="/research/files/hi/nanoPatterning.pdf">Presentation</a></p>
+</div>
+<div class="span4">
+<img src=" /research/files/hi/labWork.jpg">
+</div>
+</div>
+
+
+
+
+<hr>
+
+
+<h3>(2011) Summer Research: Fabrication of Integrated Optical and Microfluidic Devices</h3>
+
+<div class="row-fluid">
+<div class="span8">
+<p>
+I did a research project under the guidance of Dr. Kristján Leósson.
+The project aimed at developing a methodology for fabricating microfluidic devices on different substrates, in order to integrate them with optical circuits also studied by the Leosson Group, but PDMS microfluidic devices had not been fabricated in Iceland before. 
+Together these integrated optical devices can be used for live cell imaging applications.
+</p>
+<p><a href="/research/files/hi/nsn2011.pdf">Final Report</a></p>
+<p><a href="/research/files/hi/micro_procedure.pdf">Fabrication Procedure - Outline</a></p>
+</div>
+<div class="span4">
+<img src=" /research/files/hi/mold.png">
+</div>
+</div>
+
 
       </div>
       <div class="span4">
-<!--<h3>Me</h3>
-<p><code>pamfíll</code></p>
-<p>"Pamfíll" is an Icelandic/Danish word which nobody really knows the meaning of However, it is usually bundled with good luck. I guess I put it here thinking I might need it someday. (EDIT: I finally got proved wrong! <a href="http://www.visindavefur.is/svar.php?id=1614">see what it means here</a>).
+<p><center><img src="../img/profile/profile_m1_2.png" id="profileSidebar"></center> </p>
+<h4>Contact Info</h4>
+<p>Guðmundur Kári Stefánsson</br>
+NASA Earth and Space Science Fellow</br>
+Department of Astronomy & Astrophysics</br>
+The Pennsylvania State University</br>
+421 Davey Lab</br>
+University Park, PA, 16802</br>
 </p>
 
+<p>
+Email: <i>gudmundur [at] psu.edu</i></br>
+Twitter: <a href="https://twitter.com/gummiks">@gummiks</a>
+</p>
 <br/>
 
--->
-<h4>Contact Info</h4>
-	 <p>Guðmundur Kári Stefánsson</p>
-|
-<a class="muted" href="http://500px.com/gummiks">500px</a>
-|
-<a class="muted" href="https://vimeo.com/user22290691">vimeo</a>
-|
-<a class="muted" href="https://www.facebook.com/gudmundurkari">facebook</a>
-|
-
-<br/>
-
-<p>email: <i> gws5257 [at] psu.edu</i></p>
-
-<br/>
-<br/>
-
-<h4>Recent posts!</h4>
+<h4>Recent posts</h4>
   
-  <p> 09 March 2015 <a href="/2015/03/09/cdk24/">Installing a CDK24 Telescope at Penn State</a>  </p>
+  <p> 09 Mar 2015 <a href="/2015/03/09/cdk24/">Installing a CDK24 Telescope at Penn State</a>  </p>
   
-  <p> 06 December 2014 <a href="/2014/12/06/fulbright_pittsburgh/">A Day in Pittsburgh</a>  </p>
+  <p> 06 Dec 2014 <a href="/2014/12/06/fulbright_pittsburgh/">A Day in Pittsburgh</a>  </p>
   
-  <p> 12 November 2014 <a href="/2014/11/12/het_trip_results/">HET trip - Results</a>  </p>
+  <p> 12 Nov 2014 <a href="/2014/11/12/het_trip_results/">HET trip - Results</a>  </p>
   
-  <p> 11 November 2014 <a href="/2014/11/11/het_trip_day1/">HET trip - day 1</a>  </p>
+  <p> 11 Nov 2014 <a href="/2014/11/11/het_trip_day1/">HET trip - day 1</a>  </p>
   
-  <p> 01 October 2014 <a href="/2014/10/01/black_moshannon_park/">Black Moshannon State Park Observing</a>  </p>
+  <p> 01 Oct 2014 <a href="/2014/10/01/black_moshannon_park/">Black Moshannon State Park Observing</a>  </p>
   
-  <p> 29 September 2014 <a href="/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a>  </p>
+  <p> 29 Sep 2014 <a href="/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a>  </p>
   
-  <p> 19 September 2014 <a href="/2014/09/19/mli/">MLI Blankets</a>  </p>
+  <p> 19 Sep 2014 <a href="/2014/09/19/mli/">MLI Blankets</a>  </p>
   
-  <p> 11 August 2014 <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a>  </p>
+  <p> 11 Aug 2014 <a href="/2014/08/11/hpf_subsystem_assembly/">HPF subsystem assembly</a>  </p>
   
-  <p> 21 July 2014 <a href="/2014/07/21/astrofest/">Astrofest 2014</a>  </p>
+  <p> 21 Jul 2014 <a href="/2014/07/21/astrofest/">Astrofest 2014</a>  </p>
   
-  <p> 13 June 2014 <a href="/2014/06/13/hpf_keeping_it_cool/">HPF - Keeping it cool</a>  </p>
+  <p> 13 Jun 2014 <a href="/2014/06/13/hpf_keeping_it_cool/">HPF - Keeping it cool</a>  </p>
   
 
 
@@ -286,14 +376,13 @@ Below you can see a quick video of the clean-room fabrication of the HPF <a href
 <!-- tag_words: astro585cernerasmusfulbrighthelloworldhethikinghpficelandmusicoutreachpennstatephotographyplottingpoetryprogrammingresearchshortstorytelescopetravelvideography -->
 
 <br/>
-<br/>
 
 <h4>Highlights</h4>
-<p>- <a href="http://gummiks.github.io/2014/01/19/northernlights/">Northern Lights</a></p>
 <p>- <a href="http://gummiks.github.io/2014/09/29/mli_fabrication/">HPF MLI blanket fabrication</a></p>
-<p>- <a href="http://gummiks.github.io/2014/06/03/springbreak_part2/">Portland seminar</a></p>
+<!--<p>- <a href="http://gummiks.github.io/2014/01/19/northernlights/">Northern Lights</a></p>-->
+<!--<p>- <a href="http://gummiks.github.io/2014/06/03/springbreak_part2/">Portland seminar</a></p>-->
 
-<br/>
+<!--<br/>
 <div id="tags">
   <h1>Tags</h1>
 
@@ -365,7 +454,7 @@ Below you can see a quick video of the clean-room fabrication of the HPF <a href
     <li><a class="tag_list_link" href="/tag/videography"><code>videography (<b>5</b>)</code></a></li>
   
   </ul>
-
+-->
  <!-- 
     
   <h2 id="astro585">astro585</h2>
@@ -684,7 +773,7 @@ Below you can see a quick video of the clean-room fabrication of the HPF <a href
     <div class="myFooter">
 	    <hr> 
 <center>
-	<small>Ergonomically handwritten code, with a little help from my friends; <code><a href="http://www.vim.org/">vim</a></code>, <code><a href="http://jekyllrb.com/">jekyll</a></code> and <code><a href="http://getbootstrap.com/">twitter bootstrap</a></code></small>
+	<small>Handwritten code using <code><a href="http://jekyllrb.com/">jekyll</a></code>,<code><a href="http://getbootstrap.com/">twitter bootstrap</a></code> and <code><a href="http://www.vim.org/">vim</a></code></small>
     </center>
     <hr>
     </div> 

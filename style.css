@@ -39,7 +39,7 @@ footer {
 
 footer a {
 	color: #222;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 footer a:hover {
