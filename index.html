@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<title>Guðmundur Stefánsson</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css" />
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">-->
+</head>
+<body class="is-preload">
+
+<!-- Header -->
+<div id="header">
+
+<div class="top">
+
+<!-- Logo -->
+<div id="logo">
+<span class="image avatar48"><img id="avatar" src="images/stefansson_avatar.jpg" alt="" /></span>
+<h1 id="title">Guðmundur Stefánsson, PhD</h1>
+<p>he/him/his</p>
+<p>Henry Norris Russell Fellow</p>
+<p>Department of Astrophysical Sciences</p>
+<p>4 Ivy Lane</p>
+<p>Princeton University</p>
+<p>Princeton, NJ, 08540</p>
+</div>
+
+<!-- Nav -->
+<nav id="nav">
+<h4 class='navheader'>Pages</h4>
+<ul>
+<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+<li><a href="#research" id="research-link"><span class="icon solid fa-chart-line">Research</span></a></li>
+<li><a href="#press" id="press-link"><span class="icon fa-newspaper">Press</span></a></li>
+<li><a href="#publications" id="publications-link"><span class="icon fa-file-alt">Publications</span></a></li>
+<li><a href="#teaching" id="teach-link"><span class="icon solid fa-graduation-cap">Teaching</span></a></li>
+<li><a href="#videos" id="videos-link"><span class="icon solid fa-video">Videos</span></a></li>
+<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+</ul>
+</nav>
+<h4 class='navheader'>Links</h4>
+<ul class='ulscroll'>
+<li><a href="files/stefansson_gudmundur_cv.pdf" id="cv-link"><span class="icon solid fa-user">CV [PDF]</span></a></li>
+<li><a href="mailto:gstefansson@astro.princeton.edu" id="email-link" ><span class="icon solid fa-envelope">E-mail</span></a></li>
+<li><a href="https://github.com/gummiks/" id="github-link"><span class="icon brands fa-github">GitHub</span></a></li>
+<li><a href="https://twitter.com/gummiks/" id="twitter-link"><span class="icon brands fa-twitter">Twitter</span></a></li>
+<li><a href="https://hpf.psu.edu/" id="hpfblog-link" ><span class="icon solid fa-globe">HPF-Blog</span></a></li>
+<li><a href="https://neid.psu.edu/" id="neidblog-link"><span class="icon solid fa-globe">NEID-Blog</span></a></li>
+</ul>
+</div>
+</div>
+
+<!-- Main -->
+<div id="main">
+
+<!-- Intro -->
+<section id="top" class="one dark cover">
+<div class="container">
+
+<header>
+<div class="row-fluid" id="toprow">
+<div class="span4">
+<img id="topfigure" src="images/stefansson_avatar.jpg">
+</div>
+<div class="span8">
+<h2 class="alt toptext">Guðmundur K. Stefánsson, PhD</h2>
+<p class='toptext'>Hi! I am a Henry Norris Russell Postoctoral Fellow in Astrophysics at Princeton University. I work on developing and using next-generation instruments to discover and characterize exoplanets around nearby low-mass stars.</p>
+</div>
+</div>
+</header>
+</div>
+</section>
+
+<!-- Portfolio -->
+<section id="research" class="two">
+<div class="container">
+
+
+
+<header>
+<h2 class='mainheadings'><b>Research:</b> Instrumentation</h2>
+</header>
+
+<section>
+<div class="row-fluid">
+<div class="span4">
+<h2><br></h2>
+<span class="image centered">
+<img src="images/diffuser.jpg" alt="" />
+<br>
+<div class="videoWrapper">
+<iframe width="100%" height="300" src="https://www.youtube.com/embed/U6cv1_-qA0o" frameborder="0" allowfullscreen></iframe>
+</div>
+</span>
+</div>
+<div class="span8">
+<h2 class='h3class'>Precision Photometry with Engineered Diffusers</h2>
+<p>Precision ground-based photometric facilities play a critical role in confirming and characterizing transiting exoplanet candidates from space-based surveys such as the Transiting Exoplanet Survey Satellite (TESS). In <a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...848....9S/abstract">Stefansson et al. 2017</a>, I led the design and implementation of an <a href="https://www.rpcphotonics.com/product-category/polymer-on-glass/">Engineered Diffuser</a> for the <a href="https://www.apo.nmsu.edu/arc35m/Instruments/ARCTIC/">ARCTIC instrument</a> on the 3.5m Telescope at Apache Point Observatory. Produced using specialized nanofabrication techniques, Engineered Diffusers are micro-structured optical devices capable of molding the image of a star into a broad and stable top-hat shape, minimizing photometric errors due to detector, seeing, and scintillation effects. Using the Engineered Diffuser on the 3.5m Telescope, <b>we have demonstrated some of the highest photometric precisions achieved from the ground</b>, or 62ppm precision in 30 minute bins.</p>
+
+<p>
+As Engineered Diffusers are inexpensive, diffusers have now been installed and used at a number of different observatories to characterize a number of transiting planets (see Observation section below). 
+If you are interested in trying a diffuser on your telescope, check out my Python package <a href="https://gummiks.github.io/idiffuse/">iDiffuse</a>, and/or don't hesitate to send me an email.
+</p>
+
+<p>Relevant Papers:</p>
+<ul>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...848....9S/abstract">Stefansson et al. 2017: </a>Toward Space-like Photometric Precision from the Ground with Beam-shaping Diffusers</li>
+<li><a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10702/2312833/Extreme-precision-photometry-from-the-ground-with-beam-shaping-diffusers/10.1117/12.2312833.short">Stefansson et al. 2018b: </a>Extreme precision photometry from the ground with beam-shaping diffusers for K2, TESS, and beyond</li>
+</ul>
+
+</div>
+</div>
+</section>
+<section>
+<div class="row-fluid">
+<div class="span4">
+<h2><br></h2>
+<span class="image centered">
+<img src="images/hpf.jpg" alt="" />
+<br>
+<img src="images/neid.jpg" alt="" />
+</span>
+</div>
+<div class="span8">
+<h2>Precision Radial Velocities in the Near Infrared and Optical</h2>
+<p>
+I am a part of the instrument and science teams of two next-generation precision radial velocity (RV) spectrographs designed to detect and characterize planets in the habitable-zones around nearby stars: the near-infrared (NIR) <a href="https://hpf.psu.edu/"><b>Habitable-zone Planet Finder (HPF)</b></a> on the 10m Hobby-Eberly Telescope, and the NASA/NSF funded <a href="https://neid.psu.edu/"><b>NEID Spectrograph</b></a> for the 3.5m WIYN Telescope at Kitt Peak Observatory.
+</p>
+<p>
+The main science goal of HPF is to carry out a 5-year survey to detect and characterize terrestrial planets in the Habitable-zone around nearby mid-to-late M-dwarf stars within ~15pc. I currently maintain the HPF RV extractions, where we have demonstrated that HPF is capable of 1.53m/s RV precision on the nearby bright M-dwarf Barnard's Star (<a href="">Metcalf et al. 2019</a>), <b>the highest precision RVs in the NIR</b>.
+The main science goal of NEID is to detect and characterize terrestrial planets in the habitable-zone around nearby FGK stars with a goal RV precision of 30cm/s.
+</p>
+
+<p>
+For newer updates, check out the <a href="https://hpf.psu.edu/">HPF blog</a> and the <a href="https://neid.psu.edu/">NEID blog</a>.
+</p>
+
+<p>Relevant Papers:</p>
+<ul>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...833..175S/abstract">Stefansson et al. 2016:</a> A Versatile Technique to Enable Sub-milli-Kelvin Instrument Stability for Precise Radial Velocity Measurements: Tests with the Habitable-zone Planet Finder</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2019JATIS...5a5003R/abstract">Robertson, Anderson, Stefansson et al. 2019:</a> Ultrastable environment control for the NEID spectrometer: design and performance demonstration</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2019Optic...6..233M/abstract">Metcalf et al. 2019:</a> Stellar spectroscopy in the near-infrared with a laser frequency comb</li>
+</ul>
+
+</p>
+</div>
+</div>
+</section>
+
+<header>
+<h2 class='mainheadings'><b>Research:</b> Observation</h2>
+</header>
+
+<section>
+<div class="row-fluid">
+<div class="span4">
+<h3><br></h3>
+<span class="image centered">
+<img src="images/k2_25b_artist.jpg" alt="" />
+</span>
+</div>
+<div class="span8">
+<h2>Discovering New Planets Orbiting Nearby M-dwarf Stars</h2>
+<p>Using diffuser-assisted photometry and precision radial velocities with HPF, I have led or directly contributed to a number of efforts to detect and characterize new planet candidates orbiting nearby stars, with a particular focus on planets orbiting nearby M-dwarfs.</p>
+<p>Relevant Papers:</p>
+<ul>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020AJ....159..100S/abstract">Stefansson et al. 2020a:</a> Detection of the nearby M-dwarf planet G 9-40b, an excellent target for transmission spectroscopy.</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200611180S/abstract">Stefansson et al. 2020c:</a> Detection of the TOI-1266 system, a two planet M-dwarf system where one planet is in the radius valley.</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020AJ....160..147C/abstract">Cañas et al. 2020:</a> Detection of TOI-1899b, the first Warm Jupiter orbiting an M-dwarf.</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...899...29K/abstract">Kanodia et al. 2020:</a> Detection of TOI-1728b, a hot Supter Neptune orbiting a nearby M-dwarf.</li>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...877L..29C/abstract">Cañas et al. 2019:</a> Detection of TOI-150b, a Hot Jupiter in the TESS Continuous Viewing Zone.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<div class="row-fluid">
+<div class="span4">
+<h3><br></h3>
+<span class="image centered">
+<img src="images/rm_only_150_1200x1200_opt_smaller.gif" alt="" />
+</span>
+</div>
+<div class="span8">
+<h2>Characterization of the Properties of Nearby M-dwarf Planet Systems</h2>
+<p>Using diffuser-assisted photometry and precision Radial Velocities (RVs) with HPF and other spectrographs, I am currently leading efforts to study the orbital and atmospheric properties of planets orbiting nearby M-dwarfs.</p>
+In particular, I am interested in using the <a href="https://en.wikipedia.org/wiki/Rossiter%E2%80%93McLaughlin_effect">Rossiter-McLaughlin Effect</a> to characterize the spin-orbit alignment of planets, a powerful probe of their formation and subsequent dynamical evolution.
+As is shown in the animation to the left, this method relies on measuring the angle between the stellar rotation axis and the stellar equator.
+As a star rotates, one hemisphere is blueshifted towards the observer, and the other hemisphere is redshifted.
+As a planet crosses in front of the stellar disk, the planet successively blocks differently blue and redshifted light from the star resulting in a detectable signature in the RVs during the transit.
+The shape and size of this signature is strongly sensitive to the obliquity of the planet, the angle between the stellar equator and the planet orbit.</p>
+<p>Relevant Papers:</p>
+<ul>
+<li><a href="https://ui.adsabs.harvard.edu/abs/2020AJ....160..192S/abstract">Stefansson et al. 2020b:</a> Characterization of the young hot Neptune planet K2-25b orbiting an M4.5-dwarf in the Hyades.</li>
+<li><a href="http://iopscience.iop.org/article/10.3847/1538-3881/aae6ca/pdf">Stefansson et al. 2018a:</a> Diffuser-assisted characterization of the Neptune-sized planets K2-28b and K2-100b.</li>
+</ul>
+
+</div>
+</div>
+</section>
+
+</section>
+
+<!-- Portfolio -->
+<section id="press" class="three">
+	<div class="container">
+
+		<header>
+			<h2 class='mainheadings'>Press Releases</h2>
+		</header>
+
+		<div class="row">
+			<div class="col-4 col-12-mobile">
+				<article class="item pressdiv">
+					<a href="https://news.psu.edu/story/485112/2017/10/05/research/you-can-see-here" class="image fit"><img src="images/diffuser.jpg" class="pressimg" alt="" /></a>
+					<header>
+						<h3><b><a href="https://news.psu.edu/story/485112/2017/10/05/research/you-can-see-here">You Can See That From Here</a></b></h3>Nanofabricated Engineered Diffusers Enable some of the Highest Precision Photometry from the Ground (Stefansson+2017, ApJ). 
+					</header>
+				</article>
+				<article class="item pressdiv">
+					<a href="https://news.psu.edu/story/609028/2020/02/20/research/sub-neptune-sized-planet-validated-habitable-zone-planet-finder" class="image fit"><img src="images/het.jpg" class="pressimg" alt="" /></a>
+					<header>
+						<h3><b><a href="https://news.psu.edu/story/609028/2020/02/20/research/sub-neptune-sized-planet-validated-habitable-zone-planet-finder">Sub-Neptune-sized Planet Validated with the Habitable-zone Planet Finder</a></b></h3>First HPF Planet Validation: a Nearby M-dwarf Star Ideal for Transmission Spectroscopy (Stefansson+2020a, AJ).
+					</header>
+				</article>
+			</div>
+			<div class="col-4 col-12-mobile">
+				<article class="item pressdiv">
+					<a href="https://noirlab.edu/public/news/noirlab2018/" class="image fit"><img src="images/k2_25b_artist.jpg" class="pressimg" alt="" /></a>
+					<header>
+						<h3><b><a href="https://noirlab.edu/public/news/noirlab2018/">Surprisingly Dense Exoplanet Challenges Planet Formation Theories</a></b></h3>The Young Neptune K2-25b is Dense, Eccentric, and Well-Aligned (Stefansson+2020b, AJ)
+					</header>
+				</article>
+				<article class="item pressdiv">
+					<a href="https://www.nasa.gov/feature/jpl/a-new-tool-for-weighing-unseen-planets" class="image fit"><img src="images/neid_first.jpg" class="pressimg" alt="" /></a>
+					<header>
+						<h3><b><a href="https://www.nasa.gov/feature/jpl/a-new-tool-for-weighing-unseen-planets">NEID Exoplanet Instrument Sees First Light</a></b></h3>NEID, the Precision Doppler Spectrograph for the 3.5m WIYN Telescope, Sees First Light.
+					</header>
+				</article>
+			</div>
+			<div class="col-4 col-12-mobile">
+				<article class="item pressdiv">
+					<a href="https://www.princeton.edu/news/2020/11/18/mysterious-blue-ring-nebula-scientists-see-fate-binary-stars" class="image fit"><img src="images/blue_ring_nebula.jpg" class="pressimg" alt="" /></a>
+					<header class="pressheader">
+						<h3><b><a href="https://www.princeton.edu/news/2020/11/18/mysterious-blue-ring-nebula-scientists-see-fate-binary-stars">In the mysterious Blue Ring Nebula, scientists see the fate of binary stars</a></b></h3>Solving the 16-Year-Old Cosmic Mystery of the Blue Ring Nebula (Hoadley+2020, Nature)
+					</header>
+				</article>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+
+
+<!-- Publications -->
+<section id="publications" class="two">
+<div class="container">
+
+<header>
+<h2 class='mainheadings'>Publications</h2>
+</header>
+
+<h2>First Author</h2>
+
+<!--<p class="talkpoints"><span class="badge">9</span> <b>Stefansson, G.</b>, <a href="">““</a>, Submitted for Publication in AJ. </i><a href="">arxiv:  [astro-ph.EP].</a></p> -->
+
+<p class="talkpoints"><span class="badge">9</span> <b>Stefansson</b>, et al. 2020, <a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200611180S/abstract">“A Mini-Neptune and a Radius-Valley-Planet Orbiting the Nearby M2 dwarf TOI-1266 in its Venus-Zone: Validation with the Habitable-zone Planet Finder“</a>. In AJ: 160, 6 (Nov, 2020). </i><a href="https://arxiv.org/abs/2006.11180">arxiv: 2006.11180.</a></p>
+
+<p class="talkpoints"><span class="badge">8</span> <b>Stefansson</b>, et al. 2020, <a href="https://ui.adsabs.harvard.edu/abs/2020AJ....160..192S/abstract">“The Habitable-zone Planet Finder Reveals A High Mass and a Low Obliquity for the Young Neptune K2-25b“</a>, In: AJ 160, 192 (Oct, 2020). </i><a href="https://arxiv.org/abs/2007.12766">arxiv: 2007.12766.</a></p>
+
+
+<p class="talkpoints"><span class="badge">7</span> <b>Stefansson</b>, et al. 2020, <a href="https://ui.adsabs.harvard.edu/abs/2020AJ....159..100S/abstract">“A sub-Neptune sized planet transiting the M2.5-dwarf G 9-40: Validation with the Habitable-zone Planet Finder“</a>, In: AJ, 159, 100 (March 2020). </i><a href="https://arxiv.org/abs/1912.00291">arxiv: 1912.00291.</a></p>
+
+
+<p class="talkpoints"><span class="badge">6</span> <b>Stefansson</b>, et al. 2018, <a href="http://iopscience.iop.org/article/10.3847/1538-3881/aae6ca/pdf">“Diffuser-assisted Photometric Follow-up Observations of the Neptune-sized Planets K2-28b and K2-100b”</a>. In: AJ 156, 266 (July 2018). <a href="https://arxiv.org/abs/1807.04420">arXiv: 1807.04420.</a></p>
+
+
+<p class="talkpoints"><span class="badge">5</span> <b>Stefansson</b>, et al. 2018, <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10702/2312833/Extreme-precision-photometry-from-the-ground-with-beam-shaping-diffusers/10.1117/12.2312833.short">“Extreme precision photometry from the ground with beam-shaping diffusers for K2, TESS, and beyond”</a>. In: SPIE Conference Series. Vol. 10702. SPIE. Aug. 2018, p. 10702.</p>
+
+
+<p class="talkpoints"><span class="badge">4</span> <b>Stefansson</b>, et al. 2017, <a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...848....9S/abstract">“Toward Space-like Photometric Precision from the Ground with Beam-shaping Diffusers”</a>. In: ApJ 848, 9 (Oct. 2017), p. 9. <a href="https://arxiv.org/abs/1710.01790">arXiv: 1710.01790.</a></p>
+
+
+<p class="talkpoints"><span class="badge">3</span> <b>Stefansson</b>, et al. 2016, <a href="https://ui.adsabs.harvard.edu/abs/2016ApJ...833..175S/abstract">“A Versatile Technique to Enable Sub-milli-Kelvin Instrument Stability for Precise Radial Velocity Measurements: Tests with the Habitable-zone Planet Finder”</a>. In: ApJ 833, 175 (Dec. 2016), p. 175. <a href="https://arxiv.org/abs/1610.06216">arXiv: 1610.06216</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">2</span> <b>Stefansson</b>, et al. 2016, <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/9908/990871/Ultra-stable-temperature-and-pressure-control-for-the-Habitable-zone/10.1117/12.2233443.short">“Ultra-stable temperature and pressure control for the Habitable-zone Planet Finder spectrograph”</a>. In: SPIE Conference Series. Vol. 9908. SPIE. Aug. 2016, p. 990871.</p>
+
+
+<p class="talkpoints"><span class="badge">1</span> <b>Stefansson</b>, et al. 2011, <a href="http://raust.is/2011/1/03/raust2011-1-03.pdf">"Samþætting vökvarása og ljósrása á örflögum (English: "Fabrication of integrated optical and microfluidic devices)"</a> In: Raust (2011).</p>
+
+<br>
+<h2>2nd &amp; 3rd Author</h2>
+
+<p class="talkpoints"><span class="badge">12</span> C. Cañas, <b>G. Stefansson</b>, S. Kanodia, et al. 2020, <a href="https://ui.adsabs.harvard.edu/abs/2020AJ....160..147C/abstract">"A warm Jupiter transiting an M dwarf: A TESS single transit event confirmed with the Habitable-zone Planet Finder"</a>. In: AJ, 160, 147 <a href='https://arxiv.org/abs/2007.07098'>arXiv: 2007.07098.</a></p>
+
+
+<p class="talkpoints"><span class="badge">11</span> S. Kanodia, C. Cañas, <b>G. Stefansson</b> et al. 2020, <a href='https://ui.adsabs.harvard.edu/abs/2020ApJ...899...29K/abstract'>"TOI-1728b: The Habitable-zone Planet Finder confirms a warm super Neptune orbiting an M dwarf host"</a>. In: ApJ, 899, 29 (Aug, 2020). <a href='https://arxiv.org/abs/2006.14546'>arXiv: 2006.14546</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">10</span> P. Robertson, <b>G. Stefansson</b>, Suvrath Mahadevan, et al. 2020, <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...897..125R/abstract">"Persistent starspot signals on M dwarfs: multi-wavelength Doppler observations with the Habitable-zone Planet Finder and Keck/HIRES"</a>. In: ApJ, 897, 125 (July 2020). <a href='https://arxiv.org/abs/2005.09657'>arXiv: 2005.09657</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">9</span> J. Ninan, <b>G. Stefansson</b>, S. Mahadevan, et al. 2020, <a href='https://ui.adsabs.harvard.edu/abs/2020ApJ...894...97N/abstract'>"Evidence for He I 10830 A absorption during the transit of a warm Neptune around the M-dwarf GJ 3470 with the Habitable-zone Planet Finder"</a>. In: ApJ, 894, 97 (May 2020). <a href='https://arxiv.org/abs/1910.02070'>arXiv: 1910.02070</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">8</span> J. Ninan, S. Mahadevan, <b>G. Stefansson</b> et al. 2019, <a href='https://arxiv.org/abs/1903.06614'>"Impact of crosshatch patterns in H2RGs on high precision radial velocity measurements: Exploration of measurement and mitigation paths with HPF"</a>. In: Accepted for Publication in ISPA 2018 (2019). <a href='https://arxiv.org/abs/1903.06614'>arXiv: 1903.06614</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">7</span> S. Kanodia, A. Wolfgang, <b>G. Stefansson</b>, et al. 2019, <a href='https://iopscience.iop.org/article/10.3847/1538-4357/ab334c/pdf'>"Mass-Radius relationship for M dwarf exoplanets: Comparing nonparametric and parametric methods"</a>. In: ApJ 882, 38 (Sep. 2019), p. 14. <a href='https://arxiv.org/abs/1903.00042'>arXiv: 1903.00042</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">6</span> C. von Essen, <b>G. Stefansson</b>, M. Mallonn, et al. 2019, <a href='https://www.aanda.org/articles/aa/abs/2019/08/aa35312-19/aa35312-19.html'>"First Light of Engineered Diffusers at the Nordic Optical Telescope Reveal Time Variability in the Optical Eclipse Depth of WASP-12b"</a>. In: A&A, 628, 11 (August 2019). <a href='https://arxiv.org/abs/1904.05362'>arXiv: 1904.05362</a></p>
+
+
+<p class="talkpoints"><span class="badge">5</span> C. Cañas, <b>G. Stefansson</b>, A. J. Monson, et al. 2019, <a href='https://ui.adsabs.harvard.edu/abs/2019ApJ...877L..29C/abstract'>"TOI-150: A transiting hot Jupiter in the TESS southern CVZ"</a>. In: ApJL 877, 29 (June 2019), p. 8. <a href='https://arxiv.org/abs/1902.09710'>arXiv: 1902.09710</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">4</span> P. Robertson, T. Anderson, <b>G. Stefansson</b>, et al. 2019, <a href="https://ui.adsabs.harvard.edu/abs/2019JATIS...5a5003R/abstract">“Ultrastable environment control for the NEID spectrometer: design and performance demonstration”</a>. In: JATIS, 015003 (Jan 2019). <a href="https://arxiv.org/abs/1902.07729">arXiv: 1902.07729</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">3</span> Y. Li, <b>Stefansson, G.</b>, P. Robertson, et al. 2017, <a href="http://iopscience.iop.org/article/10.3847/2515-5172/aaa0d5">“A Candidate Transit Event around Proxima Centauri”</a>. In: Research Notes of the American Astronomical Society 1, 49 (Dec. 2017), p. 49. <a href="https://arxiv.org/abs/1712.04483">arXiv: 1712.04483</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">2</span> C. Bender, P. Robertson, <b>Stefansson, G.</b> et al. 2016, <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/9913/1/The-instrument-control-software-package-for-the-Habitable-Zone-Planet/10.1117/12.2233011.short">“The instrument control software package for the Habitable-Zone Planet Finder spectrometer”</a>. In: SPIE Conference Series. Vol. 9913. SPIE. Aug. 2016, p. 991338.</p>
+
+
+<p class="talkpoints"><span class="badge">1</span> Slovinsky, I., <b>Stefansson, G.</b>, Kossoy A., et al. 2013, <a href="http://link.springer.com/article/10.1007/s11468-013-9578-y">“Propagation Loss of Long-Range Surface Plasmon Polariton Gold Stripe Waveguides in the Thin-Film Limit”</a>. In: Plasmonics 8.4 (2013), pp. 1613–1619.</p>
+
+
+<br>
+<h2>Coauthor</h2>
+
+<p class="talkpoints"><span class="badge">12</span> Keri Hoadley, Christopher Martin, Brian D. Metzger, Mark Seibert, Andrew McWilliam, Ken J. Shen, James D. Neill, <b>Gudmundur Stefansson</b>, Andrew Monson, Bradley E. Schaefer. <a href="https://www.nature.com/articles/s41586-020-2893-5">"A blue ring nebula from a stellar merger several thousand years ago"</a>. In: <b>Nature,</b> 587, 387-391 (Nov, 2020). <a href="https://arxiv.org/abs/2011.09589">arxiv: 2011.09589</a>. 
+
+<p class="talkpoints"><span class="badge">11</span> Christian Obermeier, Jana Steuer, Hanna Kellermann, Roberto P. Saglia, Thomas Henning, Arno Riffeser, Ulrich Hopp, <b>Guðmundur Stefansson</b>, Caleb Cañas, Joe P. Ninan, Suvrath Mahadevan, Howard Isaacson, Andrew W. Howard, John H. Livingston, Johannes Koppenhoefer, Ralf Bender. <a href="https://ui.adsabs.harvard.edu/abs/2020arXiv200513560O/abstract">“Following the TraCS of exoplanets with Pan-Planets: Wendelstein-1b and Wendelstein-2"</a>. In: 
+A&A, 639, 130 (Jul, 2020). <a href="https://arxiv.org/abs/2005.13560">arXiv: 2005.13560</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">10</span> Arpita Roy, Sam Halverson, Suvrath Mahadevan, <b>Gudmundur Stefansson</b>, Andrew Monson, Sarah E. Logsdon, Chad F. Bender, Cullen H. Blake, Eli Golub, Arvind Gupta, Kurt P. Jaehnig, Shubham Kanodia, Kyle Kaplan, Michael W. McElwain, Joe P. Ninan, Jayadev Rajagopal, Paul Robertson, Christian Schwab, Ryan C. Terrien, Sharon Xuesong Wang, Marsha J. Wolf, and Jason T. Wright. <a href="https://ui.adsabs.harvard.edu/abs/2020AJ....159..161R/abstract">“Solar Contamination in Extreme-precision Radial-velocity Measurements: Deleterious Effects and Prospects for Mitigation”</a>. In: AJ, 159, 161 (April, 2020). <a href="https://arxiv.org/abs/2002.09468">arXiv: 2002.09468</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">9</span> Kristine W. F. Lam, Judith Korth, Kento Masuda, Szilárd Csizmadia, Philipp Eigmüller, <b>Gudmundur Stefansson</b>, Michael Endl, Simon Albrecht, Rafael Luque, John H. Livingston, Teruyuki Hirano, Roi Alonso Sobrino, Oscar Barragán, Juan Cabrera, Ilaria Carleo, Alexander Chaushev, William D. Cochran, Fei Dai, Jerome de Leon, Hans J. Deeg, Anders Erikson, Massimiliano Esposito, Malcolm Fridlund, Akihiko Fukui, Davide Gandolfi, Iskra Georgieva, Lucá Gonzalez Cuesta, Sascha Grziwa, Eike W. Guenther, Artie P. Hatzes, Diego Hidalgo, Maria Hjorth, Petr Kabath, Emil Knudstrup, Mikkel N. Lund, Suvrath Mahadevan, Savita Mathur, Pilar Montañes Rodríguez, Felipe Murgas, Norio Narita, David Nespral, Prajwal Niraula, Enric Palle, Martin Pätzold, Carina M. Persson, Jorge Prieto-Arranz, Heike Rauer, Seth Redfield, Ignasi Ribas, Paul Robertson, Marek Skarka, Alexis M. S. Smith, Jan Subjak, Vincent Van Eylen. <a href="https://ui.adsabs.harvard.edu/abs/2020AJ....159..120L/abstract">“It takes two planets in resonance to tango around K2-146”</a>. In: AJ, 159, 120 (March, 2020). <a href="https://arxiv.org/abs/1907.11141">arXiv: 1907.11141</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">8</span> Andrew J. Metcalf, Tyler Anderson, Chad F. Bender, Scott Blakeslee, Wesley Brand, David R. Carlson, William D. Cochran, Scott A. Diddams, Michael Endl, Connor Fredrick, Sam Halverson, Dan D. Hickstein, Fred Hearty, Jeff Jennings, Shubham Kanodia, Kyle F. Kaplan, Eric Levi, Emily Lubar, Suvrath Mahadevan, Andrew Monson, Joe P. Ninan, Colin Nitroy, Steve Osterman, Scott B. Papp, Franklyn Quinlan, Larry Ramsey, Paul Robertson, Arpita Roy, Christian Schwab, Steinn Sigurdsson, Kartik Srinivasan, <b>Gudmundur Stefansson</b>, David A. Sterner, Ryan Terrien, Alex Wolszczan, Jason T. Wright, and Gabriel Ycas. <a href="https://ui.adsabs.harvard.edu/abs/2019Optic...6..233M/abstract">“Stellar Spectroscopy in the Near-infrared with a Laser Frequency Comb”</a>. In: Optica, 6, 2 (Feb 2019), p. 233. <a href="https://arxiv.org/abs/1902.00500">arXiv: 1902.00500</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">7</span> S. Kanodia, S. Mahadevan, L. W. Ramsey, <b>Stefansson, G. K.</b>, A. J. Monson, F. Hearty, S. Blakeslee, E. Lubar, C. F. Bender, J. P. Ninan, D. Sterner, A. Roy, S. P. Halverson, and P. M. Robertson. <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10702/2313491/Overview-of-the-spectrometer-optical-fiber-feed-for-the-habitable/10.1117/12.2313491.short">“Overview of the spectrometer optical fiber feed for the habitable-zone planet finder”</a>. In: SPIE Conference Series. Vol. 10702. SPIE. Aug. 2018, p. 10702. <a href="https://arxiv.org/abs/1808.00557">arXiv: 1808.00557</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">6</span> J. P. Ninan, C. F. Bender, S. Mahadevan, E. B. Ford, A. J. Monson, K. F. Kaplan, R. C. Terrien, A. Roy, P. M. Robertson, S. Kanodia, and <b>Stefansson, G.</b> <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/10709/107092U/The-Habitable-Zone-Planet-Finder--improved-flux-image-generation/10.1117/12.2312787.short">“The Habitable-Zone Planet Finder: improved flux image generation algorithms for H2RG up-the-ramp data”.</a> In: SPIE Conference Series. Vol. 10709. Aug. 2018.</p>
+
+
+<p class="talkpoints"><span class="badge">5</span> S. Halverson, R. Terrien, S. Mahadevan, A. Roy, C. Bender, <b>Stefansson, G. K.</b>, A. Monson, E. Levi, F. Hearty, C. Blake, M. McElwain, C. Schwab, L. Ramsey, J. Wright, S. Wang, Q. Gong, and P. Roberson. <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/9908/1/A-comprehensive-radial-velocity-error-budget-for-next-generation-Doppler/10.1117/12.2232761.short">“A comprehensive radial velocity error budget for next generation Doppler spectrometers”</a>. In: SPIE Conference Series. Vol. 9908. SPIE. Aug. 2016, 99086P. <a href="https://arxiv.org/abs/1607.05634">arXiv: 1607.05634 [astro-ph.IM]</a>.</p>
+
+
+<p class="talkpoints"><span class="badge">4</span> P. M. Robertson, F. R. Hearty, T. B. Anderson, <b>Stefansson, G. K.</b>, E. I. Levi, C. F. Bender, S. Mahadevan, S. P. Halverson, A. J. Monson, L. W. Ramsey, A. Roy, C. Schwab, R. C. Terrien, M. J. Nelson, and B. Blank. <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/9908/990862/A-system-to-provide-sub-milliKelvin-temperature-control-at-T300K/10.1117/12.2231311.short">“A system to provide sub-milliKelvin temperature control at T 300K for extreme precision optical radial velocimetry”</a>. In: SPIE Conference Series. Vol. 9908. SPIE. Aug. 2016, p. 990862.</p>
+
+
+<p class="talkpoints"><span class="badge">3</span> C. Schwab, N. Jovanovic, T. Feger, M. Bakovic, Y. V. Gurevich, J. Stürmer, R. Apodaca, L. Vanzi, S. Rukdee, J. S. Lawrence, D. W. Coutts, N. Cvetojevic, S. Mahadevan, <b>Stefansson, G. K.</b>, S. P. Halverson, and O. Guyon. <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/9912/1/Adaptive-optics-fed-single-mode-spectrograph-for-high-precision-Doppler/10.1117/12.2234407.short">“Adaptive optics fed single-mode spectrograph for high-precision Doppler measurements in the near-infrared”</a>. In: SPIE Conference Series. Vol. 9912. SPIE. July 2016, p. 991274.</p>
+
+
+<p class="talkpoints"><span class="badge">2</span> F. Hearty, E. Levi, M. Nelson, S. Mahadevan, A. Burton, L. Ramsey, C. Bender, R. Terrien, S. Halverson, P. Robertson, A. Roy, B. Blank, K. Blanchard, and <b>Stefansson, G.</b> <a href="http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1888271">“Environmental control system for Habitable-zone Planet Finder (HPF)”</a>. In: vol. 9147. SPIE. 2014,</p>
+
+
+<p class="talkpoints"><span class="badge">1</span> S. Mahadevan, L. W. Ramsey, R. Terrien, S. Halverson, A. Roy, F. Hearty, E. Levi, <b>Stefansson, G. K.</b>, P. Robertson, C. Bender, C. Schwab, and M. Nelson. <a href="http://proceedings.spiedigitallibrary.org/proceedig.aspx?articleid=1891837">“The Habitable-zone Planet Finder: A status update on the development of a stabilized fiber-fed near-infrared spectrograph for the for the Hobby-Eberly telescope”</a>. In: Ground-based and Airborne Instrumentation for Astronomy V. Vol. 9147. SPIE. July 2014, 91471G.</p>
+
+</div>
+</section>
+
+
+<!-- About Me -->
+<section id="teaching" class="three">
+<div class="container">
+<header>
+<h2 class='mainheadings'>Teaching and Mentoring</h2>
+</header>
+
+
+<h3>Mentoring</h3>
+<ul>
+<li>Sinclaire Jones (undergraduate at Princeton)</li>
+<li>Marissa Maney (now graduate student at Harvard)</li>
+<li>Yiting Li (now graduate student at UCSB)</li>
+</ul>
+
+<h3>Teaching</h3>
+
+<h4>Spring 2014</h4>
+
+<ul>
+<li><b>Astro 11 (008)</b> Elementary Astronomy Laboratory, Instructor of Record.</li>
+<li><b>Rooftop and Planetarium TA</b></li>
+</ul>
+
+<h4>Fall 2013</h4>
+<ul>
+<li><b>Astro 11 (004)</b> Elementary Astronomy Laboratory, Instructor of Record.</li>
+<li><b>Astro 1 (001)</b> Astronomical Universe, taught by Prof <a href="http://www3.geosc.psu.edu/~ruk15/">Ravi Kopparapu</a>.</li>
+<li><b>Astro 1 (004)</b> Astronomical Universe, taught by Prof <a href="http://www.astro.psu.edu/people/e5f">Eric Feigelson</a>.</li>
+<li><b>Astro 10 (001)</b> Elementary Astronomy, taught by Prof <a href="http://www2.astro.psu.edu/users/alex/">Alex Wolszczan</a>.</li>
+</ul>
+
+<h4>Spring 2013</h4>
+
+<p><b>Physics 2V</b> Experimental Labs in Physics 2V. Supervisors: Prof <a href="http://www.hi.is/~sthi">S. Þ. Ingvarsson</a> and <a href="http://www.raunvis.hi.is/~ario/">A. Ólalfsson</a></p>
+
+<h4>Fall 2012</h4>
+
+<p><b>Physics 305G</b> Classical Mechanics, taught by Prof <a href="http://www.raunvis.hi.is/~pja/research.html">P. Jakobsson</a>.</p>
+
+</div>
+</section>
+
+<!-- Portfolio -->
+<section id="videos" class="two">
+	<div class="container">
+
+		<header>
+			<h2 class='mainheadings'>Videos</h2>
+		</header>
+
+		<div class="row">
+			<div class="col-6 col-12-mobile">
+				<article class="item pressdiv">
+					<iframe width="100%" height="450" src="https://www.youtube.com/embed/dZio-aGqKeM" frameborder="0" allowfullscreen></iframe>
+				</article>
+				<article class="item pressdiv">
+					<iframe width="100%" height="450" src="https://www.youtube.com/embed/vuxDjf6RTGM" frameborder="0" allowfullscreen></iframe>
+				</article>
+			</div>
+			<div class="col-6 col-12-mobile">
+				<article class="item pressdiv">
+					<iframe width="100%" height="450" src="https://www.youtube.com/embed/PAB7xHjAzYY" frameborder="0" allowfullscreen></iframe>
+				</article>
+				<article class="item pressdiv">
+					<iframe width="100%" height="450" src="https://www.youtube.com/embed/vRh0Jkqd27Q" frameborder="0" allowfullscreen></iframe>
+				</article>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+
+<!-- About Me -->
+<section id="about" class="three">
+<div class="container">
+
+<header>
+<h2 class='mainheadings'>About Me</h2>
+</header>
+
+<center>
+<a href="#" class="image featured"><img src="images/startrails.jpg" alt="" /></a>
+</center>
+
+<p>
+I am an astrophysicist who develops and uses next-generation instruments to better detect and characterize planets orbiting nearby stars, with a particular focus on planets orbiting low-mass stars. To study these worlds, I use two precision radial velocity spectrographs I helped design and deploy—the near-infrared <a href="https://hpf.psu.edu/">Habitable-zone Planet Finder (HPF)</a> on the 10m Hobby-Eberly Telescope, and the optical <a href="https://neid.psu.edu/">NEID spectrograph</a> on the 3.5m WIYN Telescope—, along with the diffuser-assisted photometry technique, a low-cost method I have shown is capable of approaching space-quality photometry from the ground.
+</p>
+
+<p>
+I am currently a Henry Norris Russell Fellow at the <a href="https://web.astro.princeton.edu/">Department of Astrophysical Sciences at Princeton University</a>.
+I obtained my PhD in Astronomy and Astrophysics at Penn State University in September 2019, where I completed my thesis <a href="https://etda.libraries.psu.edu/catalog/17166gws5257">"Extreme Precision Photometry and Radial Velocimetry from the Ground"</a> supervised by Professor Suvrath Mahadevan as a NASA Earth and Space Science Fellow (2016-2019).
+I completed by Bachelor's degree in Physics at the University of Iceland in 2013 where I worked in the <a href="https://uni.hi.is/kleos/">Leosson</a> lab in experimental nanophotonics with applications in biosensing, and spent a summer at Stanford University as part of the <a href="https://summer.stanford.edu/ihp">Summer International Honors Program</a>.
+</p>
+
+<p>If you have any questions, please don't hesitate to email me at gstefansson - at - astro.princeton.edu</p>
+
+</div>
+</section>
+
+</div>
+
+<!-- Footer -->
+<div id="footer">
+
+<!-- Copyright -->
+<ul class="copyright">
+<li>&copy; Guðmundur Stefánsson </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+</ul>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
